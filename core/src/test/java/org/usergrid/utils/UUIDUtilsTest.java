@@ -117,6 +117,14 @@ public class UUIDUtilsTest {
     for (int i = 0; i < count - 1; i++) {
       assertEquals(-1, uuids.get(i).compareTo(uuids.get(i + 1)));
     }
+    
+    for(int i = 0; i < count; i ++){
+      UUID uuid = uuids.get(i);
+      
+      assertEquals(ts, UUIDUtils.getTimestampInMillis(uuid));
+      assertEquals(ts*10000+count, UUIDUtils.getTimestampInMicros(uuid));
+      
+    }
   }
 
   @Test
