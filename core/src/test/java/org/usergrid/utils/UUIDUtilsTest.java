@@ -122,7 +122,11 @@ public class UUIDUtilsTest {
       UUID uuid = uuids.get(i);
       
       assertEquals(ts, UUIDUtils.getTimestampInMillis(uuid));
-      assertEquals(ts*10000+count, UUIDUtils.getTimestampInMicros(uuid));
+      
+      long expectedMicros = ts+10000+count;
+      
+      assertEquals(expectedMicros/10, UUIDUtils.getTimestampInMicros(uuid));
+      assertEquals(expectedMicros, UUIDUtils.getTimestampInMicrosTenths(uuid));
       
     }
   }

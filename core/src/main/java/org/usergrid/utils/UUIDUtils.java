@@ -319,6 +319,21 @@ public class UUIDUtils {
     long timeMillis = (t - kClockOffset) / 10;
     return timeMillis;
   }
+  
+  /**
+   * Get the timestamp in the micro ticks.  Milliseconds*10000 + 1/10 ticks
+   * @param uuid
+   * @return
+   */
+  public static long getTimestampInMicrosTenths(UUID uuid) {
+    if (uuid == null) {
+      return 0;
+    }
+    long t = uuid.timestamp();
+    long timeMillis = (t - kClockOffset) ;
+    return timeMillis;
+  }
+
 
   public static UUID tryGetUUID(String s) {
     if (s == null) {
