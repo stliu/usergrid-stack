@@ -13,17 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.usergrid.rest.test.resource;
+package org.usergrid.rest.test.resource.app;
 
+import java.util.UUID;
+
+import org.usergrid.rest.test.resource.NamedResource;
 
 /**
  * @author tnine
  * 
  */
-public class ConnectionResource extends SetResource {
+public class UserTypeCollection extends EntityCollection {
 
-  public ConnectionResource(String connectionName, NamedResource parent) {
-    super(connectionName, parent);
+
+  /**
+   * Use this constructor when accessing activies that aren't in the root collection. 
+   * @param alias
+   * @param parent
+   */
+  public UserTypeCollection(String entityType, NamedResource parent) {
+    super(entityType, parent);
   }
 
+ 
+  public Activity activity(String name){
+    return new Activity(name, this);
+  }
+  
+  public Activity activity(UUID id){
+    return new Activity(id, this);
+  }
 }

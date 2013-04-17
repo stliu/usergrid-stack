@@ -78,5 +78,17 @@ public class Application extends NamedResource {
   public QueuesCollection queues() {
     return new QueuesCollection(this);
   }
+  
+  public ActivitiesCollection activities(){
+    return new ActivitiesCollection(this);
+  }
 
+  /**
+   * Get a generic entity type
+   * @param entityType
+   * @return
+   */
+  public UserTypeCollection userType(String entityType){
+    return new UserTypeCollection(entityType, this);
+  }
 }

@@ -18,14 +18,19 @@ package org.usergrid.rest.test.resource;
 import java.util.Map;
 
 import org.codehaus.jackson.JsonNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.WebResource.Builder;
 
 /**
  * @author tnine
  * 
  */
 public abstract class ValueResource extends NamedResource {
+
+  private static final Logger logger = LoggerFactory.getLogger(ValueResource.class);
 
   private String name;
 
@@ -56,11 +61,14 @@ public abstract class ValueResource extends NamedResource {
    * @return
    */
   protected JsonNode postInternal(Map<String, ?> entity) {
-   
-    return jsonMedia(withParams(withToken(resource())))
-        .post(JsonNode.class, entity);
+
+    WebResource resource = withParams(withToken(resource()));
+
+    logger.info("POST to {} with payload {}", resource.toString(), entity);
+
+    return jsonMedia(resource).post(JsonNode.class, entity);
   }
-  
+
   /**
    * post to the entity set
    * 
@@ -68,11 +76,14 @@ public abstract class ValueResource extends NamedResource {
    * @return
    */
   protected JsonNode postInternal(Map<String, ?>[] entity) {
-   
-    return jsonMedia(withParams(withToken(resource())))
-        .post(JsonNode.class, entity);
+
+    WebResource resource = withParams(withToken(resource()));
+
+    logger.info("POST to {} with payload {}", resource.toString(), entity);
+
+    return jsonMedia(resource).post(JsonNode.class, entity);
   }
-  
+
   /**
    * post to the entity set
    * 
@@ -80,9 +91,12 @@ public abstract class ValueResource extends NamedResource {
    * @return
    */
   protected JsonNode putInternal(Map<String, ?> entity) {
-   
-    return jsonMedia(withParams(withToken(resource())))
-        .put(JsonNode.class, entity);
+
+    WebResource resource = withParams(withToken(resource()));
+
+    logger.info("PUT to {}", resource.toString());
+
+    return jsonMedia(resource).put(JsonNode.class, entity);
   }
 
   /**
@@ -91,7 +105,11 @@ public abstract class ValueResource extends NamedResource {
    * @return
    */
   protected JsonNode getInternal() {
-    return jsonMedia(withParams(withToken(resource()))).get(JsonNode.class);
+    WebResource resource = withParams(withToken(resource()));
+
+    logger.info("GET from {}", resource.toString());
+
+    return jsonMedia(resource).get(JsonNode.class);
   }
 
   /**
@@ -103,12 +121,13 @@ public abstract class ValueResource extends NamedResource {
    */
   protected JsonNode getInternal(String query, String cursor) {
 
-    
     WebResource resource = withParams(withToken(resource())).queryParam("ql", query);
 
     if (cursor != null) {
       resource = resource.queryParam("cursor", cursor);
     }
+
+    logger.info("GET from {}", resource);
 
     return jsonMedia(resource).get(JsonNode.class);
   }

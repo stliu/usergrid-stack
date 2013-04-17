@@ -16,14 +16,14 @@
 package org.usergrid.rest.test.resource.app.queue;
 
 import org.codehaus.jackson.JsonNode;
-import org.usergrid.rest.test.resource.CollectionResource;
 import org.usergrid.rest.test.resource.NamedResource;
+import org.usergrid.rest.test.resource.SetResource;
 
 /**
  * @author tnine
  * 
  */
-public class SubscribersCollection extends CollectionResource {
+public class SubscribersCollection extends SetResource {
 
   private String queueName;
 

@@ -17,46 +17,34 @@ package org.usergrid.rest.test.resource.app;
 
 import java.util.UUID;
 
-import org.usergrid.rest.test.resource.EntityResource;
 import org.usergrid.rest.test.resource.NamedResource;
 
-
 /**
- * A resource for testing users
- * 
  * @author tnine
- *
+ * 
  */
-public class User extends EntityResource {
+public class ActivitiesCollection extends EntityCollection {
+
+ 
+  public ActivitiesCollection(NamedResource parent) {
+    super("activities", parent);
+  }
 
   /**
-   * @param entityId
+   * Use this constructor when accessing activies that aren't in the root collection.  For instance "/users/me/feed"
+   * @param alias
    * @param parent
    */
-  public User(UUID entityId, NamedResource parent) {
-    super(entityId, parent);
+  public ActivitiesCollection(String alias, NamedResource parent) {
+    super(alias, parent);
   }
 
-  /**
-   * @param entityName
-   * @param parent
-   */
-  public User(String entityName, NamedResource parent) {
-    super(entityName, parent);
-  }
-
-  
-  /**
-   * Get an activity feed for the user
-   * @return
-   */
-  public ActivitiesCollection feed(){
-    return new ActivitiesCollection("feed", this);
+ 
+  public Activity activity(String name){
+    return new Activity(name, this);
   }
   
-  
-
-  
-  
-  
+  public Activity activity(UUID id){
+    return new Activity(id, this);
+  }
 }

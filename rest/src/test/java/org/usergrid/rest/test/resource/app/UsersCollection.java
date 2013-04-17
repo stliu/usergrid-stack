@@ -17,14 +17,13 @@ package org.usergrid.rest.test.resource.app;
 
 import java.util.UUID;
 
-import org.usergrid.rest.test.resource.CollectionResource;
 import org.usergrid.rest.test.resource.NamedResource;
 
 /**
  * @author tnine
  * 
  */
-public class UsersCollection extends CollectionResource {
+public class UsersCollection extends EntityCollection {
 
  
   public UsersCollection(NamedResource parent) {

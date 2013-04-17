@@ -18,8 +18,8 @@ package org.usergrid.rest.test.resource.mgmt;
 import java.util.UUID;
 
 import org.codehaus.jackson.JsonNode;
-import org.usergrid.rest.test.resource.CollectionResource;
 import org.usergrid.rest.test.resource.NamedResource;
+import org.usergrid.rest.test.resource.SetResource;
 import org.usergrid.rest.test.security.TestUser;
 import org.usergrid.utils.MapUtils;
 
@@ -27,7 +27,7 @@ import org.usergrid.utils.MapUtils;
  * @author tnine
  *
  */
-public class OrganizationsCollection extends CollectionResource {
+public class OrganizationsCollection extends SetResource {
 
   /**
    * @param collectionName

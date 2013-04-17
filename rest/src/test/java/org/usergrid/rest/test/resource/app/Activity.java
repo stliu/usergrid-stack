@@ -13,22 +13,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package org.usergrid.rest.test.resource;
+package org.usergrid.rest.test.resource.app;
+
+import java.util.UUID;
+
+import org.usergrid.rest.test.resource.EntityResource;
+import org.usergrid.rest.test.resource.NamedResource;
 
 
 /**
- * @author tnine
+ * A resource for testing activities
  * 
+ * @author tnine
+ *
  */
-public class CollectionResource extends SetResource {
+public class Activity extends EntityResource {
 
-  
-  public CollectionResource(String collectionName, NamedResource parent) {
-    super(collectionName, parent);
+  /**
+   * @param entityId
+   * @param parent
+   */
+  public Activity(UUID entityId, NamedResource parent) {
+    super(entityId, parent);
   }
+
+  /**
+   * @param entityName
+   * @param parent
+   */
+  public Activity(String entityName, NamedResource parent) {
+    super(entityName, parent);
+  }
+
+  
   
   
 
+  
   
   
 }

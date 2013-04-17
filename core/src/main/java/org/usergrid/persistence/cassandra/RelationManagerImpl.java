@@ -2624,12 +2624,19 @@ public class RelationManagerImpl implements RelationManager {
         if (!query.hasQueryPredicates() && !query.hasSortPredicates()) {
             List<UUID> ids = query.getUuidIdentifiers();
             if (ids == null) {
+              UUID start = query.getStartResult();
+              
                 ids = cass.getIdList(
                     cass.getApplicationKeyspace(applicationId),
                     key(headEntity.getUuid(), DICTIONARY_COLLECTIONS,
-                            collectionName), query.getStartResult(), null,
+                            collectionName), start, null,
                     query.getLimit() + 1, reversed, indexBucketLocator,
                     applicationId, collectionName);
+                
+                //the user handed us back the id to start with, remove it
+                if(start != null && start.equals(ids.get(0))){
+                  ids.remove(0);
+                }
             }
 
             Results results = Results.fromIdList(ids, collection.getType());

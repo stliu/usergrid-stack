@@ -19,8 +19,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.codehaus.jackson.JsonNode;
-import org.usergrid.rest.test.resource.CollectionResource;
 import org.usergrid.rest.test.resource.NamedResource;
+import org.usergrid.rest.test.resource.SetResource;
 
 import com.sun.jersey.api.client.WebResource;
 
@@ -30,7 +30,7 @@ import com.sun.jersey.api.client.WebResource;
  * @author tnine
  * 
  */
-public class Queue extends CollectionResource {
+public class Queue extends SetResource {
 
   private String clientId;
   private int limit = 0;
