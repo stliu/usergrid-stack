@@ -133,7 +133,7 @@ public class QueueSubscriptionResource extends AbstractContextResource {
 			@SuppressWarnings("unchecked")
 			List<String> supscriptions = (List<String>) json
 					.get("supscriptions");
-			return new JSONWithPadding(mq.subscribeFromQueues(queuePath,
+			return new JSONWithPadding(mq.subscribeToQueues(queuePath,
 					supscriptions), callback);
 		}
 
