@@ -125,11 +125,11 @@ public class QueueSubscriptionResource extends AbstractContextResource {
 		if (StringUtils.isNotBlank(subscriptionPath)) {
 			return new JSONWithPadding(mq.subscribeToQueue(subscriptionPath,
 					queuePath), callback);
-		} else if ((json != null) && (json.containsKey("subscriber"))) {
+		} else if ((json != null) && (json.containsKey("supscription"))) {
 			String supscription = (String) json.get("supscription");
 			return new JSONWithPadding(mq.subscribeToQueue(supscription,
 					queuePath), callback);
-		} else if ((json != null) && (json.containsKey("subscribers"))) {
+		} else if ((json != null) && (json.containsKey("supscriptions"))) {
 			@SuppressWarnings("unchecked")
 			List<String> supscriptions = (List<String>) json
 					.get("supscriptions");
