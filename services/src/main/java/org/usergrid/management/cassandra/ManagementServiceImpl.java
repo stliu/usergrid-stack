@@ -2045,7 +2045,7 @@ public class ManagementServiceImpl implements ManagementService {
     sendAdminUserEmail(
         user,
         "User Account Confirmation: " + user.getEmail(),
-        emailMsg(hashMap("user_email", user.getEmail()).map("confirmation_url", confirmation_url),
+        emailMsg(hashMap("confirm_email", user.getEmail()).map("confirmation_url", confirmation_url),
             PROPERTIES_EMAIL_ADMIN_CONFIRMATION));
 
   }
