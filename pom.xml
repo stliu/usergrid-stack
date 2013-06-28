@@ -296,6 +296,12 @@
 				<version>${junit-version}</version>
 				<scope>test</scope>
 			</dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit-dep</artifactId>
+                <version>${junit-version}</version>
+                <scope>test</scope>
+            </dependency>
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
@@ -365,6 +371,11 @@
 				<version>${cassandra-version}</version>
 				<scope>compile</scope>
 			</dependency>
+            <dependency>
+                <groupId>net.sf.jopt-simple</groupId>
+                <artifactId>jopt-simple</artifactId>
+                <version>3.2</version>
+            </dependency>
 			<dependency>
 				<groupId>org.apache.lucene</groupId>
 				<artifactId>lucene-core</artifactId>
