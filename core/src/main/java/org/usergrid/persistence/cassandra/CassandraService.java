@@ -15,26 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
-import static me.prettyprint.cassandra.service.FailoverPolicy.ON_FAIL_TRY_ALL_AVAILABLE;
-import static me.prettyprint.hector.api.factory.HFactory.createColumn;
-import static me.prettyprint.hector.api.factory.HFactory.createMultigetSliceQuery;
-import static me.prettyprint.hector.api.factory.HFactory.createMutator;
-import static me.prettyprint.hector.api.factory.HFactory.createRangeSlicesQuery;
-import static me.prettyprint.hector.api.factory.HFactory.createSliceQuery;
-import static me.prettyprint.hector.api.factory.HFactory.createVirtualKeyspace;
-import static org.apache.commons.collections.MapUtils.getIntValue;
-import static org.apache.commons.collections.MapUtils.getString;
-import static org.usergrid.persistence.cassandra.ApplicationCF.ENTITY_ID_SETS;
-import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.batchExecute;
-import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.buildSetIdListMutator;
-import static org.usergrid.utils.ConversionUtils.bytebuffer;
-import static org.usergrid.utils.ConversionUtils.bytebuffers;
-import static org.usergrid.utils.ConversionUtils.string;
-import static org.usergrid.utils.ConversionUtils.uuid;
-import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
-import static org.usergrid.utils.MapUtils.asMap;
-import static org.usergrid.utils.MapUtils.filter;
-
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -70,7 +50,6 @@ import me.prettyprint.hector.api.beans.HColumn;
 import me.prettyprint.hector.api.beans.OrderedRows;
 import me.prettyprint.hector.api.beans.Row;
 import me.prettyprint.hector.api.beans.Rows;
-import me.prettyprint.hector.api.ddl.ColumnDefinition;
 import me.prettyprint.hector.api.ddl.ColumnFamilyDefinition;
 import me.prettyprint.hector.api.ddl.KeyspaceDefinition;
 import me.prettyprint.hector.api.factory.HFactory;
@@ -81,13 +60,30 @@ import me.prettyprint.hector.api.query.MultigetSliceQuery;
 import me.prettyprint.hector.api.query.QueryResult;
 import me.prettyprint.hector.api.query.RangeSlicesQuery;
 import me.prettyprint.hector.api.query.SliceQuery;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.locking.LockManager;
 import org.usergrid.persistence.IndexBucketLocator;
 import org.usergrid.persistence.IndexBucketLocator.IndexType;
-import org.usergrid.utils.JsonUtils;
+
+import static me.prettyprint.cassandra.service.FailoverPolicy.ON_FAIL_TRY_ALL_AVAILABLE;
+import static me.prettyprint.hector.api.factory.HFactory.createColumn;
+import static me.prettyprint.hector.api.factory.HFactory.createMultigetSliceQuery;
+import static me.prettyprint.hector.api.factory.HFactory.createMutator;
+import static me.prettyprint.hector.api.factory.HFactory.createRangeSlicesQuery;
+import static me.prettyprint.hector.api.factory.HFactory.createSliceQuery;
+import static me.prettyprint.hector.api.factory.HFactory.createVirtualKeyspace;
+import static org.apache.commons.collections.MapUtils.getIntValue;
+import static org.apache.commons.collections.MapUtils.getString;
+import static org.usergrid.persistence.cassandra.ApplicationCF.ENTITY_ID_SETS;
+import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.batchExecute;
+import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.buildSetIdListMutator;
+import static org.usergrid.utils.ConversionUtils.bytebuffer;
+import static org.usergrid.utils.ConversionUtils.bytebuffers;
+import static org.usergrid.utils.ConversionUtils.uuid;
+import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
+import static org.usergrid.utils.MapUtils.asMap;
+import static org.usergrid.utils.MapUtils.filter;
 
 public class CassandraService {
 

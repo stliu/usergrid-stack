@@ -15,13 +15,10 @@
  ******************************************************************************/
 package org.usergrid.mongo.commands;
 
-import static org.usergrid.utils.MapUtils.entry;
-import static org.usergrid.utils.MapUtils.map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.MessageEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.usergrid.management.ApplicationInfo;
 import org.usergrid.mongo.MongoChannelHandler;
 import org.usergrid.mongo.protocol.OpQuery;
@@ -30,6 +27,9 @@ import org.usergrid.persistence.EntityManager;
 import org.usergrid.persistence.Identifier;
 import org.usergrid.persistence.Results;
 import org.usergrid.security.shiro.utils.SubjectUtils;
+
+import static org.usergrid.utils.MapUtils.entry;
+import static org.usergrid.utils.MapUtils.map;
 
 public class Count extends MongoCommand {
 

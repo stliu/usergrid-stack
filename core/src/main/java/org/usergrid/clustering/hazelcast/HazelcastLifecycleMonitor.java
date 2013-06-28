@@ -15,15 +15,14 @@
  ******************************************************************************/
 package org.usergrid.clustering.hazelcast;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.Instance;
 import com.hazelcast.core.InstanceEvent;
 import com.hazelcast.core.InstanceListener;
 import com.hazelcast.core.MembershipEvent;
 import com.hazelcast.core.MembershipListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class HazelcastLifecycleMonitor implements InstanceListener,
 		MembershipListener {

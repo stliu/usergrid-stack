@@ -15,17 +15,16 @@
  ******************************************************************************/
 package org.usergrid.rest.filters;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 
+import com.sun.jersey.spi.container.ContainerRequest;
+import com.sun.jersey.spi.container.ContainerRequestFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.sun.jersey.spi.container.ContainerRequest;
-import com.sun.jersey.spi.container.ContainerRequestFilter;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
 
 @Component
 public class JSONPCallbackFilter implements ContainerRequestFilter {

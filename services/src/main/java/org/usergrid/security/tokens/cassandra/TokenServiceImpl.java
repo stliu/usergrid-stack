@@ -1,5 +1,39 @@
 package org.usergrid.security.tokens.cassandra;
 
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.UUID;
+
+import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
+import me.prettyprint.cassandra.serializers.LongSerializer;
+import me.prettyprint.cassandra.serializers.StringSerializer;
+import me.prettyprint.cassandra.serializers.UUIDSerializer;
+import me.prettyprint.hector.api.Keyspace;
+import me.prettyprint.hector.api.beans.HColumn;
+import me.prettyprint.hector.api.mutation.Mutator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.util.Assert;
+import org.usergrid.persistence.EntityManagerFactory;
+import org.usergrid.persistence.cassandra.CassandraService;
+import org.usergrid.persistence.entities.Application;
+import org.usergrid.security.AuthPrincipalInfo;
+import org.usergrid.security.AuthPrincipalType;
+import org.usergrid.security.tokens.TokenCategory;
+import org.usergrid.security.tokens.TokenInfo;
+import org.usergrid.security.tokens.TokenService;
+import org.usergrid.security.tokens.exceptions.BadTokenException;
+import org.usergrid.security.tokens.exceptions.ExpiredTokenException;
+import org.usergrid.security.tokens.exceptions.InvalidTokenException;
+import org.usergrid.utils.JsonUtils;
+import org.usergrid.utils.UUIDUtils;
+
 import static java.lang.System.currentTimeMillis;
 import static me.prettyprint.hector.api.factory.HFactory.createColumn;
 import static me.prettyprint.hector.api.factory.HFactory.createMutator;
@@ -22,41 +56,6 @@ import static org.usergrid.utils.ConversionUtils.uuid;
 import static org.usergrid.utils.MapUtils.hasKeys;
 import static org.usergrid.utils.MapUtils.hashMap;
 import static org.usergrid.utils.UUIDUtils.getTimestampInMillis;
-
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.UUID;
-
-import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
-import me.prettyprint.cassandra.serializers.LongSerializer;
-import me.prettyprint.cassandra.serializers.StringSerializer;
-import me.prettyprint.cassandra.serializers.UUIDSerializer;
-import me.prettyprint.hector.api.Keyspace;
-import me.prettyprint.hector.api.beans.HColumn;
-import me.prettyprint.hector.api.mutation.Mutator;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.util.Assert;
-import org.usergrid.persistence.EntityManagerFactory;
-import org.usergrid.persistence.cassandra.CassandraService;
-import org.usergrid.persistence.entities.Application;
-import org.usergrid.security.AuthPrincipalInfo;
-import org.usergrid.security.AuthPrincipalType;
-import org.usergrid.security.tokens.TokenCategory;
-import org.usergrid.security.tokens.TokenInfo;
-import org.usergrid.security.tokens.TokenService;
-import org.usergrid.security.tokens.exceptions.BadTokenException;
-import org.usergrid.security.tokens.exceptions.ExpiredTokenException;
-import org.usergrid.security.tokens.exceptions.InvalidTokenException;
-import org.usergrid.utils.JsonUtils;
-import org.usergrid.utils.UUIDUtils;
 
 public class TokenServiceImpl implements TokenService {
 

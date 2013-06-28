@@ -15,14 +15,14 @@
  ******************************************************************************/
 package org.usergrid.locking;
 
-import static org.usergrid.locking.LockPathBuilder.buildPath;
-import static org.usergrid.utils.ConversionUtils.bytes;
-
 import java.util.UUID;
 
 import org.apache.commons.codec.binary.Hex;
 import org.usergrid.locking.exception.UGLockException;
 import org.usergrid.locking.noop.NoOpLockImpl;
+
+import static org.usergrid.locking.LockPathBuilder.buildPath;
+import static org.usergrid.utils.ConversionUtils.bytes;
 
 /**
  * @author tnine

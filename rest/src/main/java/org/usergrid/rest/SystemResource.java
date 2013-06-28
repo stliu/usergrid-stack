@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.rest;
 
-import java.util.Map;
-
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -26,13 +24,12 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.json.JSONWithPadding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.usergrid.rest.security.annotations.RequireSystemAccess;
-
-import com.sun.jersey.api.json.JSONWithPadding;
 
 @Path("/system")
 @Component

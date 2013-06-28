@@ -1,19 +1,13 @@
 package org.usergrid.rest.applications.collections;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.usergrid.utils.JsonUtils.loadJsonFromResourceFile;
-import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
-import static org.usergrid.utils.MapUtils.hashMap;
-
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.core.MediaType;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.sun.jersey.api.client.UniformInterfaceException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -21,8 +15,12 @@ import org.slf4j.LoggerFactory;
 import org.usergrid.rest.AbstractRestTest;
 import org.usergrid.utils.JsonUtils;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.sun.jersey.api.client.UniformInterfaceException;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.usergrid.utils.JsonUtils.loadJsonFromResourceFile;
+import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
+import static org.usergrid.utils.MapUtils.hashMap;
 
 /**
  * @author zznate

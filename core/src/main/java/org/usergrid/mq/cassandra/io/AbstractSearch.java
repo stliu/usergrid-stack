@@ -15,26 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mq.cassandra.io;
 
-import static me.prettyprint.hector.api.factory.HFactory.createColumn;
-import static me.prettyprint.hector.api.factory.HFactory.createMultigetSliceQuery;
-import static me.prettyprint.hector.api.factory.HFactory.createMutator;
-import static me.prettyprint.hector.api.factory.HFactory.createSliceQuery;
-import static org.usergrid.mq.Queue.QUEUE_NEWEST;
-import static org.usergrid.mq.Queue.QUEUE_OLDEST;
-import static org.usergrid.mq.cassandra.CassandraMQUtils.deserializeMessage;
-import static org.usergrid.mq.cassandra.CassandraMQUtils.getQueueShardRowKey;
-import static org.usergrid.mq.cassandra.QueueManagerImpl.ALL_COUNT;
-import static org.usergrid.mq.cassandra.QueueManagerImpl.QUEUE_SHARD_INTERVAL;
-import static org.usergrid.mq.cassandra.QueueManagerImpl.se;
-import static org.usergrid.mq.cassandra.QueuesCF.CONSUMERS;
-import static org.usergrid.mq.cassandra.QueuesCF.MESSAGE_PROPERTIES;
-import static org.usergrid.mq.cassandra.QueuesCF.QUEUE_INBOX;
-import static org.usergrid.mq.cassandra.QueuesCF.QUEUE_PROPERTIES;
-import static org.usergrid.utils.NumberUtils.roundLong;
-import static org.usergrid.utils.UUIDUtils.MAX_TIME_UUID;
-import static org.usergrid.utils.UUIDUtils.MIN_TIME_UUID;
-import static org.usergrid.utils.UUIDUtils.getTimestampInMillis;
-
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -55,7 +35,6 @@ import me.prettyprint.hector.api.beans.Rows;
 import me.prettyprint.hector.api.factory.HFactory;
 import me.prettyprint.hector.api.mutation.Mutator;
 import me.prettyprint.hector.api.query.SliceQuery;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.mq.Message;
@@ -63,6 +42,26 @@ import org.usergrid.mq.QueueResults;
 import org.usergrid.mq.cassandra.io.NoTransactionSearch.SearchParam;
 import org.usergrid.persistence.exceptions.QueueException;
 import org.usergrid.utils.UUIDUtils;
+
+import static me.prettyprint.hector.api.factory.HFactory.createColumn;
+import static me.prettyprint.hector.api.factory.HFactory.createMultigetSliceQuery;
+import static me.prettyprint.hector.api.factory.HFactory.createMutator;
+import static me.prettyprint.hector.api.factory.HFactory.createSliceQuery;
+import static org.usergrid.mq.Queue.QUEUE_NEWEST;
+import static org.usergrid.mq.Queue.QUEUE_OLDEST;
+import static org.usergrid.mq.cassandra.CassandraMQUtils.deserializeMessage;
+import static org.usergrid.mq.cassandra.CassandraMQUtils.getQueueShardRowKey;
+import static org.usergrid.mq.cassandra.QueueManagerImpl.ALL_COUNT;
+import static org.usergrid.mq.cassandra.QueueManagerImpl.QUEUE_SHARD_INTERVAL;
+import static org.usergrid.mq.cassandra.QueueManagerImpl.se;
+import static org.usergrid.mq.cassandra.QueuesCF.CONSUMERS;
+import static org.usergrid.mq.cassandra.QueuesCF.MESSAGE_PROPERTIES;
+import static org.usergrid.mq.cassandra.QueuesCF.QUEUE_INBOX;
+import static org.usergrid.mq.cassandra.QueuesCF.QUEUE_PROPERTIES;
+import static org.usergrid.utils.NumberUtils.roundLong;
+import static org.usergrid.utils.UUIDUtils.MAX_TIME_UUID;
+import static org.usergrid.utils.UUIDUtils.MIN_TIME_UUID;
+import static org.usergrid.utils.UUIDUtils.getTimestampInMillis;
 
 /**
  * @author tnine

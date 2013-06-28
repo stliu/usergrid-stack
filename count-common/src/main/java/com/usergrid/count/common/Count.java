@@ -15,19 +15,17 @@
  ******************************************************************************/
 package com.usergrid.count.common;
 
-import me.prettyprint.cassandra.serializers.SerializerTypeInferer;
-import me.prettyprint.cassandra.serializers.StringSerializer;
-import me.prettyprint.cassandra.serializers.TypeInferringSerializer;
-import me.prettyprint.hector.api.Serializer;
-import org.apache.commons.codec.binary.Hex;
-import org.apache.commons.lang.StringUtils;
+import java.nio.ByteBuffer;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.nio.ByteBuffer;
+import me.prettyprint.cassandra.serializers.SerializerTypeInferer;
+import me.prettyprint.cassandra.serializers.StringSerializer;
+import me.prettyprint.hector.api.Serializer;
+import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.lang.StringUtils;
 
 
 /**

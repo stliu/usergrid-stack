@@ -15,14 +15,9 @@
  ******************************************************************************/
 package org.usergrid.launcher;
 
-import java.awt.BorderLayout;
+import java.awt.*;
 import java.io.IOException;
-
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.SwingUtilities;
-import javax.swing.WindowConstants;
+import javax.swing.*;
 
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.Logger;

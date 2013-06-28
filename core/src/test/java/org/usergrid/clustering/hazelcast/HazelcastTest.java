@@ -18,15 +18,6 @@ package org.usergrid.clustering.hazelcast;
 import java.util.Collection;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.ITopic;
 import com.hazelcast.core.Instance;
@@ -34,6 +25,14 @@ import com.hazelcast.core.InstanceEvent;
 import com.hazelcast.core.InstanceListener;
 import com.hazelcast.core.Member;
 import com.hazelcast.core.MessageListener;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @Ignore
 public class HazelcastTest implements InstanceListener, MessageListener<Object> {

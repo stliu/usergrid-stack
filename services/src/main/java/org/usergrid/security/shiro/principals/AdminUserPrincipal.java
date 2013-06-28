@@ -15,9 +15,9 @@
  ******************************************************************************/
 package org.usergrid.security.shiro.principals;
 
-import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
-
 import org.usergrid.management.UserInfo;
+
+import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
 
 public class AdminUserPrincipal extends UserPrincipal {
 

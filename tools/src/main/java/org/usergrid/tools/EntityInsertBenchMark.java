@@ -15,15 +15,6 @@
  ******************************************************************************/
 package org.usergrid.tools;
 
-import static me.prettyprint.hector.api.factory.HFactory.createMutator;
-import static org.apache.commons.codec.digest.DigestUtils.md5;
-import static org.usergrid.persistence.cassandra.ApplicationCF.ENTITY_INDEX;
-import static org.usergrid.persistence.cassandra.ApplicationCF.ENTITY_UNIQUE;
-import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.addInsertToMutator;
-import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.key;
-import static org.usergrid.persistence.cassandra.IndexUpdate.indexValueCode;
-import static org.usergrid.utils.ConversionUtils.bytes;
-
 import java.nio.ByteBuffer;
 import java.util.Stack;
 import java.util.UUID;
@@ -36,12 +27,10 @@ import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
 import me.prettyprint.hector.api.Keyspace;
 import me.prettyprint.hector.api.beans.DynamicComposite;
 import me.prettyprint.hector.api.mutation.Mutator;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
-import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.DynamicEntity;
@@ -49,6 +38,13 @@ import org.usergrid.persistence.IndexBucketLocator;
 import org.usergrid.persistence.IndexBucketLocator.IndexType;
 import org.usergrid.persistence.cassandra.EntityManagerImpl;
 import org.usergrid.utils.UUIDUtils;
+
+import static me.prettyprint.hector.api.factory.HFactory.createMutator;
+import static org.usergrid.persistence.cassandra.ApplicationCF.ENTITY_INDEX;
+import static org.usergrid.persistence.cassandra.ApplicationCF.ENTITY_UNIQUE;
+import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.addInsertToMutator;
+import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.key;
+import static org.usergrid.persistence.cassandra.IndexUpdate.indexValueCode;
 
 /**
  * 

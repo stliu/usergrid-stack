@@ -15,13 +15,13 @@
  ******************************************************************************/
 package org.usergrid.utils;
 
-import static org.usergrid.utils.ConversionUtils.string;
-
 import java.util.Arrays;
 
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.usergrid.utils.ConversionUtils.string;
 
 /**
  * @author edanuff

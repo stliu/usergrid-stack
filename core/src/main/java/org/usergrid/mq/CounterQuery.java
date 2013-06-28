@@ -15,13 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mq;
 
-import static org.usergrid.utils.ClassUtils.cast;
-import static org.usergrid.utils.ListUtils.firstBoolean;
-import static org.usergrid.utils.ListUtils.firstInteger;
-import static org.usergrid.utils.ListUtils.firstLong;
-import static org.usergrid.utils.ListUtils.isEmpty;
-import static org.usergrid.utils.MapUtils.toMapList;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -31,6 +24,13 @@ import org.slf4j.LoggerFactory;
 import org.usergrid.mq.Query.CounterFilterPredicate;
 import org.usergrid.persistence.CounterResolution;
 import org.usergrid.utils.JsonUtils;
+
+import static org.usergrid.utils.ClassUtils.cast;
+import static org.usergrid.utils.ListUtils.firstBoolean;
+import static org.usergrid.utils.ListUtils.firstInteger;
+import static org.usergrid.utils.ListUtils.firstLong;
+import static org.usergrid.utils.ListUtils.isEmpty;
+import static org.usergrid.utils.MapUtils.toMapList;
 
 public class CounterQuery {
 

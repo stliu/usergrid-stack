@@ -15,14 +15,14 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.usergrid.utils.ClassUtils.cast;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.github.fge.jackson.JacksonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.Entity;
@@ -38,8 +38,7 @@ import org.usergrid.services.exceptions.ServiceInvocationException;
 import org.usergrid.services.exceptions.ServiceResourceNotFoundException;
 import org.usergrid.utils.JsonUtils;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.github.fge.jackson.JacksonUtils;
+import static org.usergrid.utils.ClassUtils.cast;
 
 public class AbstractCollectionService extends AbstractService {
 

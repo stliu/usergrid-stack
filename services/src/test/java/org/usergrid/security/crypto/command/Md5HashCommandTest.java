@@ -15,13 +15,13 @@
  ******************************************************************************/
 package org.usergrid.security.crypto.command;
 
-import static org.junit.Assert.assertArrayEquals;
-
 import java.io.UnsupportedEncodingException;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.junit.Test;
 import org.usergrid.persistence.CredentialsInfo;
+
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * @author tnine

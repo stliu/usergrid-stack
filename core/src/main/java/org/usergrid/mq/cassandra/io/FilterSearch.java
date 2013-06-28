@@ -15,6 +15,26 @@
  ******************************************************************************/
 package org.usergrid.mq.cassandra.io;
 
+import java.nio.ByteBuffer;
+import java.util.Iterator;
+import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.UUID;
+
+import com.fasterxml.uuid.UUIDComparator;
+import me.prettyprint.hector.api.Keyspace;
+import me.prettyprint.hector.api.beans.AbstractComposite.ComponentEquality;
+import me.prettyprint.hector.api.beans.DynamicComposite;
+import me.prettyprint.hector.api.beans.HColumn;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.usergrid.mq.Message;
+import org.usergrid.mq.QueryProcessor;
+import org.usergrid.mq.QueryProcessor.QuerySlice;
+import org.usergrid.mq.QueueQuery;
+import org.usergrid.mq.QueueResults;
+
 import static me.prettyprint.hector.api.factory.HFactory.createSliceQuery;
 import static org.usergrid.mq.Queue.getQueueId;
 import static org.usergrid.mq.cassandra.CassandraMQUtils.getConsumerId;
@@ -26,29 +46,6 @@ import static org.usergrid.utils.CompositeUtils.setEqualityFlag;
 import static org.usergrid.utils.ConversionUtils.bytebuffer;
 import static org.usergrid.utils.NumberUtils.roundLong;
 import static org.usergrid.utils.UUIDUtils.getTimestampInMillis;
-
-import java.nio.ByteBuffer;
-import java.util.Iterator;
-import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
-import java.util.UUID;
-
-import me.prettyprint.hector.api.Keyspace;
-import me.prettyprint.hector.api.beans.AbstractComposite.ComponentEquality;
-import me.prettyprint.hector.api.beans.DynamicComposite;
-import me.prettyprint.hector.api.beans.HColumn;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.usergrid.mq.Message;
-import org.usergrid.mq.QueryProcessor;
-import org.usergrid.mq.QueryProcessor.QuerySlice;
-import org.usergrid.mq.QueueQuery;
-import org.usergrid.mq.QueueResults;
-import org.usergrid.persistence.cassandra.CassandraService;
-
-import com.fasterxml.uuid.UUIDComparator;
 
 /**
  * Searches in the queue without transactions

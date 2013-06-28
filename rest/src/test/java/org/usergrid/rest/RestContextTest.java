@@ -15,12 +15,11 @@
  ******************************************************************************/
 package org.usergrid.rest;
 
+import com.sun.jersey.test.framework.spi.container.TestContainerException;
 import org.junit.runner.RunWith;
 import org.usergrid.rest.test.resource.TestContext;
 import org.usergrid.rest.test.util.Context;
 import org.usergrid.rest.test.util.RestRunner;
-
-import com.sun.jersey.test.framework.spi.container.TestContainerException;
 
 /**
  * Abstract class to make running tests easier at the rest tier.

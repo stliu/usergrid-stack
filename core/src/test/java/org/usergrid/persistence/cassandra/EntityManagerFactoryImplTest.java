@@ -15,12 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -34,7 +28,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.cassandra.DataControl;
 import org.usergrid.persistence.Entity;
@@ -46,7 +39,11 @@ import org.usergrid.persistence.cassandra.util.TraceTag;
 import org.usergrid.persistence.cassandra.util.TraceTagManager;
 import org.usergrid.persistence.cassandra.util.TraceTagReporter;
 
-import javax.annotation.Resource;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 @RunWith(CassandraRunner.class)
 @DataControl(schemaManager = "coreManager")

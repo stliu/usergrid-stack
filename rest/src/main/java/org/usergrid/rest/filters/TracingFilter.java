@@ -1,5 +1,8 @@
 package org.usergrid.rest.filters;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.core.Context;
+
 import com.sun.jersey.spi.container.ContainerRequest;
 import com.sun.jersey.spi.container.ContainerRequestFilter;
 import com.sun.jersey.spi.container.ContainerResponse;
@@ -12,9 +15,6 @@ import org.usergrid.persistence.cassandra.util.TraceTag;
 import org.usergrid.persistence.cassandra.util.TraceTagManager;
 import org.usergrid.persistence.cassandra.util.TraceTagReporter;
 import org.usergrid.utils.StringUtils;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.core.Context;
 
 /**
  * Attach and detach trace tags at start and end of request scopes

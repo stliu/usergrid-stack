@@ -2,16 +2,14 @@ package org.usergrid.services.assets.data;
 
 import java.io.File;
 import java.util.Collection;
-
 import javax.ws.rs.core.MediaType;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.usergrid.persistence.entities.Asset;
 
 import eu.medsea.mimeutil.MimeException;
 import eu.medsea.mimeutil.MimeType;
 import eu.medsea.mimeutil.MimeUtil2;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.usergrid.persistence.entities.Asset;
 
 /**
  * Detect the mime type of an Asset

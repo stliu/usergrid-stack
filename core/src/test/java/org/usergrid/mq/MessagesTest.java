@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mq;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -29,6 +26,9 @@ import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.AbstractPersistenceTest;
 import org.usergrid.persistence.EntityManager;
 import org.usergrid.utils.JsonUtils;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class MessagesTest extends AbstractPersistenceTest {
 

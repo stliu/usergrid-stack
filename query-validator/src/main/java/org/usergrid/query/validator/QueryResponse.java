@@ -15,10 +15,10 @@
  ******************************************************************************/
 package org.usergrid.query.validator;
 
+import java.util.List;
+
 import org.apache.commons.lang.StringUtils;
 import org.usergrid.persistence.Entity;
-
-import java.util.List;
 
 /**
  * @author Sung-ju Jin(realbeast)

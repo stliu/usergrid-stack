@@ -1,5 +1,8 @@
 package org.usergrid.security.providers;
 
+import java.util.Map;
+import java.util.UUID;
+
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -13,9 +16,6 @@ import org.usergrid.persistence.entities.Application;
 import org.usergrid.persistence.entities.User;
 import org.usergrid.test.ShiroHelperRunner;
 import org.usergrid.utils.MapUtils;
-
-import java.util.Map;
-import java.util.UUID;
 
 import static junit.framework.Assert.assertNotNull;
 

@@ -15,19 +15,8 @@
  ******************************************************************************/
 package org.usergrid.rest.management;
 
-import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
-import static javax.servlet.http.HttpServletResponse.SC_OK;
-import static javax.ws.rs.core.MediaType.APPLICATION_FORM_URLENCODED;
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON_TYPE;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.utils.JsonUtils.mapToJsonString;
-import static org.usergrid.utils.StringUtils.stringOrSubstringAfterFirst;
-import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
-
 import java.net.URLEncoder;
 import java.util.Map;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.FormParam;
@@ -42,6 +31,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.view.Viewable;
 import org.apache.amber.oauth2.common.error.OAuthError;
 import org.apache.amber.oauth2.common.exception.OAuthProblemException;
 import org.apache.amber.oauth2.common.message.OAuthResponse;
@@ -60,9 +50,17 @@ import org.usergrid.rest.exceptions.RedirectionException;
 import org.usergrid.rest.management.organizations.OrganizationsResource;
 import org.usergrid.rest.management.users.UsersResource;
 import org.usergrid.security.oauth.AccessInfo;
-
-import com.sun.jersey.api.view.Viewable;
 import org.usergrid.security.shiro.utils.SubjectUtils;
+
+import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
+import static javax.servlet.http.HttpServletResponse.SC_OK;
+import static javax.ws.rs.core.MediaType.APPLICATION_FORM_URLENCODED;
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON_TYPE;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.utils.JsonUtils.mapToJsonString;
+import static org.usergrid.utils.StringUtils.stringOrSubstringAfterFirst;
+import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
 
 @Path("/management")
 @Component

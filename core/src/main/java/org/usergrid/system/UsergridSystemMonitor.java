@@ -1,5 +1,7 @@
 package org.usergrid.system;
 
+import java.util.Properties;
+
 import me.prettyprint.hector.api.Cluster;
 import me.prettyprint.hector.api.exceptions.HectorException;
 import org.slf4j.Logger;
@@ -7,8 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.usergrid.utils.JsonUtils;
 import org.usergrid.utils.MapUtils;
 import org.usergrid.utils.TimeUtils;
-
-import java.util.Properties;
 
 /**
  * Provide a single spot for monitoring usergrid system health

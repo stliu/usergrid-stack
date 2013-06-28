@@ -18,11 +18,9 @@ package org.usergrid.rest.test.resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 import javax.ws.rs.core.MediaType;
 
 import com.fasterxml.jackson.databind.JsonNode;
-
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.WebResource.Builder;
 

@@ -17,15 +17,13 @@ package org.usergrid.rest.security.shiro.filters;
 
 import java.security.Principal;
 import java.util.Map;
-
 import javax.ws.rs.core.SecurityContext;
 
+import com.sun.jersey.spi.container.ContainerRequest;
 import org.apache.shiro.codec.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-
-import com.sun.jersey.spi.container.ContainerRequest;
 
 @Component
 public class BasicAuthSecurityFilter extends SecurityFilter {

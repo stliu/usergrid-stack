@@ -15,22 +15,24 @@
  ******************************************************************************/
 package org.usergrid.rest;
 
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
-import static org.usergrid.utils.MapUtils.hashMap;
-
 import java.net.URLClassLoader;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
-
 import javax.ws.rs.core.MediaType;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
+import com.sun.jersey.api.json.JSONConfiguration;
+import com.sun.jersey.test.framework.AppDescriptor;
+import com.sun.jersey.test.framework.JerseyTest;
+import com.sun.jersey.test.framework.WebAppDescriptor;
+import com.sun.jersey.test.framework.spi.container.TestContainerException;
+import com.sun.jersey.test.framework.spi.container.TestContainerFactory;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.junit.AfterClass;
@@ -43,14 +45,10 @@ import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.java.client.Client;
 import org.usergrid.management.ManagementService;
 
-import com.sun.jersey.api.client.config.ClientConfig;
-import com.sun.jersey.api.client.config.DefaultClientConfig;
-import com.sun.jersey.api.json.JSONConfiguration;
-import com.sun.jersey.test.framework.AppDescriptor;
-import com.sun.jersey.test.framework.JerseyTest;
-import com.sun.jersey.test.framework.WebAppDescriptor;
-import com.sun.jersey.test.framework.spi.container.TestContainerException;
-import com.sun.jersey.test.framework.spi.container.TestContainerFactory;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
+import static org.usergrid.utils.MapUtils.hashMap;
 
 /**
  * Base class for testing Usergrid Jersey-based REST API. Implementations should

@@ -18,16 +18,12 @@ package org.usergrid.standalone;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.ext.Provider;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.sun.jersey.api.container.ContainerException;
 import com.sun.jersey.api.core.HttpContext;
@@ -37,6 +33,8 @@ import com.sun.jersey.core.reflection.ReflectionHelper;
 import com.sun.jersey.server.impl.container.servlet.RequestDispatcherWrapper;
 import com.sun.jersey.spi.container.servlet.ServletContainer;
 import com.sun.jersey.spi.template.ViewProcessor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Provider
 public class CustomJSPTemplateProcessor implements ViewProcessor<String> {

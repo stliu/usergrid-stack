@@ -15,11 +15,11 @@
  ******************************************************************************/
 package org.usergrid.query.validator;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.usergrid.persistence.Entity;
-
-import java.util.List;
 
 /**
  * @author Sung-ju Jin(realbeast)

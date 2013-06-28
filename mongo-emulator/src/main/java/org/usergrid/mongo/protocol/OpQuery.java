@@ -15,11 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mongo.protocol;
 
-import static org.apache.commons.collections.MapUtils.getIntValue;
-import static org.usergrid.utils.JsonUtils.toJsonMap;
-import static org.usergrid.utils.MapUtils.entry;
-import static org.usergrid.utils.MapUtils.map;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -27,14 +22,11 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
-import java.util.Stack;
 
-import org.antlr.runtime.ClassicToken;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.subject.Subject;
 import org.bson.BSONObject;
 import org.bson.BasicBSONObject;
-import org.bson.types.BasicBSONList;
 import org.bson.types.ObjectId;
 import org.jboss.netty.buffer.ChannelBuffer;
 import org.jboss.netty.buffer.ChannelBufferInputStream;
@@ -54,18 +46,13 @@ import org.usergrid.persistence.Identifier;
 import org.usergrid.persistence.Query;
 import org.usergrid.persistence.Results;
 import org.usergrid.persistence.Schema;
-import org.usergrid.persistence.Query.SortDirection;
-import org.usergrid.persistence.query.tree.AndOperand;
-import org.usergrid.persistence.query.tree.Equal;
-import org.usergrid.persistence.query.tree.GreaterThan;
-import org.usergrid.persistence.query.tree.GreaterThanEqual;
-import org.usergrid.persistence.query.tree.LessThan;
-import org.usergrid.persistence.query.tree.LessThanEqual;
-import org.usergrid.persistence.query.tree.Operand;
-import org.usergrid.persistence.query.tree.OrOperand;
 import org.usergrid.security.shiro.PrincipalCredentialsToken;
 import org.usergrid.security.shiro.utils.SubjectUtils;
 import org.usergrid.utils.MapUtils;
+
+import static org.usergrid.utils.JsonUtils.toJsonMap;
+import static org.usergrid.utils.MapUtils.entry;
+import static org.usergrid.utils.MapUtils.map;
 
 public class OpQuery extends OpCrud {
 

@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.utils;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.utils.ClassUtils.cast;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -30,6 +27,9 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
+
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.utils.ClassUtils.cast;
 
 /**
  * @author edanuff

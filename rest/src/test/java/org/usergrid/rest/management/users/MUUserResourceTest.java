@@ -1,22 +1,14 @@
 package org.usergrid.rest.management.users;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.usergrid.utils.MapUtils.hashMap;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import javax.mail.Message;
 import javax.ws.rs.core.MediaType;
 
-import com.sun.jersey.api.client.ClientResponse;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.sun.jersey.api.client.UniformInterfaceException;
 import com.sun.jersey.api.representation.Form;
-import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -25,6 +17,13 @@ import org.usergrid.management.OrganizationInfo;
 import org.usergrid.management.UserInfo;
 import org.usergrid.rest.AbstractRestTest;
 import org.usergrid.rest.management.organizations.OrganizationsResource;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
+import static org.usergrid.utils.MapUtils.hashMap;
 
 /**
  * @author zznate

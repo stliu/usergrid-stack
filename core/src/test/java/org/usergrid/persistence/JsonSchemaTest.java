@@ -1,20 +1,19 @@
 package org.usergrid.persistence;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
-import static org.usergrid.utils.JsonUtils.loadJsonFromResourceFile;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.exceptions.EntityValidationException;
 import org.usergrid.persistence.exceptions.InvalidEntitySchemaSyntaxException;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
+import static org.usergrid.utils.JsonUtils.loadJsonFromResourceFile;
 
 public class JsonSchemaTest extends AbstractPersistenceTest {
 

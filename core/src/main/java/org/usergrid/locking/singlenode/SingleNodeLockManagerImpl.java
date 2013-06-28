@@ -22,7 +22,6 @@ import java.util.concurrent.locks.ReentrantLock;
 import org.usergrid.locking.Lock;
 import org.usergrid.locking.LockManager;
 import org.usergrid.locking.LockPathBuilder;
-import org.usergrid.locking.exception.UGLockException;
 
 /**
  * Single Node implementation for {@link LocalManager}

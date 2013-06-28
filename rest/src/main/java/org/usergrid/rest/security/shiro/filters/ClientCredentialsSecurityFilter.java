@@ -15,13 +15,10 @@
  ******************************************************************************/
 package org.usergrid.rest.security.shiro.filters;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.rest.exceptions.AuthErrorInfo.OAUTH2_INVALID_CLIENT;
-import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 
+import com.sun.jersey.spi.container.ContainerRequest;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +26,9 @@ import org.springframework.stereotype.Component;
 import org.usergrid.security.shiro.PrincipalCredentialsToken;
 import org.usergrid.security.shiro.utils.SubjectUtils;
 
-import com.sun.jersey.spi.container.ContainerRequest;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.rest.exceptions.AuthErrorInfo.OAUTH2_INVALID_CLIENT;
+import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
 
 @Component
 public class ClientCredentialsSecurityFilter extends SecurityFilter {

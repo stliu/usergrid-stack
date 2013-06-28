@@ -15,13 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.usergrid.services.ServiceParameter.filter;
-import static org.usergrid.services.ServiceParameter.firstParameterIsName;
-import static org.usergrid.utils.ClassUtils.cast;
-import static org.usergrid.utils.InflectionUtils.pluralize;
-import static org.usergrid.utils.ListUtils.dequeue;
-import static org.usergrid.utils.ListUtils.initCopy;
-
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -41,6 +34,13 @@ import org.usergrid.services.ServiceParameter.NameParameter;
 import org.usergrid.services.ServiceParameter.QueryParameter;
 import org.usergrid.services.ServiceResults.Type;
 import org.usergrid.services.exceptions.ServiceResourceNotFoundException;
+
+import static org.usergrid.services.ServiceParameter.filter;
+import static org.usergrid.services.ServiceParameter.firstParameterIsName;
+import static org.usergrid.utils.ClassUtils.cast;
+import static org.usergrid.utils.InflectionUtils.pluralize;
+import static org.usergrid.utils.ListUtils.dequeue;
+import static org.usergrid.utils.ListUtils.initCopy;
 
 public class AbstractConnectionsService extends AbstractService {
 

@@ -15,14 +15,10 @@
  ******************************************************************************/
 package org.usergrid.mq.cassandra.io;
 
-import static java.lang.Math.max;
-
 import java.util.UUID;
 
 import me.prettyprint.hector.api.Keyspace;
-
 import org.usergrid.mq.QueueQuery;
-import org.usergrid.persistence.cassandra.CassandraService;
 
 /**
  * Reads from the queue without starting transactions.

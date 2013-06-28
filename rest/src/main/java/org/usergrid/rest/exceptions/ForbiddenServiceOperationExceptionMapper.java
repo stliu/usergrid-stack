@@ -15,10 +15,10 @@
  ******************************************************************************/
 package org.usergrid.rest.exceptions;
 
-import org.usergrid.services.exceptions.ForbiddenServiceOperationException;
-
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
+
+import org.usergrid.services.exceptions.ForbiddenServiceOperationException;
 
 import static javax.ws.rs.core.Response.Status.FORBIDDEN;
 

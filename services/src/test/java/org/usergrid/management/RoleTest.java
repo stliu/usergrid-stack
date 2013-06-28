@@ -15,14 +15,11 @@
  ******************************************************************************/
 package org.usergrid.management;
 
-import static org.junit.Assert.assertFalse;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
 
 import org.apache.shiro.subject.Subject;
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,6 +33,8 @@ import org.usergrid.security.shiro.PrincipalCredentialsToken;
 import org.usergrid.security.shiro.utils.SubjectUtils;
 import org.usergrid.services.ServiceManagerFactory;
 import org.usergrid.test.ShiroHelperRunner;
+
+import static org.junit.Assert.assertFalse;
 
 @RunWith(ShiroHelperRunner.class)
 public class RoleTest {

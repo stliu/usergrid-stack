@@ -15,15 +15,12 @@
  ******************************************************************************/
 package org.usergrid.rest;
 
-import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.UUID;
-
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -35,19 +32,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.UriInfo;
-
-import org.apache.commons.lang.StringUtils;
-import org.apache.shiro.authz.UnauthorizedException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-import org.usergrid.rest.applications.ApplicationResource;
-import org.usergrid.rest.exceptions.NoOpException;
-import org.usergrid.rest.organizations.OrganizationResource;
-import org.usergrid.rest.security.annotations.RequireSystemAccess;
-import org.usergrid.system.UsergridSystemMonitor;
 
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -68,6 +52,20 @@ import com.yammer.metrics.core.Sampling;
 import com.yammer.metrics.core.Summarizable;
 import com.yammer.metrics.core.Timer;
 import com.yammer.metrics.stats.Snapshot;
+import org.apache.commons.lang.StringUtils;
+import org.apache.shiro.authz.UnauthorizedException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.usergrid.rest.applications.ApplicationResource;
+import org.usergrid.rest.exceptions.NoOpException;
+import org.usergrid.rest.organizations.OrganizationResource;
+import org.usergrid.rest.security.annotations.RequireSystemAccess;
+import org.usergrid.system.UsergridSystemMonitor;
+
+import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
 
 /**
  * 

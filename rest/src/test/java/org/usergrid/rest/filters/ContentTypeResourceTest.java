@@ -15,14 +15,10 @@
  ******************************************************************************/
 package org.usergrid.rest.filters;
 
-import static org.junit.Assert.assertEquals;
-import static org.usergrid.utils.MapUtils.hashMap;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 
@@ -42,10 +38,12 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.util.EntityUtils;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.usergrid.rest.AbstractRestTest;
 import org.usergrid.rest.RestContextTest;
 import org.usergrid.utils.JsonUtils;
 import org.usergrid.utils.UUIDUtils;
+
+import static org.junit.Assert.assertEquals;
+import static org.usergrid.utils.MapUtils.hashMap;
 
 /**
  * @author tnine

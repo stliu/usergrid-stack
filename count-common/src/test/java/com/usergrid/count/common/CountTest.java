@@ -15,12 +15,7 @@
  ******************************************************************************/
 package com.usergrid.count.common;
 
-import me.prettyprint.cassandra.service.clock.MicrosecondsClockResolution;
-import me.prettyprint.cassandra.utils.TimeUUIDUtils;
-import me.prettyprint.hector.api.factory.HFactory;
 import org.junit.Test;
-
-import java.util.UUID;
 
 import static junit.framework.Assert.assertEquals;
 

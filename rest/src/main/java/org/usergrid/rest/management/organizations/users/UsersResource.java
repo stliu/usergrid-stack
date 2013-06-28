@@ -15,16 +15,10 @@
  ******************************************************************************/
 package org.usergrid.rest.management.organizations.users;
 
-import static org.apache.commons.collections.MapUtils.getObject;
-import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
-import static org.usergrid.utils.ConversionUtils.getBoolean;
-import static org.usergrid.utils.ConversionUtils.string;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
@@ -40,6 +34,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.json.JSONWithPadding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
@@ -52,7 +47,10 @@ import org.usergrid.rest.ApiResponse;
 import org.usergrid.rest.security.annotations.RequireOrganizationAccess;
 import org.usergrid.security.shiro.utils.SubjectUtils;
 
-import com.sun.jersey.api.json.JSONWithPadding;
+import static org.apache.commons.collections.MapUtils.getObject;
+import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
+import static org.usergrid.utils.ConversionUtils.getBoolean;
+import static org.usergrid.utils.ConversionUtils.string;
 
 @Component("org.usergrid.rest.management.organizations.users.UsersResource")
 @Scope("prototype")

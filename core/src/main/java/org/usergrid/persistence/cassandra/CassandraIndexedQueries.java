@@ -15,11 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
-import static me.prettyprint.hector.api.factory.HFactory.createIndexedSlicesQuery;
-import static org.usergrid.persistence.Schema.PROPERTY_TYPE;
-import static org.usergrid.persistence.Schema.PROPERTY_UUID;
-import static org.usergrid.utils.ConversionUtils.bytebuffer;
-
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,12 +31,16 @@ import me.prettyprint.hector.api.beans.HColumn;
 import me.prettyprint.hector.api.beans.OrderedRows;
 import me.prettyprint.hector.api.beans.Row;
 import me.prettyprint.hector.api.query.QueryResult;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.DynamicEntity;
 import org.usergrid.persistence.Entity;
 import org.usergrid.persistence.Schema;
+
+import static me.prettyprint.hector.api.factory.HFactory.createIndexedSlicesQuery;
+import static org.usergrid.persistence.Schema.PROPERTY_TYPE;
+import static org.usergrid.persistence.Schema.PROPERTY_UUID;
+import static org.usergrid.utils.ConversionUtils.bytebuffer;
 
 public class CassandraIndexedQueries {
 

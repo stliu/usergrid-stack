@@ -15,13 +15,12 @@
  ******************************************************************************/
 package org.usergrid.tools.apidoc.swagger;
 
-import static com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion.NON_NULL;
-
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.usergrid.utils.JsonUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import static com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion.NON_NULL;
 
 public class ApiParam {
 	String name;

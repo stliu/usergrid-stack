@@ -15,14 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
-import static java.lang.Integer.parseInt;
-import static org.apache.commons.codec.binary.Base64.decodeBase64;
-import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
-import static org.usergrid.persistence.Schema.getDefaultSchema;
-import static org.usergrid.utils.ConversionUtils.bytes;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.apache.commons.lang.StringUtils.split;
-
 import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.HashMap;
@@ -43,7 +35,14 @@ import org.usergrid.persistence.Schema;
 import org.usergrid.persistence.exceptions.NoFullTextIndexException;
 import org.usergrid.persistence.exceptions.NoIndexException;
 import org.usergrid.persistence.exceptions.PersistenceException;
-import org.usergrid.persistence.query.ir.*;
+import org.usergrid.persistence.query.ir.AllNode;
+import org.usergrid.persistence.query.ir.AndNode;
+import org.usergrid.persistence.query.ir.NotNode;
+import org.usergrid.persistence.query.ir.OrNode;
+import org.usergrid.persistence.query.ir.QueryNode;
+import org.usergrid.persistence.query.ir.QuerySlice;
+import org.usergrid.persistence.query.ir.SliceNode;
+import org.usergrid.persistence.query.ir.WithinNode;
 import org.usergrid.persistence.query.tree.AndOperand;
 import org.usergrid.persistence.query.tree.ContainsOperand;
 import org.usergrid.persistence.query.tree.Equal;
@@ -61,6 +60,13 @@ import org.usergrid.persistence.query.tree.StringLiteral;
 import org.usergrid.persistence.query.tree.WithinOperand;
 import org.usergrid.persistence.schema.CollectionInfo;
 import org.usergrid.utils.StringUtils;
+
+import static java.lang.Integer.parseInt;
+import static org.apache.commons.codec.binary.Base64.decodeBase64;
+import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
+import static org.apache.commons.lang.StringUtils.split;
+import static org.usergrid.persistence.Schema.getDefaultSchema;
+import static org.usergrid.utils.ConversionUtils.bytes;
 
 public class QueryProcessor {
 

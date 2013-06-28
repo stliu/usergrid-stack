@@ -15,12 +15,8 @@
  ******************************************************************************/
 package org.usergrid.utils;
 
-import static org.usergrid.utils.MapUtils.asProperties;
-import static org.usergrid.utils.MapUtils.filter;
-
 import java.util.Map;
 import java.util.Properties;
-
 import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -32,6 +28,9 @@ import javax.mail.internet.MimeMultipart;
 import org.jsoup.Jsoup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.usergrid.utils.MapUtils.asProperties;
+import static org.usergrid.utils.MapUtils.filter;
 
 public class MailUtils {
 

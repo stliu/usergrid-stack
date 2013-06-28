@@ -19,7 +19,6 @@ import java.util.UUID;
 
 import org.usergrid.locking.Lock;
 import org.usergrid.locking.LockManager;
-import org.usergrid.locking.exception.UGLockException;
 
 /**
  * This is a no-op manager used for testing.

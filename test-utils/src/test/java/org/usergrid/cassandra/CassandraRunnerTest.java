@@ -5,8 +5,6 @@ import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.annotation.Resource;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 

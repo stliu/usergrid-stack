@@ -15,11 +15,10 @@
  ******************************************************************************/
 package org.usergrid.tools.apidoc.swagger;
 
-import static com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion.NON_NULL;
-
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.usergrid.utils.JsonUtils;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import static com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion.NON_NULL;
 
 public class ApiOperationError {
 	String reason;

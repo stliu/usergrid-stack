@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.security;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import java.util.UUID;
 
 import org.apache.shiro.subject.SimplePrincipalCollection;
@@ -30,6 +27,9 @@ import org.usergrid.persistence.entities.User;
 import org.usergrid.security.shiro.CustomPermission;
 import org.usergrid.security.shiro.principals.ApplicationUserPrincipal;
 import org.usergrid.utils.UUIDUtils;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class CustomResolverTest extends AbstractShiroTestHelper {
 

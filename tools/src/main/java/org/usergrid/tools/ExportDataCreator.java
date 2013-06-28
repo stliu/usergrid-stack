@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.tools;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.util.UUID;
 
 import org.usergrid.management.ManagementService;
@@ -26,7 +24,8 @@ import org.usergrid.persistence.EntityManager;
 import org.usergrid.persistence.EntityManagerFactory;
 import org.usergrid.persistence.entities.Activity;
 import org.usergrid.persistence.entities.User;
-import org.usergrid.utils.UUIDUtils;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Simple class to create test for for exporting

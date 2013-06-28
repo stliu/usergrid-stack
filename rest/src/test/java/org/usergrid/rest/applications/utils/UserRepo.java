@@ -1,17 +1,15 @@
 package org.usergrid.rest.applications.utils;
 
-import static org.usergrid.utils.MapUtils.hashMap;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.core.MediaType;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.sun.jersey.api.client.WebResource;
 import org.usergrid.utils.UUIDUtils;
 
-import com.sun.jersey.api.client.WebResource;
+import static org.usergrid.utils.MapUtils.hashMap;
 
 public enum UserRepo {
 	INSTANCE;

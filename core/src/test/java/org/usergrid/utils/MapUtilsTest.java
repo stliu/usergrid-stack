@@ -17,9 +17,9 @@ package org.usergrid.utils;
 
 import java.util.Map;
 
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.junit.Test;
 
 public class MapUtilsTest {
 

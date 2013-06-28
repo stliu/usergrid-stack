@@ -16,21 +16,18 @@
 package org.usergrid.locking.zookeeper;
 
 import java.util.UUID;
-
 import javax.annotation.PostConstruct;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.usergrid.locking.Lock;
-import org.usergrid.locking.LockManager;
-import org.usergrid.locking.LockPathBuilder;
-import org.usergrid.locking.exception.UGLockException;
 
 import com.netflix.curator.RetryPolicy;
 import com.netflix.curator.framework.CuratorFramework;
 import com.netflix.curator.framework.CuratorFrameworkFactory;
 import com.netflix.curator.framework.recipes.locks.InterProcessMutex;
 import com.netflix.curator.retry.ExponentialBackoffRetry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.usergrid.locking.Lock;
+import org.usergrid.locking.LockManager;
+import org.usergrid.locking.LockPathBuilder;
 
 /**
  * Implementation for Zookeeper service that handles global locks.

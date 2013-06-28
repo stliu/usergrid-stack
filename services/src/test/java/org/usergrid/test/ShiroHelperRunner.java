@@ -19,11 +19,9 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.subject.support.SubjectThreadState;
 import org.junit.runner.notification.RunNotifier;
-import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
 import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.cassandra.DataControl;
-import org.usergrid.security.shiro.utils.SubjectUtils;
 
 /**
  * @author tnine

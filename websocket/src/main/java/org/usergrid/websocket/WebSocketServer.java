@@ -30,9 +30,6 @@
  */
 package org.usergrid.websocket;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import java.net.InetSocketAddress;
 import java.util.Properties;
 import java.util.concurrent.Executors;
@@ -55,6 +52,9 @@ import org.usergrid.management.ManagementService;
 import org.usergrid.persistence.EntityManagerFactory;
 import org.usergrid.persistence.cassandra.EntityManagerFactoryImpl;
 import org.usergrid.services.ServiceManagerFactory;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * An HTTP server which serves Web Socket requests at:

@@ -15,29 +15,25 @@
  ******************************************************************************/
 package org.usergrid.rest.applications;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.usergrid.utils.MapUtils.hashMap;
-
 import java.util.Map;
-
 import javax.ws.rs.core.MediaType;
 
-import org.apache.shiro.codec.Base64;
 import com.fasterxml.jackson.databind.JsonNode;
-import org.jclouds.json.Json;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.ClientResponse.Status;
+import com.sun.jersey.api.client.UniformInterfaceException;
+import com.sun.jersey.api.representation.Form;
+import org.apache.shiro.codec.Base64;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.usergrid.management.ApplicationInfo;
 import org.usergrid.management.OrganizationInfo;
 import org.usergrid.rest.AbstractRestTest;
 
-
-import com.sun.jersey.api.client.ClientResponse.Status;
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.UniformInterfaceException;
-import com.sun.jersey.api.representation.Form;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.usergrid.utils.MapUtils.hashMap;
 
 /**
  * Invokes methods on ApplicationResource

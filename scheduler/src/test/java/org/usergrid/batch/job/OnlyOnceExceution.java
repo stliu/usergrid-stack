@@ -22,7 +22,6 @@ import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.usergrid.batch.Job;
 import org.usergrid.batch.JobExecution;
 
 /**

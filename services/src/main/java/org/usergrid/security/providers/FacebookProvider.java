@@ -1,24 +1,19 @@
 package org.usergrid.security.providers;
 
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.api.client.config.ClientConfig;
-import com.sun.jersey.api.client.config.DefaultClientConfig;
-import com.sun.jersey.api.json.JSONConfiguration;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import javax.ws.rs.core.MediaType;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.usergrid.management.ManagementService;
-import org.usergrid.persistence.*;
+import org.usergrid.persistence.EntityManager;
+import org.usergrid.persistence.Identifier;
+import org.usergrid.persistence.Query;
+import org.usergrid.persistence.Results;
 import org.usergrid.persistence.entities.User;
 import org.usergrid.security.tokens.exceptions.BadTokenException;
 import org.usergrid.utils.JsonUtils;
-import org.usergrid.utils.MapUtils;
-
-import javax.ws.rs.core.MediaType;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.UUID;
 
 import static org.usergrid.persistence.Schema.PROPERTY_MODIFIED;
 import static org.usergrid.utils.ListUtils.anyNull;

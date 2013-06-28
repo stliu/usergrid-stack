@@ -1,5 +1,33 @@
 package org.usergrid.rest.management;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.UUID;
+import javax.mail.Folder;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Store;
+import javax.mail.internet.MimeMultipart;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.UniformInterfaceException;
+import com.sun.jersey.core.util.MultivaluedMapImpl;
+import org.apache.commons.lang.StringUtils;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.jvnet.mock_javamail.Mailbox;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.usergrid.management.UserInfo;
+import org.usergrid.persistence.cassandra.CassandraService;
+import org.usergrid.rest.AbstractRestTest;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -12,36 +40,6 @@ import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_A
 import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_APPROVES_ORGANIZATIONS;
 import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_EMAIL;
 import static org.usergrid.utils.MapUtils.hashMap;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.UUID;
-
-import javax.mail.Folder;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Store;
-import javax.mail.internet.MimeMultipart;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedMap;
-
-import org.apache.commons.lang.StringUtils;
-import com.fasterxml.jackson.databind.JsonNode;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.jvnet.mock_javamail.Mailbox;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.usergrid.management.UserInfo;
-import org.usergrid.persistence.cassandra.CassandraService;
-import org.usergrid.rest.AbstractRestTest;
-
-import com.sun.jersey.api.client.ClientResponse;
-import com.sun.jersey.api.client.UniformInterfaceException;
-import com.sun.jersey.core.util.MultivaluedMapImpl;
 
 public class RegistrationTest extends AbstractRestTest {
 

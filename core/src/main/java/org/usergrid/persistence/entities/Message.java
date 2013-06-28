@@ -17,15 +17,13 @@ package org.usergrid.persistence.entities;
 
 import java.util.Set;
 import java.util.UUID;
-
 import javax.xml.bind.annotation.XmlRootElement;
-
-import org.usergrid.persistence.TypedEntity;
-import org.usergrid.persistence.annotations.EntityDictionary;
-import org.usergrid.persistence.annotations.EntityProperty;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
+import org.usergrid.persistence.TypedEntity;
+import org.usergrid.persistence.annotations.EntityDictionary;
+import org.usergrid.persistence.annotations.EntityProperty;
 
 /**
  * A generic Message type for message queue type operations. For status updates

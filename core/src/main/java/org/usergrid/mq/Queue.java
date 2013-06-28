@@ -15,6 +15,16 @@
  ******************************************************************************/
 package org.usergrid.mq;
 
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.UUID;
+
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang.StringUtils;
+import org.usergrid.utils.UUIDUtils;
+
 import static java.util.UUID.nameUUIDFromBytes;
 import static org.apache.commons.collections.MapUtils.getBooleanValue;
 import static org.apache.commons.collections.MapUtils.getByteValue;
@@ -25,17 +35,6 @@ import static org.apache.commons.collections.MapUtils.getLongValue;
 import static org.apache.commons.collections.MapUtils.getShortValue;
 import static org.apache.commons.collections.MapUtils.getString;
 import static org.usergrid.utils.MapUtils.hashMap;
-
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.UUID;
-
-import org.apache.commons.lang.StringUtils;
-import org.usergrid.utils.UUIDUtils;
-
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Queue {
 

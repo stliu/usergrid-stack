@@ -1,6 +1,10 @@
 package org.usergrid.security.providers;
 
-import com.sun.jersey.api.client.WebResource;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import javax.ws.rs.core.MediaType;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,12 +13,6 @@ import org.usergrid.persistence.EntityManager;
 import org.usergrid.persistence.Identifier;
 import org.usergrid.persistence.entities.User;
 import org.usergrid.security.tokens.exceptions.BadTokenException;
-
-import javax.ws.rs.core.MediaType;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.UUID;
 
 /**
  * Provider implementation for accessing Ping Identity

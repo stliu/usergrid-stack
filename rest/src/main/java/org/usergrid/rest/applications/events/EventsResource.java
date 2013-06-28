@@ -23,6 +23,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.json.JSONWithPadding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
@@ -33,8 +34,6 @@ import org.usergrid.mq.QueueResults;
 import org.usergrid.persistence.entities.User;
 import org.usergrid.rest.applications.ApplicationResource;
 import org.usergrid.rest.applications.ServiceResource;
-
-import com.sun.jersey.api.json.JSONWithPadding;
 
 @Component("org.usergrid.rest.applications.events.EventsResource")
 @Scope("prototype")

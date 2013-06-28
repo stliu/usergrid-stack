@@ -15,14 +15,14 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.util.UUID;
 
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.EntityManager;
+
+import static org.junit.Assert.assertNotNull;
 
 public class ApplicationsServiceTest extends AbstractServiceTest {
 

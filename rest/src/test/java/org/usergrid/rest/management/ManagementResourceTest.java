@@ -15,27 +15,25 @@
  ******************************************************************************/
 package org.usergrid.rest.management;
 
+import java.util.HashMap;
+import java.util.Map;
+import javax.ws.rs.core.MediaType;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.sun.jersey.api.client.ClientResponse.Status;
+import com.sun.jersey.api.client.UniformInterfaceException;
+import org.apache.commons.lang.StringUtils;
+import org.junit.Test;
+import org.usergrid.management.OrganizationInfo;
+import org.usergrid.management.OrganizationOwnerInfo;
+import org.usergrid.rest.AbstractRestTest;
+import org.usergrid.rest.management.organizations.OrganizationsResource;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.usergrid.utils.MapUtils.hashMap;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.ws.rs.core.MediaType;
-
-import org.apache.commons.lang.StringUtils;
-import com.fasterxml.jackson.databind.JsonNode;
-import org.junit.Test;
-import org.usergrid.management.OrganizationInfo;
-import org.usergrid.management.OrganizationOwnerInfo;
-import org.usergrid.rest.AbstractRestTest;
-
-import com.sun.jersey.api.client.ClientResponse.Status;
-import com.sun.jersey.api.client.UniformInterfaceException;
-import org.usergrid.rest.management.organizations.OrganizationsResource;
 
 /**
  * @author tnine

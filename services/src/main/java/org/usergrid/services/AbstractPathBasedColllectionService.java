@@ -15,12 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.usergrid.services.ServiceParameter.filter;
-import static org.usergrid.services.ServiceParameter.mergeQueries;
-import static org.usergrid.utils.InflectionUtils.pluralize;
-import static org.usergrid.utils.ListUtils.dequeueCopy;
-import static org.usergrid.utils.ListUtils.isEmpty;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +29,12 @@ import org.usergrid.services.ServiceParameter.IdParameter;
 import org.usergrid.services.ServiceParameter.NameParameter;
 import org.usergrid.services.ServiceParameter.QueryParameter;
 import org.usergrid.services.exceptions.ServiceInvocationException;
+
+import static org.usergrid.services.ServiceParameter.filter;
+import static org.usergrid.services.ServiceParameter.mergeQueries;
+import static org.usergrid.utils.InflectionUtils.pluralize;
+import static org.usergrid.utils.ListUtils.dequeueCopy;
+import static org.usergrid.utils.ListUtils.isEmpty;
 
 public class AbstractPathBasedColllectionService extends
 		AbstractCollectionService {

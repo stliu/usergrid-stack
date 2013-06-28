@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static org.junit.Assert.assertNull;
-
 import java.util.UUID;
 
 import org.junit.AfterClass;
@@ -24,7 +22,6 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.cassandra.DataControl;
 import org.usergrid.mq.QueueManagerFactory;

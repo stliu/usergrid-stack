@@ -1,11 +1,10 @@
 package org.usergrid.batch;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
+import com.google.common.base.CharMatcher;
 import org.junit.Test;
 
-import com.google.common.base.CharMatcher;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * @author zznate

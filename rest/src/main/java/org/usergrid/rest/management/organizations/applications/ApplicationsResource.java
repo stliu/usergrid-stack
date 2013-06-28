@@ -15,12 +15,9 @@
  ******************************************************************************/
 package org.usergrid.rest.management.organizations.applications;
 
-import static org.apache.commons.lang.StringUtils.isEmpty;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.FormParam;
@@ -34,7 +31,9 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
-import org.jclouds.rest.ResourceNotFoundException;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.BiMap;
+import com.sun.jersey.api.json.JSONWithPadding;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.usergrid.management.ApplicationInfo;
@@ -44,9 +43,7 @@ import org.usergrid.rest.AbstractContextResource;
 import org.usergrid.rest.ApiResponse;
 import org.usergrid.rest.security.annotations.RequireOrganizationAccess;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.BiMap;
-import com.sun.jersey.api.json.JSONWithPadding;
+import static org.apache.commons.lang.StringUtils.isEmpty;
 
 @Component("org.usergrid.rest.management.organizations.applications.ApplicationsResource")
 @Scope("prototype")

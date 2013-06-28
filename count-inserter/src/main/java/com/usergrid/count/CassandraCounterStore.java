@@ -15,21 +15,19 @@
  ******************************************************************************/
 package com.usergrid.count;
 
+import java.nio.ByteBuffer;
+import java.util.Arrays;
+import java.util.Collection;
+
 import com.usergrid.count.common.Count;
 import me.prettyprint.cassandra.model.HCounterColumnImpl;
 import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
-import me.prettyprint.cassandra.serializers.StringSerializer;
 import me.prettyprint.hector.api.Keyspace;
-import me.prettyprint.hector.api.beans.HCounterColumn;
 import me.prettyprint.hector.api.exceptions.HectorException;
 import me.prettyprint.hector.api.factory.HFactory;
 import me.prettyprint.hector.api.mutation.Mutator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.nio.ByteBuffer;
-import java.util.Arrays;
-import java.util.Collection;
 
 /**
  * Encapsulate counter writes to Cassandra

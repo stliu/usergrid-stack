@@ -15,12 +15,9 @@
  ******************************************************************************/
 package org.usergrid.tools;
 
-import static org.usergrid.utils.StringUtils.readClasspathFileAsString;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
-
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -43,6 +40,8 @@ import org.usergrid.utils.JsonUtils;
 import org.w3c.dom.Document;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
+
+import static org.usergrid.utils.StringUtils.readClasspathFileAsString;
 
 public class ApiDoc extends ToolBase {
 

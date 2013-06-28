@@ -1,15 +1,12 @@
 package org.usergrid.tools.bean;
 
+import java.util.List;
+import java.util.UUID;
+
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import org.usergrid.persistence.AggregateCounter;
-
-import java.io.IOException;
-import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 /**
  * @author zznate

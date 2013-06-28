@@ -21,11 +21,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import org.usergrid.persistence.cassandra.GeoIndexManager;
 import org.usergrid.persistence.entities.Application;
 import org.usergrid.persistence.entities.Role;
-
-import com.fasterxml.jackson.databind.JsonNode;
 
 /**
  * The interface class for the data access object for Applications. Each

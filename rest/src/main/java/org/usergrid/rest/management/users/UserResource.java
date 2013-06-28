@@ -15,12 +15,8 @@
  ******************************************************************************/
 package org.usergrid.rest.management.users;
 
-import static org.usergrid.security.shiro.utils.SubjectUtils.isServiceAdmin;
-import static org.usergrid.utils.ConversionUtils.string;
-
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.FormParam;
@@ -34,9 +30,10 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.json.JSONWithPadding;
+import com.sun.jersey.api.view.Viewable;
 import net.tanesha.recaptcha.ReCaptchaImpl;
 import net.tanesha.recaptcha.ReCaptchaResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
@@ -52,8 +49,8 @@ import org.usergrid.security.shiro.utils.SubjectUtils;
 import org.usergrid.security.tokens.exceptions.TokenException;
 import org.usergrid.services.ServiceResults;
 
-import com.sun.jersey.api.json.JSONWithPadding;
-import com.sun.jersey.api.view.Viewable;
+import static org.usergrid.security.shiro.utils.SubjectUtils.isServiceAdmin;
+import static org.usergrid.utils.ConversionUtils.string;
 
 @Component("org.usergrid.rest.management.users.UserResource")
 @Scope("prototype")

@@ -15,14 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mq.cassandra.io;
 
-import static me.prettyprint.hector.api.factory.HFactory.createColumn;
-import static me.prettyprint.hector.api.factory.HFactory.createMutator;
-import static me.prettyprint.hector.api.factory.HFactory.createSliceQuery;
-import static org.usergrid.mq.cassandra.CassandraMQUtils.getConsumerId;
-import static org.usergrid.mq.cassandra.CassandraMQUtils.getQueueClientTransactionKey;
-import static org.usergrid.mq.cassandra.CassandraMQUtils.getQueueId;
-import static org.usergrid.mq.cassandra.QueuesCF.CONSUMER_QUEUE_TIMEOUTS;
-
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,7 +25,6 @@ import me.prettyprint.hector.api.Keyspace;
 import me.prettyprint.hector.api.beans.HColumn;
 import me.prettyprint.hector.api.mutation.Mutator;
 import me.prettyprint.hector.api.query.SliceQuery;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.locking.Lock;
@@ -46,6 +37,14 @@ import org.usergrid.persistence.cassandra.CassandraService;
 import org.usergrid.persistence.exceptions.QueueException;
 import org.usergrid.persistence.exceptions.TransactionNotFoundException;
 import org.usergrid.utils.UUIDUtils;
+
+import static me.prettyprint.hector.api.factory.HFactory.createColumn;
+import static me.prettyprint.hector.api.factory.HFactory.createMutator;
+import static me.prettyprint.hector.api.factory.HFactory.createSliceQuery;
+import static org.usergrid.mq.cassandra.CassandraMQUtils.getConsumerId;
+import static org.usergrid.mq.cassandra.CassandraMQUtils.getQueueClientTransactionKey;
+import static org.usergrid.mq.cassandra.CassandraMQUtils.getQueueId;
+import static org.usergrid.mq.cassandra.QueuesCF.CONSUMER_QUEUE_TIMEOUTS;
 
 /**
  * Reads from the queue and starts a transaction

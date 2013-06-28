@@ -15,30 +15,25 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
-
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.usergrid.count.SimpleBatcher;
 import org.junit.Before;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.persistence.entities.Event;
 import org.usergrid.persistence.entities.Group;
 import org.usergrid.persistence.entities.User;
 import org.usergrid.utils.JsonUtils;
 
-import com.usergrid.count.AbstractBatcher;
-import com.usergrid.count.BatchSubmitter;
-import com.usergrid.count.Batcher;
-import com.usergrid.count.CassandraSubmitter;
-import com.usergrid.count.SimpleBatcher;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
 
 public class CounterTest extends AbstractPersistenceTest {
 

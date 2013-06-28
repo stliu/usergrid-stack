@@ -15,6 +15,10 @@
  ******************************************************************************/
 package org.usergrid.management;
 
+import java.util.Map;
+import java.util.UUID;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import static org.apache.commons.lang.StringUtils.isNotBlank;
 import static org.usergrid.persistence.Schema.PROPERTY_ACTIVATED;
 import static org.usergrid.persistence.Schema.PROPERTY_DISABLED;
@@ -26,11 +30,6 @@ import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APP
 import static org.usergrid.utils.ConversionUtils.getBoolean;
 import static org.usergrid.utils.ConversionUtils.string;
 import static org.usergrid.utils.ConversionUtils.uuid;
-
-import java.util.Map;
-import java.util.UUID;
-
-import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class UserInfo {

@@ -15,18 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mq.cassandra;
 
-import static me.prettyprint.hector.api.factory.HFactory.createColumn;
-import static org.usergrid.mq.Message.MESSAGE_PROPERTIES;
-import static org.usergrid.mq.cassandra.QueueIndexUpdate.indexValueCode;
-import static org.usergrid.mq.cassandra.QueueIndexUpdate.validIndexableValue;
-import static org.usergrid.mq.cassandra.QueueIndexUpdate.validIndexableValueOrJson;
-import static org.usergrid.mq.cassandra.QueueManagerImpl.DICTIONARY_MESSAGE_INDEXES;
-import static org.usergrid.mq.cassandra.QueuesCF.PROPERTY_INDEX;
-import static org.usergrid.mq.cassandra.QueuesCF.QUEUE_DICTIONARIES;
-import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.key;
-import static org.usergrid.utils.ConversionUtils.bytebuffer;
-import static org.usergrid.utils.IndexUtils.getKeyValueList;
-
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.List;
@@ -42,8 +30,19 @@ import me.prettyprint.cassandra.serializers.StringSerializer;
 import me.prettyprint.cassandra.serializers.UUIDSerializer;
 import me.prettyprint.hector.api.beans.DynamicComposite;
 import me.prettyprint.hector.api.mutation.Mutator;
-
 import org.usergrid.mq.Message;
+
+import static me.prettyprint.hector.api.factory.HFactory.createColumn;
+import static org.usergrid.mq.Message.MESSAGE_PROPERTIES;
+import static org.usergrid.mq.cassandra.QueueIndexUpdate.indexValueCode;
+import static org.usergrid.mq.cassandra.QueueIndexUpdate.validIndexableValue;
+import static org.usergrid.mq.cassandra.QueueIndexUpdate.validIndexableValueOrJson;
+import static org.usergrid.mq.cassandra.QueueManagerImpl.DICTIONARY_MESSAGE_INDEXES;
+import static org.usergrid.mq.cassandra.QueuesCF.PROPERTY_INDEX;
+import static org.usergrid.mq.cassandra.QueuesCF.QUEUE_DICTIONARIES;
+import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.key;
+import static org.usergrid.utils.ConversionUtils.bytebuffer;
+import static org.usergrid.utils.IndexUtils.getKeyValueList;
 
 public class MessageIndexUpdate {
 

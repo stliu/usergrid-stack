@@ -1,8 +1,8 @@
 package org.usergrid.query.validator;
 
-import org.usergrid.persistence.DynamicEntity;
-
 import java.util.Map;
+
+import org.usergrid.persistence.DynamicEntity;
 
 public class QueryEntity extends DynamicEntity {
 

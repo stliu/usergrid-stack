@@ -53,17 +53,8 @@ package org.usergrid.rest.applications.users;
  * for Usergrid Stack and the licenses of the other code concerned, provided that
  ******************************************************************************/
 
-import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
-import static javax.servlet.http.HttpServletResponse.SC_FORBIDDEN;
-import static javax.servlet.http.HttpServletResponse.SC_OK;
-import static org.usergrid.security.shiro.utils.SubjectUtils.getSubjectUserId;
-import static org.usergrid.security.shiro.utils.SubjectUtils.isApplicationAdmin;
-import static org.usergrid.security.shiro.utils.SubjectUtils.isApplicationUser;
-import static org.usergrid.utils.ConversionUtils.string;
-
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.FormParam;
@@ -81,10 +72,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.sun.jersey.core.provider.EntityHolder;
+import com.sun.jersey.api.json.JSONWithPadding;
+import com.sun.jersey.api.view.Viewable;
 import net.tanesha.recaptcha.ReCaptchaImpl;
 import net.tanesha.recaptcha.ReCaptchaResponse;
-
 import org.apache.amber.oauth2.common.exception.OAuthProblemException;
 import org.apache.amber.oauth2.common.message.OAuthResponse;
 import org.apache.commons.lang.StringUtils;
@@ -103,11 +94,14 @@ import org.usergrid.rest.exceptions.RedirectionException;
 import org.usergrid.rest.security.annotations.RequireApplicationAccess;
 import org.usergrid.security.oauth.AccessInfo;
 import org.usergrid.security.tokens.exceptions.TokenException;
-import org.usergrid.services.ServiceAction;
-import org.usergrid.services.ServicePayload;
 
-import com.sun.jersey.api.json.JSONWithPadding;
-import com.sun.jersey.api.view.Viewable;
+import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
+import static javax.servlet.http.HttpServletResponse.SC_FORBIDDEN;
+import static javax.servlet.http.HttpServletResponse.SC_OK;
+import static org.usergrid.security.shiro.utils.SubjectUtils.getSubjectUserId;
+import static org.usergrid.security.shiro.utils.SubjectUtils.isApplicationAdmin;
+import static org.usergrid.security.shiro.utils.SubjectUtils.isApplicationUser;
+import static org.usergrid.utils.ConversionUtils.string;
 
 @Component("org.usergrid.rest.applications.users.UserResource")
 @Scope("prototype")

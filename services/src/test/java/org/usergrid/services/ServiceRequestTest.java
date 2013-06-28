@@ -15,10 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.usergrid.persistence.cassandra.CassandraService.DEFAULT_APPLICATION_ID;
-import static org.usergrid.services.ServiceParameter.filter;
-import static org.usergrid.services.ServiceParameter.parameters;
-
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -31,6 +27,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.test.ShiroHelperRunner;
+
+import static org.usergrid.persistence.cassandra.CassandraService.DEFAULT_APPLICATION_ID;
+import static org.usergrid.services.ServiceParameter.filter;
+import static org.usergrid.services.ServiceParameter.parameters;
 
 @RunWith(ShiroHelperRunner.class)
 public class ServiceRequestTest {

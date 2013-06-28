@@ -15,8 +15,7 @@
  ******************************************************************************/
 package org.usergrid.launcher;
 
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class AppleUtils {
 

@@ -15,10 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mq.cassandra;
 
-import static java.nio.ByteBuffer.wrap;
-import static org.usergrid.utils.JsonUtils.toJsonNode;
-import static org.usergrid.utils.UUIDUtils.getTimestampInMicros;
-
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
@@ -30,11 +26,14 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.uuid.UUIDComparator;
 import me.prettyprint.hector.api.beans.DynamicComposite;
 import me.prettyprint.hector.api.mutation.Mutator;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.uuid.UUIDComparator;
+import static java.nio.ByteBuffer.wrap;
+import static org.usergrid.utils.JsonUtils.toJsonNode;
+import static org.usergrid.utils.UUIDUtils.getTimestampInMicros;
 
 public class QueueIndexUpdate {
 

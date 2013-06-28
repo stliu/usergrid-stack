@@ -16,19 +16,16 @@
 package org.usergrid.locking.cassandra;
 
 import java.util.UUID;
-
 import javax.annotation.PostConstruct;
 
 import me.prettyprint.cassandra.locking.HLockManagerImpl;
 import me.prettyprint.hector.api.Cluster;
 import me.prettyprint.hector.api.locking.HLockManager;
 import me.prettyprint.hector.api.locking.HLockManagerConfigurator;
-
 import org.springframework.util.Assert;
 import org.usergrid.locking.Lock;
 import org.usergrid.locking.LockManager;
 import org.usergrid.locking.LockPathBuilder;
-import org.usergrid.locking.exception.UGLockException;
 
 /**
  * Uses the hector based locking implementation to obtain locks

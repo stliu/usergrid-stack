@@ -15,22 +15,10 @@
  ******************************************************************************/
 package org.usergrid.rest.applications;
 
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON_TYPE;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.services.ServiceParameter.addParameter;
-import static org.usergrid.services.ServicePayload.batchPayload;
-import static org.usergrid.services.ServicePayload.idListPayload;
-import static org.usergrid.services.ServicePayload.payload;
-import static org.usergrid.utils.JsonUtils.mapToJsonString;
-import static org.usergrid.utils.JsonUtils.normalizeJsonTree;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
@@ -47,14 +35,13 @@ import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.PathSegment;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.json.JSONWithPadding;
+import com.sun.jersey.core.provider.EntityHolder;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.usergrid.persistence.AggregateCounter;
-import org.usergrid.persistence.AggregateCounterSet;
-import org.usergrid.persistence.Entity;
 import org.usergrid.persistence.Query;
 import org.usergrid.rest.AbstractContextResource;
 import org.usergrid.rest.ApiResponse;
@@ -68,8 +55,14 @@ import org.usergrid.services.ServiceRequest;
 import org.usergrid.services.ServiceResults;
 import org.usergrid.utils.InflectionUtils;
 
-import com.sun.jersey.api.json.JSONWithPadding;
-import com.sun.jersey.core.provider.EntityHolder;
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON_TYPE;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.services.ServiceParameter.addParameter;
+import static org.usergrid.services.ServicePayload.batchPayload;
+import static org.usergrid.services.ServicePayload.idListPayload;
+import static org.usergrid.services.ServicePayload.payload;
+import static org.usergrid.utils.JsonUtils.mapToJsonString;
+import static org.usergrid.utils.JsonUtils.normalizeJsonTree;
 
 @Component
 @Scope("prototype")

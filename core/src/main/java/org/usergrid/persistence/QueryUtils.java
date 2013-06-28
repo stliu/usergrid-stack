@@ -1,9 +1,9 @@
 package org.usergrid.persistence;
 
-import org.usergrid.utils.ListUtils;
-
 import java.util.List;
 import java.util.Map;
+
+import org.usergrid.utils.ListUtils;
 
 /**
  * Utilities to deal with query extraction and generation

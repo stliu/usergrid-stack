@@ -15,15 +15,11 @@
  ******************************************************************************/
 package org.usergrid.batch.job;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import java.util.Properties;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+import com.google.common.util.concurrent.Service.State;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -39,7 +35,10 @@ import org.usergrid.persistence.entities.JobData;
 import org.usergrid.persistence.entities.JobStat;
 import org.usergrid.utils.UUIDUtils;
 
-import com.google.common.util.concurrent.Service.State;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Class to test job runtimes

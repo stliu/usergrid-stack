@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.batch.job;
 
-import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
-
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +23,8 @@ import org.usergrid.batch.Job;
 import org.usergrid.batch.JobExecution;
 import org.usergrid.locking.Lock;
 import org.usergrid.locking.LockManager;
+
+import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
 
 /**
  * Simple abstract job class that performs additional locking to ensure that the

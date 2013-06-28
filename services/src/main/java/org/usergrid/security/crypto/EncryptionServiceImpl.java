@@ -15,14 +15,11 @@
  ******************************************************************************/
 package org.usergrid.security.crypto;
 
-import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
-
 import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +27,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import org.usergrid.persistence.CredentialsInfo;
 import org.usergrid.security.crypto.command.EncryptionCommand;
+
+import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
 
 /**
  * @author tnine

@@ -15,12 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.utils.ListUtils.dequeue;
-import static org.usergrid.utils.ListUtils.dequeueCopy;
-import static org.usergrid.utils.ListUtils.isEmpty;
-import static org.usergrid.utils.ListUtils.queue;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +24,12 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.Query;
+
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.utils.ListUtils.dequeue;
+import static org.usergrid.utils.ListUtils.dequeueCopy;
+import static org.usergrid.utils.ListUtils.isEmpty;
+import static org.usergrid.utils.ListUtils.queue;
 
 public abstract class ServiceParameter {
 

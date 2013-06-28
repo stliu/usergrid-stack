@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services.roles;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
-import static org.usergrid.services.ServiceResults.genericServiceResults;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -32,6 +29,9 @@ import org.usergrid.services.AbstractCollectionService;
 import org.usergrid.services.ServiceContext;
 import org.usergrid.services.ServicePayload;
 import org.usergrid.services.ServiceResults;
+
+import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.usergrid.services.ServiceResults.genericServiceResults;
 
 public class RolesService extends AbstractCollectionService {
 

@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.tools;
 
-import static org.usergrid.persistence.cassandra.CassandraService.DEFAULT_APPLICATION_ID;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -25,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import com.fasterxml.jackson.core.JsonFactory;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
@@ -43,7 +42,7 @@ import org.usergrid.utils.HttpUtils;
 import org.usergrid.utils.JsonUtils;
 import org.usergrid.utils.UUIDUtils;
 
-import com.fasterxml.jackson.core.JsonFactory;
+import static org.usergrid.persistence.cassandra.CassandraService.DEFAULT_APPLICATION_ID;
 
 public class Cli extends ToolBase {
 

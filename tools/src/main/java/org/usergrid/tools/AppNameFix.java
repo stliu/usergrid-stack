@@ -24,13 +24,9 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.usergrid.management.ApplicationInfo;
-import org.usergrid.management.OrganizationInfo;
-import org.usergrid.persistence.Entity;
 import org.usergrid.persistence.EntityManager;
 import org.usergrid.persistence.cassandra.CassandraService;
 import org.usergrid.persistence.entities.Application;
-import org.usergrid.utils.UUIDUtils;
 
 /**
  * @author tnine

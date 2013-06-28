@@ -15,14 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services.users;
 
-import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
-import static org.apache.commons.lang.StringUtils.isBlank;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.persistence.Schema.PROPERTY_EMAIL;
-import static org.usergrid.persistence.Schema.PROPERTY_PICTURE;
-import static org.usergrid.services.ServiceResults.genericServiceResults;
-import static org.usergrid.utils.ConversionUtils.string;
-
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -47,6 +39,14 @@ import org.usergrid.services.ServicePayload;
 import org.usergrid.services.ServiceRequest;
 import org.usergrid.services.ServiceResults;
 import org.usergrid.services.exceptions.ServiceResourceNotFoundException;
+
+import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
+import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.persistence.Schema.PROPERTY_EMAIL;
+import static org.usergrid.persistence.Schema.PROPERTY_PICTURE;
+import static org.usergrid.services.ServiceResults.genericServiceResults;
+import static org.usergrid.utils.ConversionUtils.string;
 
 public class UsersService extends AbstractCollectionService {
 

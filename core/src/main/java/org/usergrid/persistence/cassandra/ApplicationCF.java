@@ -15,12 +15,12 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
-import static me.prettyprint.hector.api.ddl.ComparatorType.COUNTERTYPE;
-import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.getIndexMetadata;
-
 import java.util.List;
 
 import me.prettyprint.hector.api.ddl.ColumnDefinition;
+
+import static me.prettyprint.hector.api.ddl.ComparatorType.COUNTERTYPE;
+import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.getIndexMetadata;
 
 
 

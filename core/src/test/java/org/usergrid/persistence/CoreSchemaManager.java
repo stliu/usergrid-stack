@@ -8,8 +8,6 @@ import org.usergrid.cassandra.SchemaManager;
 import org.usergrid.persistence.cassandra.CassandraService;
 import org.usergrid.persistence.cassandra.Setup;
 
-import javax.annotation.Resource;
-
 /**
  * @author zznate
  */

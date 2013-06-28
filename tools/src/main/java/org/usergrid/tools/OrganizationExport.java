@@ -1,27 +1,16 @@
 package org.usergrid.tools;
 
-import au.com.bytecode.opencsv.CSVWriter;
+import java.io.FileWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
-import com.google.common.collect.*;
+import au.com.bytecode.opencsv.CSVWriter;
 import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
-import org.apache.commons.lang.time.DateUtils;
-import org.usergrid.management.ApplicationInfo;
 import org.usergrid.management.OrganizationInfo;
 import org.usergrid.management.UserInfo;
-import org.usergrid.persistence.*;
-import org.usergrid.persistence.cassandra.CassandraService;
-import org.usergrid.persistence.entities.Group;
-import org.usergrid.tools.bean.*;
-import org.usergrid.utils.TimeUtils;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import org.usergrid.persistence.Entity;
 
 /**
  * Tools class which dumps metrics for tracking Usergrid developer adoption and

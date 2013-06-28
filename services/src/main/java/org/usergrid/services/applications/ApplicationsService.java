@@ -15,10 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services.applications;
 
-import static org.usergrid.services.ServiceResults.genericServiceResults;
-import static org.usergrid.services.ServiceResults.simpleServiceResults;
-import static org.usergrid.utils.MapUtils.hashMap;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -37,6 +33,10 @@ import org.usergrid.services.ServiceParameter.QueryParameter;
 import org.usergrid.services.ServicePayload;
 import org.usergrid.services.ServiceResults;
 import org.usergrid.services.ServiceResults.Type;
+
+import static org.usergrid.services.ServiceResults.genericServiceResults;
+import static org.usergrid.services.ServiceResults.simpleServiceResults;
+import static org.usergrid.utils.MapUtils.hashMap;
 
 public class ApplicationsService extends AbstractService {
 

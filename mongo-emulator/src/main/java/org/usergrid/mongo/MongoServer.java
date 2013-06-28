@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mongo;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import java.net.InetSocketAddress;
 import java.nio.ByteOrder;
 import java.util.Properties;
@@ -42,6 +39,9 @@ import org.usergrid.management.ManagementService;
 import org.usergrid.persistence.EntityManagerFactory;
 import org.usergrid.persistence.cassandra.EntityManagerFactoryImpl;
 import org.usergrid.services.ServiceManagerFactory;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class MongoServer {
 

@@ -15,10 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.usergrid.services.ServiceInfo.normalizeServicePattern;
-import static org.usergrid.utils.ListUtils.dequeueCopy;
-import static org.usergrid.utils.ListUtils.isEmpty;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +23,10 @@ import java.util.UUID;
 import org.usergrid.persistence.EntityRef;
 import org.usergrid.persistence.Query;
 import org.usergrid.services.exceptions.ServiceResourceNotFoundException;
+
+import static org.usergrid.services.ServiceInfo.normalizeServicePattern;
+import static org.usergrid.utils.ListUtils.dequeueCopy;
+import static org.usergrid.utils.ListUtils.isEmpty;
 
 public class ServiceContext {
 

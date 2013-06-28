@@ -15,14 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.usergrid.security.shiro.utils.SubjectUtils.getPermissionFromPath;
-import static org.usergrid.services.ServiceParameter.filter;
-import static org.usergrid.services.ServiceParameter.mergeQueries;
-import static org.usergrid.utils.ClassUtils.cast;
-import static org.usergrid.utils.InflectionUtils.pluralize;
-import static org.usergrid.utils.ListUtils.dequeueCopy;
-import static org.usergrid.utils.ListUtils.isEmpty;
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -50,6 +42,14 @@ import org.usergrid.services.ServiceResults.Type;
 import org.usergrid.services.exceptions.ServiceInvocationException;
 import org.usergrid.services.exceptions.ServiceResourceNotFoundException;
 import org.usergrid.services.exceptions.UnsupportedServiceOperationException;
+
+import static org.usergrid.security.shiro.utils.SubjectUtils.getPermissionFromPath;
+import static org.usergrid.services.ServiceParameter.filter;
+import static org.usergrid.services.ServiceParameter.mergeQueries;
+import static org.usergrid.utils.ClassUtils.cast;
+import static org.usergrid.utils.InflectionUtils.pluralize;
+import static org.usergrid.utils.ListUtils.dequeueCopy;
+import static org.usergrid.utils.ListUtils.isEmpty;
 
 /**
  * Implementation of Service inferface. Builds a method call fanout from the

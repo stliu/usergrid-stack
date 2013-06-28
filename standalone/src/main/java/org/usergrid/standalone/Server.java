@@ -22,10 +22,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
-
 import javax.servlet.Servlet;
 import javax.servlet.jsp.JspFactory;
 
+import com.sun.jersey.api.core.PackagesResourceConfig;
+import com.sun.jersey.api.core.ResourceConfig;
+import com.sun.jersey.api.json.JSONConfiguration;
+import com.sun.jersey.spi.container.servlet.ServletContainer;
+import com.sun.jersey.spi.spring.container.servlet.SpringServlet;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.GnuParser;
@@ -56,18 +60,10 @@ import org.usergrid.management.ManagementService;
 import org.usergrid.management.UserInfo;
 import org.usergrid.mq.QueueManagerFactory;
 import org.usergrid.persistence.EntityManagerFactory;
-import org.usergrid.persistence.cassandra.EntityManagerFactoryImpl;
-import org.usergrid.persistence.cassandra.Setup;
 import org.usergrid.rest.SwaggerServlet;
 import org.usergrid.rest.filters.ContentTypeFilter;
 import org.usergrid.services.ServiceManagerFactory;
 import org.usergrid.standalone.cassandra.EmbeddedServerHelper;
-
-import com.sun.jersey.api.core.PackagesResourceConfig;
-import com.sun.jersey.api.core.ResourceConfig;
-import com.sun.jersey.api.json.JSONConfiguration;
-import com.sun.jersey.spi.container.servlet.ServletContainer;
-import com.sun.jersey.spi.spring.container.servlet.SpringServlet;
 
 public class Server implements ApplicationContextAware {
 

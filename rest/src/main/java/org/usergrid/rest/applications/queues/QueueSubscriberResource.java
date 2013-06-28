@@ -17,7 +17,6 @@ package org.usergrid.rest.applications.queues;
 
 import java.util.List;
 import java.util.Map;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
@@ -32,6 +31,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.json.JSONWithPadding;
+import com.sun.jersey.core.provider.EntityHolder;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,9 +41,6 @@ import org.springframework.stereotype.Component;
 import org.usergrid.mq.QueueManager;
 import org.usergrid.mq.QueueSet;
 import org.usergrid.rest.AbstractContextResource;
-
-import com.sun.jersey.api.json.JSONWithPadding;
-import com.sun.jersey.core.provider.EntityHolder;
 
 @Component
 @Scope("prototype")

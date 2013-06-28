@@ -17,15 +17,13 @@ package org.usergrid.persistence.entities;
 
 import java.util.List;
 import java.util.UUID;
-
 import javax.xml.bind.annotation.XmlRootElement;
-
-import org.usergrid.persistence.TypedEntity;
-import org.usergrid.persistence.annotations.EntityCollection;
-import org.usergrid.persistence.annotations.EntityProperty;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
+import org.usergrid.persistence.TypedEntity;
+import org.usergrid.persistence.annotations.EntityCollection;
+import org.usergrid.persistence.annotations.EntityProperty;
 
 /**
  * The Device entity class for representing devices in the service.

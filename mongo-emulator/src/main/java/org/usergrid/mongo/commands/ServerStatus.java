@@ -15,15 +15,15 @@
  ******************************************************************************/
 package org.usergrid.mongo.commands;
 
-import static org.usergrid.utils.MapUtils.entry;
-import static org.usergrid.utils.MapUtils.map;
-
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.MessageEvent;
 import org.usergrid.mongo.MongoChannelHandler;
 import org.usergrid.mongo.protocol.OpQuery;
 import org.usergrid.mongo.protocol.OpReply;
 import org.usergrid.utils.DateUtils;
+
+import static org.usergrid.utils.MapUtils.entry;
+import static org.usergrid.utils.MapUtils.map;
 
 public class ServerStatus extends MongoCommand {
 

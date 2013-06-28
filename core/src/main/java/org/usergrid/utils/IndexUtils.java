@@ -15,11 +15,6 @@
  ******************************************************************************/
 package org.usergrid.utils;
 
-import static org.usergrid.utils.ClassUtils.cast;
-import static org.usergrid.utils.ClassUtils.isBasicType;
-import static org.usergrid.utils.JsonUtils.quoteString;
-import static org.usergrid.utils.JsonUtils.toJsonNode;
-
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.AbstractMap;
@@ -33,17 +28,21 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.UUID;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.analysis.tokenattributes.TermAttribute;
 import org.apache.lucene.util.Version;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import static org.usergrid.utils.ClassUtils.cast;
+import static org.usergrid.utils.ClassUtils.isBasicType;
+import static org.usergrid.utils.JsonUtils.quoteString;
+import static org.usergrid.utils.JsonUtils.toJsonNode;
 
 public class IndexUtils {
 

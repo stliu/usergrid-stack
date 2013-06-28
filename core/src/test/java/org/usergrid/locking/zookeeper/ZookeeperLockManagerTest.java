@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.locking.zookeeper;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
 import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -36,6 +33,9 @@ import org.slf4j.LoggerFactory;
 import org.usergrid.locking.Lock;
 import org.usergrid.locking.LockManager;
 import org.usergrid.locking.exception.UGLockException;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ZookeeperLockManagerTest extends AbstractZooKeeperTest {
 

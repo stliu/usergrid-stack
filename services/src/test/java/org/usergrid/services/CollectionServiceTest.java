@@ -15,12 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.usergrid.persistence.Schema.TYPE_APPLICATION;
-import static org.usergrid.utils.JsonUtils.loadJsonFromResourceFile;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -37,6 +31,12 @@ import org.usergrid.persistence.exceptions.RequiredPropertyNotFoundException;
 import org.usergrid.persistence.exceptions.UnexpectedEntityTypeException;
 import org.usergrid.persistence.schema.CollectionInfo;
 import org.usergrid.services.exceptions.ServiceResourceNotFoundException;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.usergrid.persistence.Schema.TYPE_APPLICATION;
+import static org.usergrid.utils.JsonUtils.loadJsonFromResourceFile;
 
 public class CollectionServiceTest extends AbstractServiceTest {
 

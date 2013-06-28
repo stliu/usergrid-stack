@@ -15,11 +15,10 @@
  ******************************************************************************/
 package org.usergrid.rest.exceptions;
 
-import static org.usergrid.utils.JsonUtils.mapToJsonString;
-
+import com.sun.jersey.api.container.MappableContainerException;
 import org.usergrid.rest.ApiResponse;
 
-import com.sun.jersey.api.container.MappableContainerException;
+import static org.usergrid.utils.JsonUtils.mapToJsonString;
 
 /**
  * <p>

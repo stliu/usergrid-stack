@@ -15,10 +15,10 @@
  ******************************************************************************/
 package org.usergrid.persistence.query.tree;
 
-import static org.apache.commons.lang.StringUtils.removeEnd;
-
 import org.antlr.runtime.ClassicToken;
 import org.antlr.runtime.Token;
+
+import static org.apache.commons.lang.StringUtils.removeEnd;
 
 /**
  * @author tnine

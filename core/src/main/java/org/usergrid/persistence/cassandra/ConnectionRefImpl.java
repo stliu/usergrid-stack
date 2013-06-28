@@ -15,13 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
-import static org.usergrid.persistence.SimpleEntityRef.ref;
-import static org.usergrid.utils.ConversionUtils.ascii;
-import static org.usergrid.utils.ConversionUtils.bytebuffer;
-import static org.usergrid.utils.ConversionUtils.string;
-import static org.usergrid.utils.ConversionUtils.uuid;
-import static org.usergrid.utils.ConversionUtils.uuidToBytesNullOk;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -36,7 +29,6 @@ import java.util.UUID;
 
 import me.prettyprint.cassandra.model.IndexedSlicesQuery;
 import me.prettyprint.hector.api.beans.HColumn;
-
 import org.apache.cassandra.thrift.ColumnDef;
 import org.apache.cassandra.thrift.IndexType;
 import org.apache.commons.codec.binary.Hex;
@@ -47,6 +39,13 @@ import org.usergrid.persistence.ConnectedEntityRef;
 import org.usergrid.persistence.ConnectionRef;
 import org.usergrid.persistence.EntityRef;
 import org.usergrid.persistence.SimpleEntityRef;
+
+import static org.usergrid.persistence.SimpleEntityRef.ref;
+import static org.usergrid.utils.ConversionUtils.ascii;
+import static org.usergrid.utils.ConversionUtils.bytebuffer;
+import static org.usergrid.utils.ConversionUtils.string;
+import static org.usergrid.utils.ConversionUtils.uuid;
+import static org.usergrid.utils.ConversionUtils.uuidToBytesNullOk;
 
 /**
  * @author edanuff

@@ -19,10 +19,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.sun.jersey.api.client.WebResource;
 import org.usergrid.rest.test.resource.CollectionResource;
 import org.usergrid.rest.test.resource.NamedResource;
-
-import com.sun.jersey.api.client.WebResource;
 
 /**
  * A resource for testing queues

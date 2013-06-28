@@ -15,20 +15,19 @@
  ******************************************************************************/
 package org.usergrid.security.crypto.command;
 
-import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
-import static org.junit.Assert.assertArrayEquals;
-
 import java.io.UnsupportedEncodingException;
 import java.util.UUID;
-
-import org.junit.Test;
-import org.usergrid.persistence.CredentialsInfo;
 
 import com.yammer.metrics.Metrics;
 import com.yammer.metrics.core.MetricPredicate;
 import com.yammer.metrics.core.Timer;
 import com.yammer.metrics.core.TimerContext;
 import com.yammer.metrics.reporting.ConsoleReporter;
+import org.junit.Test;
+import org.usergrid.persistence.CredentialsInfo;
+
+import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * @author tnine

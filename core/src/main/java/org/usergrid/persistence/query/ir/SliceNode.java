@@ -15,15 +15,15 @@
  ******************************************************************************/
 package org.usergrid.persistence.query.ir;
 
-import static org.usergrid.persistence.cassandra.IndexUpdate.indexValueCode;
-import static org.usergrid.persistence.cassandra.IndexUpdate.toIndexableValue;
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.usergrid.persistence.query.ir.QuerySlice.RangeValue;
 import org.usergrid.persistence.schema.CollectionInfo;
+
+import static org.usergrid.persistence.cassandra.IndexUpdate.indexValueCode;
+import static org.usergrid.persistence.cassandra.IndexUpdate.toIndexableValue;
 
 /**
  * A node which has 1 or more query Slices that can be unioned together. I.E and

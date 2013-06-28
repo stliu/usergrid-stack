@@ -15,19 +15,18 @@
  ******************************************************************************/
 package org.usergrid.mq;
 
-import static java.util.UUID.nameUUIDFromBytes;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.utils.ConversionUtils.getInt;
-import static org.usergrid.utils.ConversionUtils.getLong;
-import static org.usergrid.utils.ListUtils.first;
-import static org.usergrid.utils.UUIDUtils.isUUID;
-import static org.usergrid.utils.UUIDUtils.tryGetUUID;
-
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 import org.usergrid.utils.ConversionUtils;
+
+import static java.util.UUID.nameUUIDFromBytes;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.utils.ConversionUtils.getLong;
+import static org.usergrid.utils.ListUtils.first;
+import static org.usergrid.utils.UUIDUtils.isUUID;
+import static org.usergrid.utils.UUIDUtils.tryGetUUID;
 
 public class QueueQuery extends Query {
 

@@ -1,9 +1,5 @@
 package org.usergrid.management.cassandra;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import java.util.Set;
 
 import org.junit.Before;
@@ -16,6 +12,10 @@ import org.usergrid.management.ManagementService;
 import org.usergrid.management.OrganizationOwnerInfo;
 import org.usergrid.persistence.EntityManagerFactory;
 import org.usergrid.test.ShiroHelperRunner;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author zznate

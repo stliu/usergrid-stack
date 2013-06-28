@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mongo.commands;
 
-import static org.usergrid.utils.MapUtils.entry;
-import static org.usergrid.utils.MapUtils.map;
-
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.MessageEvent;
 import org.usergrid.management.ApplicationInfo;
@@ -27,6 +24,9 @@ import org.usergrid.mongo.protocol.OpReply;
 import org.usergrid.persistence.EntityManager;
 import org.usergrid.persistence.Identifier;
 import org.usergrid.security.shiro.utils.SubjectUtils;
+
+import static org.usergrid.utils.MapUtils.entry;
+import static org.usergrid.utils.MapUtils.map;
 
 public class Collstats extends MongoCommand {
 

@@ -15,6 +15,26 @@
  ******************************************************************************/
 package org.usergrid.mq;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+import java.util.UUID;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
+import com.fasterxml.uuid.UUIDComparator;
+import org.usergrid.utils.UUIDUtils;
+
 import static org.apache.commons.collections.IteratorUtils.asEnumeration;
 import static org.apache.commons.collections.MapUtils.getBooleanValue;
 import static org.apache.commons.collections.MapUtils.getByteValue;
@@ -33,28 +53,6 @@ import static org.usergrid.utils.MapUtils.hashMap;
 import static org.usergrid.utils.UUIDUtils.getTimestampInMillis;
 import static org.usergrid.utils.UUIDUtils.isTimeBased;
 import static org.usergrid.utils.UUIDUtils.newTimeUUID;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.TreeMap;
-import java.util.UUID;
-
-import javax.xml.bind.annotation.XmlRootElement;
-
-import org.usergrid.utils.UUIDUtils;
-
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
-import com.fasterxml.uuid.UUIDComparator;
 
 @XmlRootElement
 public class Message {

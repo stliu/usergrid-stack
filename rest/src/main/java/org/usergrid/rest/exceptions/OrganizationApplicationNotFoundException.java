@@ -1,11 +1,11 @@
 package org.usergrid.rest.exceptions;
 
-import static org.usergrid.utils.JsonUtils.mapToJsonString;
-
 import javax.ws.rs.core.UriInfo;
 
 import org.usergrid.rest.ApiResponse;
 import org.usergrid.rest.ServerEnvironmentProperties;
+
+import static org.usergrid.utils.JsonUtils.mapToJsonString;
 
 /**
  * @author zznate

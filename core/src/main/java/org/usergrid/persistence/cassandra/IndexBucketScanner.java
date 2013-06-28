@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
-import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.key;
-
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -27,12 +25,13 @@ import java.util.UUID;
 
 import com.yammer.metrics.annotation.Metered;
 import me.prettyprint.hector.api.beans.HColumn;
-
 import org.apache.cassandra.config.ConfigurationException;
 import org.apache.cassandra.db.marshal.AbstractType;
 import org.apache.cassandra.db.marshal.TypeParser;
 import org.usergrid.persistence.IndexBucketLocator;
 import org.usergrid.persistence.IndexBucketLocator.IndexType;
+
+import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.key;
 
 /**
  * A simple class to make working with index buckets easier. Scans all buckets

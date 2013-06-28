@@ -15,14 +15,9 @@
  ******************************************************************************/
 package org.usergrid.tools;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
-
 import java.util.Properties;
 
 import me.prettyprint.hector.testutils.EmbeddedServerHelper;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.GnuParser;
@@ -44,6 +39,10 @@ import org.usergrid.persistence.cassandra.CassandraService;
 import org.usergrid.persistence.cassandra.EntityManagerFactoryImpl;
 import org.usergrid.persistence.cassandra.Setup;
 import org.usergrid.services.ServiceManagerFactory;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
 
 public abstract class ToolBase {
 

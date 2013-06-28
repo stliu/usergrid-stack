@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.usergrid.utils.JsonUtils.normalizeJsonTree;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -27,6 +25,8 @@ import java.util.UUID;
 import org.apache.commons.collections.iterators.EmptyIterator;
 import org.apache.commons.collections.iterators.SingletonListIterator;
 import org.usergrid.utils.JsonUtils;
+
+import static org.usergrid.utils.JsonUtils.normalizeJsonTree;
 
 public class ServicePayload {
 

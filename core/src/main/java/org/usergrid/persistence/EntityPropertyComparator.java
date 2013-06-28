@@ -15,9 +15,9 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static org.usergrid.persistence.cassandra.IndexUpdate.compareIndexedValues;
-
 import java.util.Comparator;
+
+import static org.usergrid.persistence.cassandra.IndexUpdate.compareIndexedValues;
 
 public class EntityPropertyComparator implements Comparator<Entity> {
 

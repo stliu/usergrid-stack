@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -27,6 +25,8 @@ import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.Entity;
 import org.usergrid.persistence.Query;
 import org.usergrid.persistence.entities.Activity;
+
+import static org.junit.Assert.assertNotNull;
 
 public class ActivitiesServiceTest extends AbstractServiceTest {
 

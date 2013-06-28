@@ -1,12 +1,12 @@
 package org.usergrid.rest.management.organizations;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.Test;
 import org.usergrid.rest.RestContextTest;
 import org.usergrid.rest.test.security.TestAdminUser;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Tests for admin emails with + signs create accounts correctly, and can get

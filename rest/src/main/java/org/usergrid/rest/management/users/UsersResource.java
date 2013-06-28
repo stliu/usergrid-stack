@@ -15,13 +15,9 @@
  ******************************************************************************/
 package org.usergrid.rest.management.users;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
-import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.FormParam;
@@ -35,9 +31,10 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.json.JSONWithPadding;
+import com.sun.jersey.api.view.Viewable;
 import net.tanesha.recaptcha.ReCaptchaImpl;
 import net.tanesha.recaptcha.ReCaptchaResponse;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -48,8 +45,8 @@ import org.usergrid.rest.exceptions.AuthErrorInfo;
 import org.usergrid.rest.exceptions.RedirectionException;
 import org.usergrid.security.shiro.utils.SubjectUtils;
 
-import com.sun.jersey.api.json.JSONWithPadding;
-import com.sun.jersey.api.view.Viewable;
+import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
 
 @Component("org.usergrid.rest.management.users.UsersResource")
 @Produces({ MediaType.APPLICATION_JSON, "application/javascript",

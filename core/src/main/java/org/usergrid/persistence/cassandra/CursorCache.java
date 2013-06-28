@@ -1,15 +1,15 @@
 package org.usergrid.persistence.cassandra;
 
+import java.nio.ByteBuffer;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import static java.lang.Integer.parseInt;
 import static org.apache.commons.codec.binary.Base64.decodeBase64;
 import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
 import static org.apache.commons.lang.StringUtils.split;
 import static org.usergrid.utils.ConversionUtils.bytes;
-
-import java.nio.ByteBuffer;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
 
 /**
  * Internal cursor parsing

@@ -15,19 +15,18 @@
  ******************************************************************************/
 package org.usergrid.mq.cassandra.io;
 
-import static org.usergrid.mq.cassandra.CassandraMQUtils.getConsumerId;
-import static org.usergrid.mq.cassandra.CassandraMQUtils.getQueueId;
-
 import java.util.List;
 import java.util.UUID;
 
 import me.prettyprint.hector.api.Keyspace;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.mq.Message;
 import org.usergrid.mq.QueueQuery;
 import org.usergrid.mq.QueueResults;
+
+import static org.usergrid.mq.cassandra.CassandraMQUtils.getConsumerId;
+import static org.usergrid.mq.cassandra.CassandraMQUtils.getQueueId;
 
 /**
  * Reads from the queue without starting transactions.

@@ -15,19 +15,7 @@
  ******************************************************************************/
 package org.usergrid.tools;
 
-import static java.lang.Boolean.parseBoolean;
-import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_LOGIN_ALLOWED;
-import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_LOGIN_EMAIL;
-import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_LOGIN_NAME;
-import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_LOGIN_PASSWORD;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Set;
-import java.util.UUID;
-
 import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
@@ -36,17 +24,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.management.AccountCreationProps;
 import org.usergrid.management.cassandra.ManagementServiceImpl;
-import org.usergrid.persistence.Entity;
-import org.usergrid.persistence.EntityManager;
-import org.usergrid.persistence.EntityRef;
-import org.usergrid.persistence.Identifier;
-import org.usergrid.persistence.Query;
-import org.usergrid.persistence.Results;
-import org.usergrid.persistence.SimpleEntityRef;
-import org.usergrid.persistence.cassandra.CassandraService;
-import org.usergrid.persistence.entities.Application;
-import org.usergrid.persistence.entities.User;
-import org.usergrid.persistence.exceptions.DuplicateUniquePropertyExistsException;
+
+import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_LOGIN_ALLOWED;
+import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_LOGIN_EMAIL;
+import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_LOGIN_NAME;
+import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_LOGIN_PASSWORD;
 
 /**
  * This is a utility to load all entities in an application and re-save them,

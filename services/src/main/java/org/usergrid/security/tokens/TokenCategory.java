@@ -15,10 +15,10 @@
  ******************************************************************************/
 package org.usergrid.security.tokens;
 
-import static org.usergrid.utils.CodecUtils.base64;
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import static org.usergrid.utils.CodecUtils.base64;
 
 public enum TokenCategory {
 	ACCESS("ac", true), REFRESH("re", false), OFFLINE("of", false), EMAIL("em",

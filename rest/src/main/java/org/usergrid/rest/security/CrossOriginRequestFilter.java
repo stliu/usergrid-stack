@@ -15,13 +15,12 @@
  ******************************************************************************/
 package org.usergrid.rest.security;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.usergrid.rest.utils.CORSUtils;
-
 import com.sun.jersey.spi.container.ContainerRequest;
 import com.sun.jersey.spi.container.ContainerResponse;
 import com.sun.jersey.spi.container.ContainerResponseFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.usergrid.rest.utils.CORSUtils;
 
 public class CrossOriginRequestFilter implements ContainerResponseFilter {
 

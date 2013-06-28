@@ -15,15 +15,14 @@
  ******************************************************************************/
 package org.usergrid.services.groups;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
-import static org.usergrid.services.ServiceResults.genericServiceResults;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import com.google.common.base.CharMatcher;
+import com.google.common.base.Preconditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.EntityRef;
@@ -34,8 +33,8 @@ import org.usergrid.services.ServiceContext;
 import org.usergrid.services.ServicePayload;
 import org.usergrid.services.ServiceResults;
 
-import com.google.common.base.CharMatcher;
-import com.google.common.base.Preconditions;
+import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.usergrid.services.ServiceResults.genericServiceResults;
 
 public class GroupsService extends AbstractPathBasedColllectionService {
 

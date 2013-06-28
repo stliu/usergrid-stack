@@ -1,5 +1,10 @@
 package org.usergrid.security.providers;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import javax.ws.rs.core.MediaType;
+
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
@@ -14,12 +19,6 @@ import org.usergrid.persistence.Results;
 import org.usergrid.persistence.entities.User;
 import org.usergrid.security.tokens.exceptions.BadTokenException;
 import org.usergrid.utils.JsonUtils;
-
-import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.UUID;
 
 import static org.usergrid.utils.ListUtils.anyNull;
 

@@ -15,11 +15,6 @@
  ******************************************************************************/
 package org.usergrid.tools;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.usergrid.services.ServiceParameter.parameters;
-import static org.usergrid.services.ServicePayload.payload;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -39,6 +34,11 @@ import org.usergrid.services.ServiceAction;
 import org.usergrid.services.ServiceManager;
 import org.usergrid.services.ServiceRequest;
 import org.usergrid.services.ServiceResults;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.usergrid.services.ServiceParameter.parameters;
+import static org.usergrid.services.ServicePayload.payload;
 
 public class PopulateSample extends ToolBase {
 

@@ -17,10 +17,9 @@ package org.usergrid.locking.zookeeper;
 
 import java.util.concurrent.TimeUnit;
 
+import com.netflix.curator.framework.recipes.locks.InterProcessMutex;
 import org.usergrid.locking.Lock;
 import org.usergrid.locking.exception.UGLockException;
-
-import com.netflix.curator.framework.recipes.locks.InterProcessMutex;
 
 /**
  * Wrapper for locks using curator

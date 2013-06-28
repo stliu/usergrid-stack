@@ -15,13 +15,13 @@
  ******************************************************************************/
 package org.usergrid.security;
 
-import static org.usergrid.utils.CodecUtils.base64;
-
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.usergrid.persistence.entities.Group;
 import org.usergrid.persistence.entities.User;
+
+import static org.usergrid.utils.CodecUtils.base64;
 
 public enum AuthPrincipalType {
 	ORGANIZATION("ou", Group.ENTITY_TYPE), ADMIN_USER("ad", User.ENTITY_TYPE), APPLICATION(

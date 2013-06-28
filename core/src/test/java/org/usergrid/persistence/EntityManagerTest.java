@@ -15,13 +15,14 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static org.junit.Assert.*;
-import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
-
-import me.prettyprint.cassandra.utils.TimeUUIDUtils;
+import java.util.Set;
+import java.util.UUID;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -30,6 +31,12 @@ import org.usergrid.persistence.Results.Level;
 import org.usergrid.persistence.entities.Group;
 import org.usergrid.persistence.entities.User;
 import org.usergrid.utils.UUIDUtils;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
 
 public class EntityManagerTest extends AbstractPersistenceTest {
 

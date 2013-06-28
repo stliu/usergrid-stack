@@ -15,11 +15,11 @@
  ******************************************************************************/
 package org.usergrid.utils;
 
-import static org.usergrid.utils.ConversionUtils.bytes;
-
 import java.util.UUID;
 
 import org.apache.commons.codec.binary.Base64;
+
+import static org.usergrid.utils.ConversionUtils.bytes;
 
 public class CodecUtils {
 

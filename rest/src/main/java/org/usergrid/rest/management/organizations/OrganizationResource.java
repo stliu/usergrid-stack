@@ -15,11 +15,21 @@
  ******************************************************************************/
 package org.usergrid.rest.management.organizations;
 
-import javax.ws.rs.*;
+import java.util.Map;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DefaultValue;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.json.JSONWithPadding;
+import com.sun.jersey.api.view.Viewable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
@@ -35,11 +45,6 @@ import org.usergrid.rest.security.annotations.RequireOrganizationAccess;
 import org.usergrid.security.oauth.ClientCredentialsInfo;
 import org.usergrid.security.tokens.exceptions.TokenException;
 import org.usergrid.services.ServiceResults;
-
-import com.sun.jersey.api.json.JSONWithPadding;
-import com.sun.jersey.api.view.Viewable;
-
-import java.util.Map;
 
 @Component("org.usergrid.rest.management.organizations.OrganizationResource")
 @Scope("prototype")

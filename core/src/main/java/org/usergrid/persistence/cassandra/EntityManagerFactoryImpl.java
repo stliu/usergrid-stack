@@ -15,29 +15,15 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
-import static java.lang.String.CASE_INSENSITIVE_ORDER;
-import static me.prettyprint.hector.api.factory.HFactory.createMutator;
-import static me.prettyprint.hector.api.factory.HFactory.createRangeSlicesQuery;
-import static org.usergrid.persistence.Schema.PROPERTY_NAME;
-import static org.usergrid.persistence.Schema.PROPERTY_UUID;
-import static org.usergrid.persistence.Schema.TYPE_APPLICATION;
-import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.addInsertToMutator;
-import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.asMap;
-import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.batchExecute;
-import static org.usergrid.persistence.cassandra.CassandraService.APPLICATIONS_CF;
-import static org.usergrid.persistence.cassandra.CassandraService.PROPERTIES_CF;
-import static org.usergrid.persistence.cassandra.CassandraService.RETRY_COUNT;
-import static org.usergrid.utils.ConversionUtils.uuid;
-
 import java.nio.ByteBuffer;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import com.yammer.metrics.annotation.Metered;
 import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
 import me.prettyprint.cassandra.serializers.BytesArraySerializer;
 import me.prettyprint.cassandra.serializers.DynamicCompositeSerializer;
@@ -53,7 +39,6 @@ import me.prettyprint.hector.api.beans.Rows;
 import me.prettyprint.hector.api.mutation.Mutator;
 import me.prettyprint.hector.api.query.QueryResult;
 import me.prettyprint.hector.api.query.RangeSlicesQuery;
-
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,7 +52,19 @@ import org.usergrid.persistence.entities.Application;
 import org.usergrid.persistence.exceptions.ApplicationAlreadyExistsException;
 import org.usergrid.utils.UUIDUtils;
 
-import com.yammer.metrics.annotation.Metered;
+import static java.lang.String.CASE_INSENSITIVE_ORDER;
+import static me.prettyprint.hector.api.factory.HFactory.createMutator;
+import static me.prettyprint.hector.api.factory.HFactory.createRangeSlicesQuery;
+import static org.usergrid.persistence.Schema.PROPERTY_NAME;
+import static org.usergrid.persistence.Schema.PROPERTY_UUID;
+import static org.usergrid.persistence.Schema.TYPE_APPLICATION;
+import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.addInsertToMutator;
+import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.asMap;
+import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.batchExecute;
+import static org.usergrid.persistence.cassandra.CassandraService.APPLICATIONS_CF;
+import static org.usergrid.persistence.cassandra.CassandraService.PROPERTIES_CF;
+import static org.usergrid.persistence.cassandra.CassandraService.RETRY_COUNT;
+import static org.usergrid.utils.ConversionUtils.uuid;
 
 /**
  * Cassandra-specific implementation of Datastore

@@ -15,20 +15,12 @@
  ******************************************************************************/
 package org.usergrid.rest.applications;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.usergrid.utils.MapUtils.hashMap;
-
-import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.core.MediaType;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.Test;
 import org.usergrid.cassandra.CassandraRunner;
-import org.usergrid.management.ApplicationInfo;
-import org.usergrid.management.OrganizationInfo;
 import org.usergrid.persistence.CounterResolution;
 import org.usergrid.persistence.EntityManager;
 import org.usergrid.persistence.EntityManagerFactory;
@@ -38,8 +30,8 @@ import org.usergrid.rest.AbstractRestTest;
 import org.usergrid.services.ServiceManager;
 import org.usergrid.utils.UUIDUtils;
 
-import com.sun.jersey.api.client.ClientResponse.Status;
-import com.sun.jersey.api.client.UniformInterfaceException;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Invoke application request counters

@@ -3,6 +3,7 @@ package org.usergrid.management.cassandra;
 import java.util.Arrays;
 import java.util.UUID;
 
+import com.google.common.base.Preconditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.management.ApplicationCreator;
@@ -12,8 +13,6 @@ import org.usergrid.management.OrganizationInfo;
 import org.usergrid.management.exceptions.ApplicationCreationException;
 import org.usergrid.persistence.EntityManager;
 import org.usergrid.persistence.EntityManagerFactory;
-
-import com.google.common.base.Preconditions;
 
 /**
  * @author zznate

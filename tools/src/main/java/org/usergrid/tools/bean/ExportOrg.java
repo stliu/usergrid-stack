@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.usergrid.management.OrganizationInfo;
-import org.usergrid.management.UserInfo;
 
 /**
  * @author tnine

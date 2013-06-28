@@ -15,13 +15,13 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
-import static org.usergrid.utils.ConversionUtils.bytebuffer;
-
 import java.nio.ByteBuffer;
 import java.util.List;
 
 import me.prettyprint.cassandra.serializers.AbstractSerializer;
 import me.prettyprint.hector.api.beans.DynamicComposite;
+
+import static org.usergrid.utils.ConversionUtils.bytebuffer;
 
 public class EntityValueSerializer extends AbstractSerializer<Object> {
 

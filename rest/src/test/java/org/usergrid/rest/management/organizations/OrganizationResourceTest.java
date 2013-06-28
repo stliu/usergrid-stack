@@ -1,20 +1,17 @@
 package org.usergrid.rest.management.organizations;
 
-import junit.framework.Assert;
-import com.fasterxml.jackson.databind.JsonNode;
-import org.junit.Test;
-import org.usergrid.cassandra.CassandraRunner;
-import org.usergrid.management.OrganizationInfo;
-import org.usergrid.persistence.EntityManagerFactory;
-import org.usergrid.rest.AbstractRestTest;
-
-import javax.ws.rs.core.MediaType;
 import java.util.HashMap;
 import java.util.Map;
+import javax.ws.rs.core.MediaType;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import junit.framework.Assert;
+import org.junit.Test;
+import org.usergrid.management.OrganizationInfo;
+import org.usergrid.rest.AbstractRestTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.usergrid.utils.MapUtils.hashMap;
 
 public class OrganizationResourceTest extends AbstractRestTest {

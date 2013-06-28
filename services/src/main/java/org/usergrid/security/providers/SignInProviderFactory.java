@@ -2,12 +2,8 @@ package org.usergrid.security.providers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.usergrid.management.ManagementService;
-import org.usergrid.persistence.EntityManager;
 import org.usergrid.persistence.EntityManagerFactory;
-import org.usergrid.persistence.EntityRef;
 import org.usergrid.persistence.entities.Application;
-
-import java.util.Map;
 
 /**
  * @author zznate

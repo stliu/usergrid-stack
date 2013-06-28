@@ -28,11 +28,13 @@ import org.slf4j.LoggerFactory;
 import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.management.cassandra.ManagementServiceImpl;
 import org.usergrid.management.exceptions.RecentlyUsedPasswordException;
-import org.usergrid.persistence.CredentialsInfo;
 import org.usergrid.security.AuthPrincipalInfo;
 import org.usergrid.test.ShiroHelperRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 @RunWith(ShiroHelperRunner.class)
 public class OrganizationTest {

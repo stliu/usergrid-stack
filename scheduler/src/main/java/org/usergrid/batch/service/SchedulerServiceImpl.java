@@ -15,12 +15,9 @@
  ******************************************************************************/
 package org.usergrid.batch.service;
 
-import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
@@ -47,6 +44,8 @@ import org.usergrid.persistence.cassandra.CassandraService;
 import org.usergrid.persistence.entities.JobData;
 import org.usergrid.persistence.entities.JobStat;
 import org.usergrid.persistence.exceptions.TransactionNotFoundException;
+
+import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
 
 /**
  * Should be referenced by services as a SchedulerService instance. Only the

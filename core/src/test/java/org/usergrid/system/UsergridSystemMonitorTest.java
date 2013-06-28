@@ -1,25 +1,16 @@
 package org.usergrid.system;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
-import javax.annotation.Resource;
-
-import me.prettyprint.hector.testutils.EmbeddedServerHelper;
+import java.util.Date;
 
 import org.apache.commons.lang.StringUtils;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.utils.MapUtils;
 
-import java.util.Date;
-import java.util.HashMap;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author zznate

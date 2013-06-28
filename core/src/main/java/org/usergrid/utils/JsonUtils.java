@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.utils;
 
-import static org.apache.commons.lang.StringUtils.substringAfter;
-import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
-
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -29,10 +26,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.usergrid.persistence.Entity;
-
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.io.JsonStringEncoder;
@@ -42,6 +35,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.jsonschema.JsonSchema;
 import com.fasterxml.jackson.dataformat.smile.SmileFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.usergrid.persistence.Entity;
+
+import static org.apache.commons.lang.StringUtils.substringAfter;
+import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
 
 /**
  * @author edanuff

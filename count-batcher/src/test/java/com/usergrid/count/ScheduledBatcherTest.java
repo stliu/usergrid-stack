@@ -15,10 +15,10 @@
  ******************************************************************************/
 package com.usergrid.count;
 
+import java.util.concurrent.TimeUnit;
+
 import com.usergrid.count.common.Count;
 import org.junit.Test;
-
-import java.util.concurrent.TimeUnit;
 
 import static junit.framework.Assert.assertEquals;
 

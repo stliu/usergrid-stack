@@ -17,10 +17,6 @@ package org.usergrid.persistence;
 
 import java.util.Properties;
 
-import org.springframework.context.ApplicationContext;
-import org.usergrid.mq.QueueManagerFactory;
-import org.usergrid.persistence.cassandra.CassandraService;
-
 public interface PersistenceTestHelper {
 
 	public abstract Properties getProperties();

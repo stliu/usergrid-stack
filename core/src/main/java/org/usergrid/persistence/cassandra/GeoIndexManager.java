@@ -15,6 +15,37 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import javax.persistence.Id;
+
+import com.beoui.geocell.GeocellManager;
+import com.beoui.geocell.GeocellQueryEngine;
+import com.beoui.geocell.annotations.Latitude;
+import com.beoui.geocell.annotations.Longitude;
+import com.beoui.geocell.model.GeocellQuery;
+import com.beoui.geocell.model.Point;
+import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
+import me.prettyprint.cassandra.serializers.DoubleSerializer;
+import me.prettyprint.cassandra.serializers.StringSerializer;
+import me.prettyprint.cassandra.serializers.UUIDSerializer;
+import me.prettyprint.hector.api.Keyspace;
+import me.prettyprint.hector.api.beans.DynamicComposite;
+import me.prettyprint.hector.api.beans.HColumn;
+import me.prettyprint.hector.api.mutation.Mutator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.usergrid.persistence.EntityRef;
+import org.usergrid.persistence.IndexBucketLocator;
+import org.usergrid.persistence.IndexBucketLocator.IndexType;
+import org.usergrid.persistence.Results;
+import org.usergrid.persistence.Results.Level;
+import org.usergrid.utils.UUIDUtils;
+
 import static me.prettyprint.hector.api.factory.HFactory.createColumn;
 import static me.prettyprint.hector.api.factory.HFactory.createMutator;
 import static org.apache.commons.lang.math.NumberUtils.toDouble;
@@ -29,40 +60,6 @@ import static org.usergrid.utils.ClassUtils.cast;
 import static org.usergrid.utils.ConversionUtils.bytebuffer;
 import static org.usergrid.utils.StringUtils.stringOrSubstringAfterLast;
 import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
-
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-
-import javax.persistence.Id;
-
-import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
-import me.prettyprint.cassandra.serializers.DoubleSerializer;
-import me.prettyprint.cassandra.serializers.StringSerializer;
-import me.prettyprint.cassandra.serializers.UUIDSerializer;
-import me.prettyprint.hector.api.Keyspace;
-import me.prettyprint.hector.api.beans.DynamicComposite;
-import me.prettyprint.hector.api.beans.HColumn;
-import me.prettyprint.hector.api.mutation.Mutator;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.usergrid.persistence.EntityRef;
-import org.usergrid.persistence.IndexBucketLocator;
-import org.usergrid.persistence.IndexBucketLocator.IndexType;
-import org.usergrid.persistence.Results;
-import org.usergrid.persistence.Results.Level;
-import org.usergrid.utils.UUIDUtils;
-
-import com.beoui.geocell.GeocellManager;
-import com.beoui.geocell.GeocellQueryEngine;
-import com.beoui.geocell.annotations.Latitude;
-import com.beoui.geocell.annotations.Longitude;
-import com.beoui.geocell.model.GeocellQuery;
-import com.beoui.geocell.model.Point;
 
 public class GeoIndexManager {
 

@@ -15,6 +15,35 @@
  ******************************************************************************/
 package org.usergrid.management;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.UUID;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMultipart;
+
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.text.StrSubstitutor;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.config.PropertiesFactoryBean;
+import org.usergrid.cassandra.CassandraRunner;
+import org.usergrid.persistence.EntityManager;
+import org.usergrid.persistence.EntityManagerFactory;
+import org.usergrid.persistence.SimpleEntityRef;
+import org.usergrid.persistence.cassandra.CassandraService;
+import org.usergrid.persistence.entities.Application;
+import org.usergrid.persistence.entities.User;
+import org.usergrid.test.ShiroHelperRunner;
+
 import static org.apache.commons.lang.StringUtils.isNotBlank;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -42,37 +71,6 @@ import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_E
 import static org.usergrid.management.AccountCreationProps.PROPERTIES_USER_ACTIVATION_URL;
 import static org.usergrid.management.AccountCreationProps.PROPERTIES_USER_CONFIRMATION_URL;
 import static org.usergrid.management.AccountCreationProps.PROPERTIES_USER_RESETPW_URL;
-
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.UUID;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMultipart;
-
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.text.StrSubstitutor;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.config.PropertiesFactoryBean;
-import org.usergrid.cassandra.CassandraRunner;
-import org.usergrid.persistence.EntityManager;
-import org.usergrid.persistence.EntityManagerFactory;
-import org.usergrid.persistence.SimpleEntityRef;
-import org.usergrid.persistence.cassandra.CassandraService;
-import org.usergrid.persistence.entities.Application;
-import org.usergrid.persistence.entities.User;
-import org.usergrid.test.ShiroHelperRunner;
 
 @Ignore
 @RunWith(ShiroHelperRunner.class)

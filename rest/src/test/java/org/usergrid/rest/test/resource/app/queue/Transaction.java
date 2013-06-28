@@ -16,10 +16,9 @@
 package org.usergrid.rest.test.resource.app.queue;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.sun.jersey.api.client.WebResource;
 import org.usergrid.rest.test.resource.CollectionResource;
 import org.usergrid.rest.test.resource.NamedResource;
-
-import com.sun.jersey.api.client.WebResource;
 
 /**
  * A resource for testing queues

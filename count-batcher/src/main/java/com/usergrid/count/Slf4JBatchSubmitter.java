@@ -15,16 +15,19 @@
  ******************************************************************************/
 package com.usergrid.count;
 
-import com.usergrid.count.common.Count;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
 import com.usergrid.count.AbstractBatcher.Batch;
+import com.usergrid.count.common.Count;
 import com.yammer.metrics.Metrics;
-import com.yammer.metrics.annotation.Timed;
 import com.yammer.metrics.core.Timer;
 import com.yammer.metrics.core.TimerContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.concurrent.*;
 
 /**
  * A BatchSubmitter that prints contents to the configured slf4j logger logger

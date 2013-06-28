@@ -1,7 +1,19 @@
 package org.usergrid.tools;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
+
 import com.fasterxml.jackson.core.JsonGenerator;
-import com.google.common.collect.*;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.ListMultimap;
+import com.google.common.collect.Ordering;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
@@ -10,13 +22,12 @@ import org.apache.commons.lang.time.DateUtils;
 import org.usergrid.management.ApplicationInfo;
 import org.usergrid.management.OrganizationInfo;
 import org.usergrid.management.UserInfo;
-import org.usergrid.persistence.*;
-import org.usergrid.tools.bean.*;
+import org.usergrid.persistence.AggregateCounter;
+import org.usergrid.persistence.CounterResolution;
+import org.usergrid.tools.bean.MetricLine;
+import org.usergrid.tools.bean.MetricQuery;
+import org.usergrid.tools.bean.MetricSort;
 import org.usergrid.utils.TimeUtils;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
 
 /**
  * Tools class which dumps metrics for tracking Usergrid developer adoption

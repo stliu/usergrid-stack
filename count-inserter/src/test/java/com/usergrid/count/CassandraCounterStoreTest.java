@@ -15,6 +15,8 @@
  ******************************************************************************/
 package com.usergrid.count;
 
+import java.io.IOException;
+
 import com.usergrid.count.common.Count;
 import me.prettyprint.cassandra.service.CassandraHostConfigurator;
 import me.prettyprint.hector.api.Cluster;
@@ -23,8 +25,6 @@ import me.prettyprint.hector.testutils.EmbeddedServerHelper;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.io.IOException;
 
 /**
  * @author zznate

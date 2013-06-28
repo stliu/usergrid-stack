@@ -15,6 +15,20 @@
  ******************************************************************************/
 package org.usergrid.services;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
+import com.google.common.hash.Hasher;
+import com.google.common.hash.Hashing;
+import org.usergrid.persistence.Schema;
+
 import static org.apache.commons.lang.StringUtils.capitalize;
 import static org.apache.commons.lang.StringUtils.removeEnd;
 import static org.apache.commons.lang.StringUtils.split;
@@ -23,21 +37,6 @@ import static org.usergrid.utils.InflectionUtils.singularize;
 import static org.usergrid.utils.StringUtils.stringOrSubstringAfterLast;
 import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
 import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeLast;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
-
-import org.usergrid.persistence.Schema;
-
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
-import com.google.common.hash.Hasher;
-import com.google.common.hash.Hashing;
 
 public class ServiceInfo {
 

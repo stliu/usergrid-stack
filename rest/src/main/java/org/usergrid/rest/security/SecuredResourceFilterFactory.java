@@ -15,22 +15,20 @@
  ******************************************************************************/
 package org.usergrid.rest.security;
 
-import static org.apache.commons.lang.StringUtils.isNotEmpty;
-import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
-import static org.usergrid.security.shiro.utils.SubjectUtils.isPermittedAccessToApplication;
-import static org.usergrid.security.shiro.utils.SubjectUtils.isPermittedAccessToOrganization;
-import static org.usergrid.security.shiro.utils.SubjectUtils.isUser;
-import static org.usergrid.security.shiro.utils.SubjectUtils.loginApplicationGuest;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.model.AbstractMethod;
+import com.sun.jersey.spi.container.ContainerRequest;
+import com.sun.jersey.spi.container.ContainerRequestFilter;
+import com.sun.jersey.spi.container.ContainerResponseFilter;
+import com.sun.jersey.spi.container.ResourceFilter;
+import com.sun.jersey.spi.container.ResourceFilterFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,12 +47,12 @@ import org.usergrid.rest.utils.PathingUtils;
 import org.usergrid.security.shiro.utils.SubjectUtils;
 import org.usergrid.services.ServiceManagerFactory;
 
-import com.sun.jersey.api.model.AbstractMethod;
-import com.sun.jersey.spi.container.ContainerRequest;
-import com.sun.jersey.spi.container.ContainerRequestFilter;
-import com.sun.jersey.spi.container.ContainerResponseFilter;
-import com.sun.jersey.spi.container.ResourceFilter;
-import com.sun.jersey.spi.container.ResourceFilterFactory;
+import static org.apache.commons.lang.StringUtils.isNotEmpty;
+import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
+import static org.usergrid.security.shiro.utils.SubjectUtils.isPermittedAccessToApplication;
+import static org.usergrid.security.shiro.utils.SubjectUtils.isPermittedAccessToOrganization;
+import static org.usergrid.security.shiro.utils.SubjectUtils.isUser;
+import static org.usergrid.security.shiro.utils.SubjectUtils.loginApplicationGuest;
 
 @Component
 public class SecuredResourceFilterFactory implements ResourceFilterFactory {

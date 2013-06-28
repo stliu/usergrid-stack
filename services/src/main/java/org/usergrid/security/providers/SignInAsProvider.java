@@ -1,10 +1,9 @@
 package org.usergrid.security.providers;
 
+import java.util.Map;
+
 import org.usergrid.persistence.entities.User;
 import org.usergrid.security.tokens.exceptions.BadTokenException;
-
-import java.util.Map;
-import java.util.UUID;
 
 /**
  * @author zznate

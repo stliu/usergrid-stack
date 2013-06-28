@@ -1,16 +1,15 @@
 package org.usergrid.rest.management.users.organizations;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.fail;
-import static org.usergrid.utils.MapUtils.hashMap;
-
 import java.util.Map;
-
 import javax.ws.rs.core.MediaType;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.Test;
 import org.usergrid.rest.AbstractRestTest;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
+import static org.usergrid.utils.MapUtils.hashMap;
 
 /**
  * @author zznate

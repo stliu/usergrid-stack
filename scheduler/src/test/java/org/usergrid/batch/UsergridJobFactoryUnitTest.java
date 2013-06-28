@@ -1,13 +1,13 @@
 package org.usergrid.batch;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import java.util.List;
 import java.util.UUID;
 
 import org.junit.Test;
 import org.usergrid.batch.repository.JobDescriptor;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * @author zznate

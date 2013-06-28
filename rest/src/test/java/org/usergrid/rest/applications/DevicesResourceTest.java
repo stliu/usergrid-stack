@@ -1,13 +1,13 @@
 package org.usergrid.rest.applications;
 
-import com.sun.jersey.api.client.UniformInterfaceException;
-import com.fasterxml.jackson.databind.JsonNode;
-import org.junit.Test;
-import org.usergrid.rest.AbstractRestTest;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.sun.jersey.api.client.UniformInterfaceException;
+import org.junit.Test;
+import org.usergrid.rest.AbstractRestTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

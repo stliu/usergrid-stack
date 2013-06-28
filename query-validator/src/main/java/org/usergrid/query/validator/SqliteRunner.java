@@ -15,6 +15,13 @@
  ******************************************************************************/
 package org.usergrid.query.validator;
 
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Logger;
+
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,13 +29,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 import org.usergrid.persistence.Entity;
 import org.usergrid.persistence.Schema;
-
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
-import java.util.logging.Logger;
 
 /**
  * @author Sung-ju Jin(realbeast)

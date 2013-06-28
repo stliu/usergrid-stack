@@ -15,10 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static me.prettyprint.hector.api.factory.HFactory.createMutator;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-
 import java.nio.ByteBuffer;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -27,17 +23,20 @@ import java.util.UUID;
 import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
 import me.prettyprint.hector.api.Keyspace;
 import me.prettyprint.hector.api.mutation.Mutator;
-
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.persistence.cassandra.CassandraService;
 import org.usergrid.persistence.cassandra.IndexUpdate;
-import org.usergrid.persistence.cassandra.RelationManagerImpl;
 import org.usergrid.persistence.cassandra.IndexUpdate.IndexEntry;
+import org.usergrid.persistence.cassandra.RelationManagerImpl;
 import org.usergrid.utils.JsonUtils;
 import org.usergrid.utils.UUIDUtils;
+
+import static me.prettyprint.hector.api.factory.HFactory.createMutator;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class IndexTest extends AbstractPersistenceTest {
 

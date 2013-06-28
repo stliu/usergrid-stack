@@ -16,7 +16,6 @@
 package org.usergrid.rest.test.resource.mgmt;
 
 import java.util.Map;
-
 import javax.ws.rs.core.MediaType;
 
 import com.fasterxml.jackson.databind.JsonNode;

@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.security.crypto;
 
-import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -26,6 +24,8 @@ import org.usergrid.persistence.CredentialsInfo;
 import org.usergrid.security.crypto.command.EncryptionCommand;
 import org.usergrid.security.crypto.command.Md5HashCommand;
 import org.usergrid.security.crypto.command.Sha1HashCommand;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author tnine

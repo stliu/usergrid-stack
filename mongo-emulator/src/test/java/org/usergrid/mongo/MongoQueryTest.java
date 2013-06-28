@@ -1,16 +1,9 @@
 package org.usergrid.mongo;
 
-import static org.junit.Assert.*;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-
-import org.bson.types.BasicBSONList;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.usergrid.persistence.EntityManager;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
@@ -18,6 +11,14 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
+import org.bson.types.BasicBSONList;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.usergrid.persistence.EntityManager;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 @Ignore
 public class MongoQueryTest extends AbstractMongoTest {

@@ -15,10 +15,10 @@
  ******************************************************************************/
 package org.usergrid.rest.exceptions;
 
-import static javax.ws.rs.core.Response.Status.OK;
-
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
+
+import static javax.ws.rs.core.Response.Status.OK;
 
 @Provider
 public class NoOpExceptionMapper extends AbstractExceptionMapper<NoOpException> {

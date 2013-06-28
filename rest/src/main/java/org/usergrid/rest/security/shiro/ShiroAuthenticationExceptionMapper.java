@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.rest.security.shiro;
 
-import static org.usergrid.rest.exceptions.AuthErrorInfo.BAD_ACCESS_TOKEN_ERROR;
-import static org.usergrid.rest.exceptions.AuthErrorInfo.EXPIRED_ACCESS_TOKEN_ERROR;
-
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.ext.ExceptionMapper;
@@ -27,6 +24,9 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.usergrid.rest.ApiResponse;
 import org.usergrid.security.tokens.exceptions.BadTokenException;
 import org.usergrid.security.tokens.exceptions.ExpiredTokenException;
+
+import static org.usergrid.rest.exceptions.AuthErrorInfo.BAD_ACCESS_TOKEN_ERROR;
+import static org.usergrid.rest.exceptions.AuthErrorInfo.EXPIRED_ACCESS_TOKEN_ERROR;
 
 @Provider
 public class ShiroAuthenticationExceptionMapper implements

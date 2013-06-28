@@ -18,15 +18,27 @@ package org.usergrid.persistence;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.exceptions.QueryParseException;
-import org.usergrid.persistence.query.tree.*;
+import org.usergrid.persistence.query.tree.AndOperand;
+import org.usergrid.persistence.query.tree.ContainsOperand;
+import org.usergrid.persistence.query.tree.Equal;
+import org.usergrid.persistence.query.tree.FloatLiteral;
+import org.usergrid.persistence.query.tree.GreaterThan;
+import org.usergrid.persistence.query.tree.GreaterThanEqual;
+import org.usergrid.persistence.query.tree.LessThan;
+import org.usergrid.persistence.query.tree.LessThanEqual;
+import org.usergrid.persistence.query.tree.LongLiteral;
+import org.usergrid.persistence.query.tree.NotOperand;
+import org.usergrid.persistence.query.tree.StringLiteral;
+import org.usergrid.persistence.query.tree.WithinOperand;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 public class QueryTest {
 

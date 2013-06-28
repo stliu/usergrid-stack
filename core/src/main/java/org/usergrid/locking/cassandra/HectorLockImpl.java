@@ -21,7 +21,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import me.prettyprint.hector.api.locking.HLock;
 import me.prettyprint.hector.api.locking.HLockManager;
 import me.prettyprint.hector.api.locking.HLockTimeoutException;
-
 import org.usergrid.locking.Lock;
 import org.usergrid.locking.exception.UGLockException;
 

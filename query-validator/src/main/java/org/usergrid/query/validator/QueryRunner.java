@@ -16,6 +16,7 @@
 package org.usergrid.query.validator;
 
 import java.util.List;
+
 import org.usergrid.persistence.Entity;
 
 /**

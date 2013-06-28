@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mongo.commands;
 
-import static org.usergrid.utils.MapUtils.map;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +26,8 @@ import org.usergrid.mongo.MongoChannelHandler;
 import org.usergrid.mongo.protocol.OpQuery;
 import org.usergrid.mongo.protocol.OpReply;
 import org.usergrid.security.shiro.utils.SubjectUtils;
+
+import static org.usergrid.utils.MapUtils.map;
 
 public class ListDatabases extends MongoCommand {
 

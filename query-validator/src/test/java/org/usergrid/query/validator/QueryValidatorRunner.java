@@ -15,6 +15,14 @@
  ******************************************************************************/
 package org.usergrid.query.validator;
 
+import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
 import org.junit.runner.notification.RunNotifier;
@@ -27,14 +35,6 @@ import org.usergrid.management.ManagementService;
 import org.usergrid.persistence.Entity;
 import org.usergrid.standalone.Server;
 import org.usergrid.utils.JsonUtils;
-
-import java.io.IOException;
-import java.net.URL;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 
 /**
  * @author Sung-ju Jin(realbeast)

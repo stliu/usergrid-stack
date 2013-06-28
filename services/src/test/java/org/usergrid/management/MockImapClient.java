@@ -2,7 +2,6 @@ package org.usergrid.management;
 
 import java.io.IOException;
 import java.util.Properties;
-
 import javax.mail.Folder;
 import javax.mail.Message;
 import javax.mail.MessagingException;

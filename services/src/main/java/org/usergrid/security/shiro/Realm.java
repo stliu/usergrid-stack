@@ -15,19 +15,12 @@
  ******************************************************************************/
 package org.usergrid.security.shiro;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_LOGIN_ALLOWED;
-import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
-import static org.usergrid.security.shiro.utils.SubjectUtils.getPermissionFromPath;
-import static org.usergrid.utils.StringUtils.stringOrSubstringAfterFirst;
-import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
-
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import com.google.common.collect.HashBiMap;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -79,7 +72,13 @@ import org.usergrid.security.shiro.principals.PrincipalIdentifier;
 import org.usergrid.security.tokens.TokenInfo;
 import org.usergrid.security.tokens.TokenService;
 
-import com.google.common.collect.HashBiMap;
+import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.management.AccountCreationProps.PROPERTIES_SYSADMIN_LOGIN_ALLOWED;
+import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
+import static org.usergrid.security.shiro.utils.SubjectUtils.getPermissionFromPath;
+import static org.usergrid.utils.StringUtils.stringOrSubstringAfterFirst;
+import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
 
 public class Realm extends AuthorizingRealm {
     private static final Logger logger = LoggerFactory.getLogger(Realm.class);

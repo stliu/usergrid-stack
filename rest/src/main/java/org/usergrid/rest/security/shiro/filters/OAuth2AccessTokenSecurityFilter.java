@@ -15,12 +15,11 @@
  ******************************************************************************/
 package org.usergrid.rest.security.shiro.filters;
 
-import static org.usergrid.rest.exceptions.AuthErrorInfo.*;
-import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 
+import com.sun.jersey.api.container.MappableContainerException;
+import com.sun.jersey.spi.container.ContainerRequest;
 import org.apache.amber.oauth2.common.exception.OAuthProblemException;
 import org.apache.amber.oauth2.common.exception.OAuthSystemException;
 import org.apache.amber.oauth2.common.message.types.ParameterStyle;
@@ -40,11 +39,14 @@ import org.usergrid.security.shiro.PrincipalCredentialsToken;
 import org.usergrid.security.shiro.utils.SubjectUtils;
 import org.usergrid.security.tokens.TokenInfo;
 import org.usergrid.security.tokens.exceptions.BadTokenException;
-
-import com.sun.jersey.api.container.MappableContainerException;
-import com.sun.jersey.spi.container.ContainerRequest;
 import org.usergrid.security.tokens.exceptions.ExpiredTokenException;
 import org.usergrid.security.tokens.exceptions.InvalidTokenException;
+
+import static org.usergrid.rest.exceptions.AuthErrorInfo.BAD_ACCESS_TOKEN_ERROR;
+import static org.usergrid.rest.exceptions.AuthErrorInfo.EXPIRED_ACCESS_TOKEN_ERROR;
+import static org.usergrid.rest.exceptions.AuthErrorInfo.INVALID_AUTH_ERROR;
+import static org.usergrid.rest.exceptions.AuthErrorInfo.UNVERIFIED_OAUTH_ERROR;
+import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
 
 @Component
 public class OAuth2AccessTokenSecurityFilter extends SecurityFilter {

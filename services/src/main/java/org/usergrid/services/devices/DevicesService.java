@@ -17,16 +17,11 @@ package org.usergrid.services.devices;
 
 import java.util.UUID;
 
-import org.apache.commons.collections.map.LRUMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.usergrid.persistence.Entity;
-import org.usergrid.persistence.Results;
-import org.usergrid.persistence.entities.Device;
 import org.usergrid.services.AbstractCollectionService;
 import org.usergrid.services.ServiceContext;
 import org.usergrid.services.ServiceResults;
-import org.usergrid.services.ServiceResults.Type;
 
 public class DevicesService extends AbstractCollectionService {
 

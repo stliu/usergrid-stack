@@ -20,7 +20,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-
 import org.usergrid.persistence.CounterResolution;
 import org.usergrid.persistence.Results;
 import org.usergrid.persistence.exceptions.TransactionNotFoundException;

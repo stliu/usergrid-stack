@@ -15,11 +15,13 @@
  ******************************************************************************/
 package org.usergrid.mongo;
 
-import static org.junit.Assert.assertNull;
-
 import java.net.UnknownHostException;
 import java.util.Properties;
 
+import com.mongodb.DB;
+import com.mongodb.Mongo;
+import com.mongodb.MongoException;
+import com.mongodb.WriteConcern;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.slf4j.Logger;
@@ -29,10 +31,7 @@ import org.usergrid.persistence.cassandra.EntityManagerFactoryImpl;
 import org.usergrid.persistence.cassandra.PersistenceTestHelperImpl;
 import org.usergrid.services.ServiceManagerFactory;
 
-import com.mongodb.DB;
-import com.mongodb.Mongo;
-import com.mongodb.MongoException;
-import com.mongodb.WriteConcern;
+import static org.junit.Assert.assertNull;
 
 public abstract class AbstractMongoTest {
 

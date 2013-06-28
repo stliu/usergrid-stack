@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.locking.cassandra;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertTrue;
-
 import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -39,6 +36,9 @@ import org.usergrid.locking.LockManager;
 import org.usergrid.locking.exception.UGLockException;
 import org.usergrid.persistence.AbstractPersistenceTest;
 import org.usergrid.persistence.cassandra.CassandraService;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class HectorLockManagerTest extends AbstractPersistenceTest {
 

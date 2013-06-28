@@ -15,15 +15,6 @@
  ******************************************************************************/
 package org.usergrid.utils;
 
-import static com.fasterxml.uuid.impl.UUIDUtil.BYTE_OFFSET_CLOCK_HI;
-import static com.fasterxml.uuid.impl.UUIDUtil.BYTE_OFFSET_CLOCK_LO;
-import static com.fasterxml.uuid.impl.UUIDUtil.BYTE_OFFSET_CLOCK_MID;
-import static com.fasterxml.uuid.impl.UUIDUtil.BYTE_OFFSET_CLOCK_SEQUENCE;
-import static org.apache.commons.codec.binary.Base64.decodeBase64;
-import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
-import static org.usergrid.utils.ConversionUtils.bytes;
-import static org.usergrid.utils.ConversionUtils.uuid;
-
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -37,6 +28,15 @@ import com.fasterxml.uuid.EthernetAddress;
 import com.fasterxml.uuid.Generators;
 import com.fasterxml.uuid.UUIDComparator;
 import com.fasterxml.uuid.impl.TimeBasedGenerator;
+
+import static com.fasterxml.uuid.impl.UUIDUtil.BYTE_OFFSET_CLOCK_HI;
+import static com.fasterxml.uuid.impl.UUIDUtil.BYTE_OFFSET_CLOCK_LO;
+import static com.fasterxml.uuid.impl.UUIDUtil.BYTE_OFFSET_CLOCK_MID;
+import static com.fasterxml.uuid.impl.UUIDUtil.BYTE_OFFSET_CLOCK_SEQUENCE;
+import static org.apache.commons.codec.binary.Base64.decodeBase64;
+import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
+import static org.usergrid.utils.ConversionUtils.bytes;
+import static org.usergrid.utils.ConversionUtils.uuid;
 
 /**
  * @author edanuff

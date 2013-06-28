@@ -1,9 +1,6 @@
 package org.usergrid.rest.organizations;
 
-import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
-
 import java.util.UUID;
-
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.Path;
@@ -14,6 +11,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.google.common.collect.BiMap;
+import com.sun.jersey.api.json.JSONWithPadding;
 import org.apache.commons.lang.NotImplementedException;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.springframework.context.annotation.Scope;
@@ -27,8 +26,7 @@ import org.usergrid.rest.security.annotations.RequireOrganizationAccess;
 import org.usergrid.rest.utils.PathingUtils;
 import org.usergrid.security.shiro.utils.SubjectUtils;
 
-import com.google.common.collect.BiMap;
-import com.sun.jersey.api.json.JSONWithPadding;
+import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
 
 @Component("org.usergrid.rest.organizations.OrganizationResource")
 @Scope("prototype")

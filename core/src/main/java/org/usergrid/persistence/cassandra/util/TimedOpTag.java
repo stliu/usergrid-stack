@@ -1,9 +1,9 @@
 package org.usergrid.persistence.cassandra.util;
 
+import java.util.UUID;
+
 import com.google.common.base.Objects;
 import org.usergrid.utils.UUIDUtils;
-
-import java.util.UUID;
 
 /**
  * Simple struct holding timer information for an operation and an

@@ -15,9 +15,8 @@
  ******************************************************************************/
 package org.usergrid.persistence.query.tree;
 
-import org.antlr.runtime.tree.CommonTree;
-
 import org.antlr.runtime.Token;
+import org.antlr.runtime.tree.CommonTree;
 import org.usergrid.persistence.exceptions.PersistenceException;
 
 /**

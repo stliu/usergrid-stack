@@ -17,7 +17,6 @@ package org.usergrid.security.oauth;
 
 import java.util.Map;
 import java.util.TreeMap;
-
 import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;

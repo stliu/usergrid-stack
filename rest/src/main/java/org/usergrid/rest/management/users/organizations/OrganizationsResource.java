@@ -17,7 +17,6 @@ package org.usergrid.rest.management.users.organizations;
 
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
@@ -33,6 +32,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.google.common.collect.BiMap;
+import com.sun.jersey.api.json.JSONWithPadding;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.usergrid.management.OrganizationInfo;
@@ -43,9 +44,6 @@ import org.usergrid.rest.ApiResponse;
 import org.usergrid.rest.security.annotations.RequireAdminUserAccess;
 import org.usergrid.rest.security.annotations.RequireOrganizationAccess;
 import org.usergrid.security.shiro.utils.SubjectUtils;
-
-import com.google.common.collect.BiMap;
-import com.sun.jersey.api.json.JSONWithPadding;
 
 @Component("org.usergrid.rest.management.users.organizations.OrganizationsResource")
 @Scope("prototype")

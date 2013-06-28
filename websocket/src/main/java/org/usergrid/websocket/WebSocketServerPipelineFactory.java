@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.websocket;
 
-import static org.jboss.netty.channel.Channels.pipeline;
-
 import javax.net.ssl.SSLEngine;
 
 import org.apache.shiro.mgt.SessionsSecurityManager;
@@ -30,6 +28,8 @@ import org.jboss.netty.handler.ssl.SslHandler;
 import org.usergrid.management.ManagementService;
 import org.usergrid.persistence.EntityManagerFactory;
 import org.usergrid.services.ServiceManagerFactory;
+
+import static org.jboss.netty.channel.Channels.pipeline;
 
 public class WebSocketServerPipelineFactory implements ChannelPipelineFactory {
 

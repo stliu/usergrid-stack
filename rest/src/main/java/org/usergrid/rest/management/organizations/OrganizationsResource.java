@@ -17,7 +17,6 @@ package org.usergrid.rest.management.organizations;
 
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.FormParam;
@@ -31,6 +30,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
 import com.google.common.base.Preconditions;
+import com.sun.jersey.api.json.JSONWithPadding;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,8 +44,6 @@ import org.usergrid.management.exceptions.ManagementException;
 import org.usergrid.rest.AbstractContextResource;
 import org.usergrid.rest.ApiResponse;
 import org.usergrid.rest.security.annotations.RequireOrganizationAccess;
-
-import com.sun.jersey.api.json.JSONWithPadding;
 
 @Component("org.usergrid.rest.management.organizations.OrganizationsResource")
 @Scope("prototype")

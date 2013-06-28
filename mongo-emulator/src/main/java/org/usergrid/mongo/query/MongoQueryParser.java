@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mongo.query;
 
-import static org.apache.commons.collections.MapUtils.getIntValue;
-
 import java.util.Stack;
 
 import org.antlr.runtime.ClassicToken;
@@ -33,6 +31,8 @@ import org.usergrid.persistence.query.tree.LessThan;
 import org.usergrid.persistence.query.tree.LessThanEqual;
 import org.usergrid.persistence.query.tree.Operand;
 import org.usergrid.persistence.query.tree.OrOperand;
+
+import static org.apache.commons.collections.MapUtils.getIntValue;
 
 /**
  * Parser class to parse mongo queries into usergrid EM queries

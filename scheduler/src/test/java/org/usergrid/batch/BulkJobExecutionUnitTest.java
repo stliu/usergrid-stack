@@ -1,8 +1,5 @@
 package org.usergrid.batch;
 
-import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
 import java.util.UUID;
 
 import org.junit.Test;
@@ -10,6 +7,9 @@ import org.usergrid.batch.JobExecution.Status;
 import org.usergrid.batch.repository.JobDescriptor;
 import org.usergrid.persistence.entities.JobData;
 import org.usergrid.persistence.entities.JobStat;
+
+import static junit.framework.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  * @author zznate

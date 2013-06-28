@@ -15,20 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static org.apache.commons.codec.binary.Base64.decodeBase64;
-import static org.apache.commons.lang.StringUtils.isBlank;
-import static org.apache.commons.lang.StringUtils.split;
-import static org.usergrid.persistence.Schema.PROPERTY_UUID;
-import static org.usergrid.utils.ClassUtils.cast;
-import static org.usergrid.utils.ConversionUtils.uuid;
-import static org.usergrid.utils.ListUtils.first;
-import static org.usergrid.utils.ListUtils.firstBoolean;
-import static org.usergrid.utils.ListUtils.firstInteger;
-import static org.usergrid.utils.ListUtils.firstLong;
-import static org.usergrid.utils.ListUtils.firstUuid;
-import static org.usergrid.utils.ListUtils.isEmpty;
-import static org.usergrid.utils.MapUtils.toMapList;
-
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -69,6 +55,20 @@ import org.usergrid.persistence.query.tree.QueryFilterLexer;
 import org.usergrid.persistence.query.tree.QueryFilterParser;
 import org.usergrid.persistence.query.tree.WithinOperand;
 import org.usergrid.utils.JsonUtils;
+
+import static org.apache.commons.codec.binary.Base64.decodeBase64;
+import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang.StringUtils.split;
+import static org.usergrid.persistence.Schema.PROPERTY_UUID;
+import static org.usergrid.utils.ClassUtils.cast;
+import static org.usergrid.utils.ConversionUtils.uuid;
+import static org.usergrid.utils.ListUtils.first;
+import static org.usergrid.utils.ListUtils.firstBoolean;
+import static org.usergrid.utils.ListUtils.firstInteger;
+import static org.usergrid.utils.ListUtils.firstLong;
+import static org.usergrid.utils.ListUtils.firstUuid;
+import static org.usergrid.utils.ListUtils.isEmpty;
+import static org.usergrid.utils.MapUtils.toMapList;
 
 public class Query {
 

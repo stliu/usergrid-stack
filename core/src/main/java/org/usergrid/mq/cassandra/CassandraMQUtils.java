@@ -15,18 +15,6 @@
  ******************************************************************************/
 package org.usergrid.mq.cassandra;
 
-import static me.prettyprint.hector.api.factory.HFactory.createColumn;
-import static org.usergrid.mq.Message.MESSAGE_ID;
-import static org.usergrid.mq.Message.MESSAGE_PROPERTIES;
-import static org.usergrid.mq.Message.MESSAGE_TYPE;
-import static org.usergrid.mq.Queue.QUEUE_NEWEST;
-import static org.usergrid.mq.Queue.QUEUE_OLDEST;
-import static org.usergrid.mq.Queue.QUEUE_PROPERTIES;
-import static org.usergrid.mq.QueuePosition.CONSUMER;
-import static org.usergrid.utils.ConversionUtils.bytebuffer;
-import static org.usergrid.utils.ConversionUtils.getLong;
-import static org.usergrid.utils.ConversionUtils.object;
-
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import java.util.List;
@@ -42,7 +30,6 @@ import me.prettyprint.cassandra.serializers.StringSerializer;
 import me.prettyprint.cassandra.serializers.UUIDSerializer;
 import me.prettyprint.hector.api.beans.HColumn;
 import me.prettyprint.hector.api.mutation.Mutator;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.mq.Message;
@@ -51,6 +38,18 @@ import org.usergrid.mq.QueueQuery;
 import org.usergrid.utils.ConversionUtils;
 import org.usergrid.utils.JsonUtils;
 import org.usergrid.utils.UUIDUtils;
+
+import static me.prettyprint.hector.api.factory.HFactory.createColumn;
+import static org.usergrid.mq.Message.MESSAGE_ID;
+import static org.usergrid.mq.Message.MESSAGE_PROPERTIES;
+import static org.usergrid.mq.Message.MESSAGE_TYPE;
+import static org.usergrid.mq.Queue.QUEUE_NEWEST;
+import static org.usergrid.mq.Queue.QUEUE_OLDEST;
+import static org.usergrid.mq.Queue.QUEUE_PROPERTIES;
+import static org.usergrid.mq.QueuePosition.CONSUMER;
+import static org.usergrid.utils.ConversionUtils.bytebuffer;
+import static org.usergrid.utils.ConversionUtils.getLong;
+import static org.usergrid.utils.ConversionUtils.object;
 
 public class CassandraMQUtils {
 

@@ -15,19 +15,27 @@
  ******************************************************************************/
 package org.usergrid.utils;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.usergrid.utils.UUIDUtils.getTimestampInMillis;
-import static org.usergrid.utils.UUIDUtils.newTimeUUID;
-
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.usergrid.utils.UUIDUtils.getTimestampInMillis;
+import static org.usergrid.utils.UUIDUtils.newTimeUUID;
 
 public class UUIDUtilsTest {
 

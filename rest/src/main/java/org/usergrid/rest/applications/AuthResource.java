@@ -15,13 +15,6 @@
  ******************************************************************************/
 package org.usergrid.rest.applications;
 
-import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
-import static javax.servlet.http.HttpServletResponse.SC_OK;
-import static javax.ws.rs.core.MediaType.APPLICATION_FORM_URLENCODED;
-import static org.usergrid.rest.utils.JSONPUtils.jsonMediaType;
-import static org.usergrid.rest.utils.JSONPUtils.wrapJSONPResponse;
-import static org.usergrid.rest.utils.JSONPUtils.wrapWithCallback;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.FormParam;
@@ -46,8 +39,17 @@ import org.springframework.stereotype.Component;
 import org.usergrid.persistence.entities.User;
 import org.usergrid.rest.AbstractContextResource;
 import org.usergrid.security.oauth.AccessInfo;
-import org.usergrid.security.providers.*;
+import org.usergrid.security.providers.PingIdentityProvider;
+import org.usergrid.security.providers.SignInAsProvider;
+import org.usergrid.security.providers.SignInProviderFactory;
 import org.usergrid.services.ServiceManager;
+
+import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
+import static javax.servlet.http.HttpServletResponse.SC_OK;
+import static javax.ws.rs.core.MediaType.APPLICATION_FORM_URLENCODED;
+import static org.usergrid.rest.utils.JSONPUtils.jsonMediaType;
+import static org.usergrid.rest.utils.JSONPUtils.wrapJSONPResponse;
+import static org.usergrid.rest.utils.JSONPUtils.wrapWithCallback;
 
 @Component
 @Scope("prototype")

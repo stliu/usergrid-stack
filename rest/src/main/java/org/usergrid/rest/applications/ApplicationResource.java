@@ -15,23 +15,10 @@
  ******************************************************************************/
 package org.usergrid.rest.applications;
 
-import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
-import static javax.servlet.http.HttpServletResponse.SC_OK;
-import static javax.ws.rs.core.MediaType.APPLICATION_FORM_URLENCODED;
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
-import static org.usergrid.security.oauth.ClientCredentialsInfo.getUUIDFromClientId;
-import static org.usergrid.security.shiro.utils.SubjectUtils.isApplicationAdmin;
-import static org.usergrid.services.ServiceParameter.addParameter;
-import static org.usergrid.utils.StringUtils.stringOrSubstringAfterFirst;
-import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
@@ -49,6 +36,8 @@ import javax.ws.rs.core.PathSegment;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.json.JSONWithPadding;
+import com.sun.jersey.api.view.Viewable;
 import org.apache.amber.oauth2.common.error.OAuthError;
 import org.apache.amber.oauth2.common.exception.OAuthProblemException;
 import org.apache.amber.oauth2.common.message.OAuthResponse;
@@ -70,7 +59,6 @@ import org.usergrid.persistence.Identifier;
 import org.usergrid.persistence.entities.Application;
 import org.usergrid.persistence.entities.User;
 import org.usergrid.rest.AbstractContextResource;
-import org.usergrid.rest.ApiResponse;
 import org.usergrid.rest.applications.assets.AssetsResource;
 import org.usergrid.rest.applications.events.EventsResource;
 import org.usergrid.rest.applications.queues.QueueResource;
@@ -81,8 +69,17 @@ import org.usergrid.rest.security.annotations.RequireApplicationAccess;
 import org.usergrid.security.oauth.AccessInfo;
 import org.usergrid.security.oauth.ClientCredentialsInfo;
 
-import com.sun.jersey.api.json.JSONWithPadding;
-import com.sun.jersey.api.view.Viewable;
+import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
+import static javax.servlet.http.HttpServletResponse.SC_OK;
+import static javax.ws.rs.core.MediaType.APPLICATION_FORM_URLENCODED;
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.rest.exceptions.SecurityException.mappableSecurityException;
+import static org.usergrid.security.oauth.ClientCredentialsInfo.getUUIDFromClientId;
+import static org.usergrid.security.shiro.utils.SubjectUtils.isApplicationAdmin;
+import static org.usergrid.services.ServiceParameter.addParameter;
+import static org.usergrid.utils.StringUtils.stringOrSubstringAfterFirst;
+import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
 
 @Component("org.usergrid.rest.applications.ApplicationResource")
 @Scope("prototype")

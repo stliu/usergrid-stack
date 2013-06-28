@@ -1,11 +1,11 @@
 package org.usergrid.services.assets.data;
 
-import static junit.framework.Assert.assertEquals;
-
 import java.util.UUID;
 
 import org.junit.Test;
 import org.usergrid.persistence.entities.Asset;
+
+import static junit.framework.Assert.assertEquals;
 
 /**
  * @author zznate

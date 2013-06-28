@@ -1,11 +1,5 @@
 package org.usergrid.rest.applications.queues;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +12,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
+import com.sun.jersey.api.client.UniformInterfaceException;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.usergrid.mq.QueuePosition;
@@ -26,9 +23,11 @@ import org.usergrid.rest.test.resource.app.queue.Queue;
 import org.usergrid.rest.test.resource.app.queue.Transaction;
 import org.usergrid.utils.MapUtils;
 
-import com.google.common.collect.BiMap;
-import com.google.common.collect.HashBiMap;
-import com.sun.jersey.api.client.UniformInterfaceException;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class QueueResourceTest extends RestContextTest {
 

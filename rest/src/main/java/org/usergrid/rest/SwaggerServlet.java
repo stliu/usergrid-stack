@@ -15,16 +15,10 @@
  ******************************************************************************/
 package org.usergrid.rest;
 
-import static org.apache.commons.lang.StringUtils.isEmpty;
-import static org.springframework.web.context.support.WebApplicationContextUtils.getRequiredWebApplicationContext;
-import static org.usergrid.rest.utils.CORSUtils.allowAllOrigins;
-import static org.usergrid.utils.StringUtils.readClasspathFileAsString;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -41,6 +35,11 @@ import org.apache.commons.lang.text.StrSubstitutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+
+import static org.apache.commons.lang.StringUtils.isEmpty;
+import static org.springframework.web.context.support.WebApplicationContextUtils.getRequiredWebApplicationContext;
+import static org.usergrid.rest.utils.CORSUtils.allowAllOrigins;
+import static org.usergrid.utils.StringUtils.readClasspathFileAsString;
 
 public class SwaggerServlet extends HttpServlet implements Filter {
 

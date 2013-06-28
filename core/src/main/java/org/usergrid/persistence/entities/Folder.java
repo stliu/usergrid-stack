@@ -17,15 +17,13 @@ package org.usergrid.persistence.entities;
 
 import java.util.Set;
 import java.util.UUID;
-
 import javax.xml.bind.annotation.XmlRootElement;
-
-import org.usergrid.persistence.TypedEntity;
-import org.usergrid.persistence.annotations.EntityProperty;
-import org.usergrid.persistence.annotations.EntityDictionary;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
+import org.usergrid.persistence.TypedEntity;
+import org.usergrid.persistence.annotations.EntityDictionary;
+import org.usergrid.persistence.annotations.EntityProperty;
 
 /**
  * Asset entity for representing folder-like objects.

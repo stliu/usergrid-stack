@@ -15,23 +15,21 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static org.usergrid.persistence.Schema.PROPERTY_UUID;
-import static org.usergrid.persistence.Schema.PROPERTY_NAME;
-import static org.usergrid.persistence.Schema.PROPERTY_TYPE;
-import static org.usergrid.persistence.Schema.PROPERTY_URI;
-
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-
 import javax.xml.bind.annotation.XmlRootElement;
-
-import org.usergrid.persistence.annotations.EntityProperty;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import org.usergrid.persistence.annotations.EntityProperty;
+
+import static org.usergrid.persistence.Schema.PROPERTY_NAME;
+import static org.usergrid.persistence.Schema.PROPERTY_TYPE;
+import static org.usergrid.persistence.Schema.PROPERTY_URI;
+import static org.usergrid.persistence.Schema.PROPERTY_UUID;
 
 /**
  * Entities are the base object type in the service.

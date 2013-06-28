@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
-import static org.usergrid.utils.ConversionUtils.*;
-import static org.apache.commons.codec.digest.DigestUtils.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,6 +22,9 @@ import java.util.List;
 import java.util.UUID;
 
 import org.usergrid.persistence.IndexBucketLocator;
+
+import static org.apache.commons.codec.digest.DigestUtils.md5;
+import static org.usergrid.utils.ConversionUtils.bytes;
 
 /**
  * Simple implementation that does static hashing across 100 rows. Future

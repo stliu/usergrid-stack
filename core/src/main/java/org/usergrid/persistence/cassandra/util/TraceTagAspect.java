@@ -1,10 +1,10 @@
 package org.usergrid.persistence.cassandra.util;
 
+import javax.annotation.Resource;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.annotation.Resource;
 
 /**
  * Use Aspects to apply a trace

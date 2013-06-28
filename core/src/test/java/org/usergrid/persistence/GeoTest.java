@@ -15,22 +15,20 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.usergrid.persistence.Results.Level.ALL_PROPERTIES;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import com.beoui.geocell.model.Point;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.usergrid.persistence.cassandra.EntityManagerImpl;
 import org.usergrid.persistence.cassandra.GeoIndexManager;
 import org.usergrid.persistence.cassandra.GeoIndexManager.EntityLocationRef;
 
-import com.beoui.geocell.model.Point;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.usergrid.persistence.Results.Level.ALL_PROPERTIES;
 
 public class GeoTest extends AbstractPersistenceTest {
 

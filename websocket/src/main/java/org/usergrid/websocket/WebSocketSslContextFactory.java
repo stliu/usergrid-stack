@@ -17,7 +17,6 @@ package org.usergrid.websocket;
 
 import java.security.KeyStore;
 import java.security.Security;
-
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
 

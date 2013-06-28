@@ -2,12 +2,11 @@ package org.usergrid.batch;
 
 import java.util.UUID;
 
+import com.google.common.base.Preconditions;
 import org.usergrid.batch.repository.JobDescriptor;
 import org.usergrid.batch.service.JobRuntimeService;
 import org.usergrid.persistence.entities.JobData;
 import org.usergrid.persistence.entities.JobStat;
-
-import com.google.common.base.Preconditions;
 
 /**
  * Models the execution context of the {@link Job} with state transition methods

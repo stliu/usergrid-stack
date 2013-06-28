@@ -15,11 +15,11 @@
  ******************************************************************************/
 package org.usergrid.mongo.testproxy;
 
-import static org.jboss.netty.channel.Channels.pipeline;
-
 import org.jboss.netty.channel.ChannelPipeline;
 import org.jboss.netty.channel.ChannelPipelineFactory;
 import org.jboss.netty.channel.socket.ClientSocketChannelFactory;
+
+import static org.jboss.netty.channel.Channels.pipeline;
 
 /**
  * @author <a href="http://www.jboss.org/netty/">The Netty Project</a>

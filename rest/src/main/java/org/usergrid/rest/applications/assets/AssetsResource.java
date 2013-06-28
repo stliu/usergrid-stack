@@ -1,32 +1,41 @@
 package org.usergrid.rest.applications.assets;
 
+import java.io.InputStream;
+import java.util.Date;
+import java.util.Map;
+import java.util.UUID;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DefaultValue;
+import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.PathSegment;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
+
 import com.sun.jersey.api.json.JSONWithPadding;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
-import com.sun.jersey.multipart.MultiPart;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import org.usergrid.mq.QueueQuery;
-import org.usergrid.mq.QueueResults;
 import org.usergrid.persistence.EntityManager;
 import org.usergrid.persistence.entities.Asset;
 import org.usergrid.rest.AbstractContextResource;
-import org.usergrid.rest.applications.ApplicationResource;
 import org.usergrid.rest.applications.ServiceResource;
 import org.usergrid.rest.security.annotations.RequireApplicationAccess;
 import org.usergrid.services.assets.data.AssetUtils;
 import org.usergrid.services.assets.data.BinaryStore;
 import org.usergrid.utils.StringUtils;
-
-import javax.ws.rs.*;
-import javax.ws.rs.core.*;
-import java.io.InputStream;
-import java.util.Date;
-import java.util.Map;
-import java.util.UUID;
 
 /**
  * @author zznate

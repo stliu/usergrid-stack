@@ -1,19 +1,11 @@
 package org.usergrid.management.cassandra;
 
-import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.usergrid.persistence.Schema.DICTIONARY_CREDENTIALS;
-import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import com.usergrid.count.SimpleBatcher;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,7 +29,14 @@ import org.usergrid.test.ShiroHelperRunner;
 import org.usergrid.utils.JsonUtils;
 import org.usergrid.utils.UUIDUtils;
 
-import com.usergrid.count.SimpleBatcher;
+import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.usergrid.persistence.Schema.DICTIONARY_CREDENTIALS;
+import static org.usergrid.persistence.cassandra.CassandraService.MANAGEMENT_APPLICATION_ID;
 
 /**
  * @author zznate

@@ -15,21 +15,20 @@
  ******************************************************************************/
 package org.usergrid.query.validator;
 
-import org.apache.commons.lang.StringUtils;
-import org.springframework.http.HttpMethod;
-import org.springframework.stereotype.Component;
-import org.usergrid.java.client.response.ApiResponse;
-import org.usergrid.persistence.Entity;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import org.usergrid.java.client.Client;
-import org.usergrid.persistence.Schema;
-
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.apache.commons.lang.StringUtils;
+import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Component;
+import org.usergrid.java.client.Client;
+import org.usergrid.java.client.response.ApiResponse;
+import org.usergrid.persistence.Entity;
+import org.usergrid.persistence.Schema;
 
 import static org.usergrid.java.client.utils.ObjectUtils.isEmpty;
 

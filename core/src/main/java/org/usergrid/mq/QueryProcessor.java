@@ -1,15 +1,5 @@
 package org.usergrid.mq;
 
-import static java.lang.Integer.parseInt;
-import static org.apache.commons.codec.binary.Base64.decodeBase64;
-import static org.apache.commons.lang.StringUtils.isBlank;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.apache.commons.lang.StringUtils.removeEnd;
-import static org.apache.commons.lang.StringUtils.split;
-import static org.usergrid.mq.Query.SortDirection.DESCENDING;
-import static org.usergrid.persistence.cassandra.IndexUpdate.indexValueCode;
-import static org.usergrid.persistence.cassandra.IndexUpdate.toIndexableValue;
-
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,6 +19,16 @@ import org.usergrid.persistence.EntityPropertyComparator;
 import org.usergrid.utils.ListUtils;
 import org.usergrid.utils.NumberUtils;
 import org.usergrid.utils.StringUtils;
+
+import static java.lang.Integer.parseInt;
+import static org.apache.commons.codec.binary.Base64.decodeBase64;
+import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang.StringUtils.removeEnd;
+import static org.apache.commons.lang.StringUtils.split;
+import static org.usergrid.mq.Query.SortDirection.DESCENDING;
+import static org.usergrid.persistence.cassandra.IndexUpdate.indexValueCode;
+import static org.usergrid.persistence.cassandra.IndexUpdate.toIndexableValue;
 
 public class QueryProcessor {
 

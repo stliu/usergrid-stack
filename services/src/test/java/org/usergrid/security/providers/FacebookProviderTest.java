@@ -1,14 +1,12 @@
 package org.usergrid.security.providers;
 
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.WebResource;
-import com.sun.jersey.api.client.config.ClientConfig;
-import org.junit.Before;
+import java.util.Map;
+import java.util.UUID;
+
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.management.ManagementService;
 import org.usergrid.management.OrganizationInfo;
@@ -19,14 +17,8 @@ import org.usergrid.persistence.entities.User;
 import org.usergrid.test.ShiroHelperRunner;
 import org.usergrid.utils.MapUtils;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.mock;
 
 /**
  * @author zznate

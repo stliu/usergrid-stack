@@ -15,13 +15,13 @@
  ******************************************************************************/
 package org.usergrid.mq;
 
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import static org.usergrid.mq.Queue.getQueueParentPaths;
 import static org.usergrid.mq.Queue.normalizeQueuePath;
 import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.junit.Test;
 
 public class QueuePathsTest {
 

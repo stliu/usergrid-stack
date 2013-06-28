@@ -1,12 +1,5 @@
 package org.usergrid.security.tokens;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-import static org.usergrid.utils.ClassUtils.cast;
-import static org.usergrid.utils.MapUtils.hashMap;
-
 import java.util.Map;
 import java.util.UUID;
 
@@ -30,6 +23,13 @@ import org.usergrid.security.tokens.cassandra.TokenServiceImpl;
 import org.usergrid.security.tokens.exceptions.InvalidTokenException;
 import org.usergrid.test.ShiroHelperRunner;
 import org.usergrid.utils.UUIDUtils;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.usergrid.utils.ClassUtils.cast;
+import static org.usergrid.utils.MapUtils.hashMap;
 
 @RunWith(ShiroHelperRunner.class)
 public class TokenServiceTest {

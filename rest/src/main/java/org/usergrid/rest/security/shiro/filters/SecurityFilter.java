@@ -15,17 +15,16 @@
  ******************************************************************************/
 package org.usergrid.rest.security.shiro.filters;
 
-import static org.usergrid.utils.StringUtils.stringOrSubstringAfterFirst;
-import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
-
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.core.HttpContext;
+import com.sun.jersey.spi.container.ContainerRequest;
+import com.sun.jersey.spi.container.ContainerRequestFilter;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.usergrid.management.ManagementService;
@@ -33,9 +32,8 @@ import org.usergrid.persistence.EntityManagerFactory;
 import org.usergrid.security.tokens.TokenService;
 import org.usergrid.services.ServiceManagerFactory;
 
-import com.sun.jersey.api.core.HttpContext;
-import com.sun.jersey.spi.container.ContainerRequest;
-import com.sun.jersey.spi.container.ContainerRequestFilter;
+import static org.usergrid.utils.StringUtils.stringOrSubstringAfterFirst;
+import static org.usergrid.utils.StringUtils.stringOrSubstringBeforeFirst;
 
 public abstract class SecurityFilter implements ContainerRequestFilter {
 

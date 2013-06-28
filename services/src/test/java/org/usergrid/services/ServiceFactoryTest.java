@@ -17,16 +17,14 @@ package org.usergrid.services;
 
 import java.util.UUID;
 
+import baas.io.simple.SimpleService;
 import junit.framework.Assert;
-
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.test.ShiroHelperRunner;
-
-import baas.io.simple.SimpleService;
 
 @RunWith(ShiroHelperRunner.class)
 public class ServiceFactoryTest extends AbstractServiceTest {

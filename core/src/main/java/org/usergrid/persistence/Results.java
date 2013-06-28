@@ -15,13 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
-import static org.usergrid.persistence.SimpleEntityRef.ref;
-import static org.usergrid.utils.ClassUtils.cast;
-import static org.usergrid.utils.CompositeUtils.setEqualityFlag;
-import static org.usergrid.utils.ConversionUtils.bytes;
-
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -29,21 +22,20 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.UUID;
-import java.util.Map.Entry;
-
 import javax.xml.bind.annotation.XmlRootElement;
-
-import me.prettyprint.hector.api.beans.DynamicComposite;
-import me.prettyprint.hector.api.beans.AbstractComposite.ComponentEquality;
-
-import org.usergrid.persistence.query.ir.QuerySlice.RangeValue;
-import org.usergrid.utils.MapUtils;
-import org.usergrid.utils.StringUtils;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
+import org.usergrid.utils.MapUtils;
+import org.usergrid.utils.StringUtils;
+
+import static org.apache.commons.codec.binary.Base64.encodeBase64URLSafeString;
+import static org.usergrid.persistence.SimpleEntityRef.ref;
+import static org.usergrid.utils.ClassUtils.cast;
+import static org.usergrid.utils.ConversionUtils.bytes;
 
 @XmlRootElement
 public class Results implements Iterable<Entity> {

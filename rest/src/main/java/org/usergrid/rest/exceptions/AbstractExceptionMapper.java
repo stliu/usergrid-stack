@@ -15,14 +15,6 @@
  ******************************************************************************/
 package org.usergrid.rest.exceptions;
 
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON_TYPE;
-import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
-import static javax.ws.rs.core.Response.Status.OK;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.rest.utils.JSONPUtils.isJavascript;
-import static org.usergrid.rest.utils.JSONPUtils.wrapJSONPResponse;
-import static org.usergrid.utils.JsonUtils.mapToJsonString;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
@@ -33,6 +25,14 @@ import javax.ws.rs.ext.ExceptionMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.rest.ApiResponse;
+
+import static javax.ws.rs.core.MediaType.APPLICATION_JSON_TYPE;
+import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
+import static javax.ws.rs.core.Response.Status.OK;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.rest.utils.JSONPUtils.isJavascript;
+import static org.usergrid.rest.utils.JSONPUtils.wrapJSONPResponse;
+import static org.usergrid.utils.JsonUtils.mapToJsonString;
 
 public abstract class AbstractExceptionMapper<E extends java.lang.Throwable>
 		implements ExceptionMapper<E> {

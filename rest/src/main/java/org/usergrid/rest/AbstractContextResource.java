@@ -15,12 +15,7 @@
  ******************************************************************************/
 package org.usergrid.rest;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.apache.commons.lang.StringUtils.removeEnd;
-
 import java.util.List;
-import java.util.Properties;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.PathSegment;
@@ -28,9 +23,12 @@ import javax.ws.rs.core.Request;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.core.UriInfo;
 
+import com.sun.jersey.api.core.HttpContext;
+import com.sun.jersey.api.core.ResourceContext;
+import com.sun.jersey.api.view.Viewable;
+import com.sun.jersey.spi.CloseableService;
 import net.tanesha.recaptcha.ReCaptcha;
 import net.tanesha.recaptcha.ReCaptchaFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.usergrid.management.ManagementService;
 import org.usergrid.mq.QueueManagerFactory;
@@ -39,10 +37,8 @@ import org.usergrid.rest.exceptions.RedirectionException;
 import org.usergrid.security.tokens.TokenService;
 import org.usergrid.services.ServiceManagerFactory;
 
-import com.sun.jersey.api.core.HttpContext;
-import com.sun.jersey.api.core.ResourceContext;
-import com.sun.jersey.api.view.Viewable;
-import com.sun.jersey.spi.CloseableService;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang.StringUtils.removeEnd;
 
 public abstract class AbstractContextResource {
 

@@ -15,15 +15,15 @@
  ******************************************************************************/
 package org.usergrid.management;
 
-import static org.usergrid.persistence.Schema.PROPERTY_NAME;
-import static org.usergrid.persistence.Schema.PROPERTY_UUID;
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.UUID;
+
+import static org.usergrid.persistence.Schema.PROPERTY_NAME;
+import static org.usergrid.persistence.Schema.PROPERTY_UUID;
 
 public class ApplicationInfo {
 

@@ -15,10 +15,9 @@
  ******************************************************************************/
 package com.usergrid.count;
 
-import com.usergrid.count.common.Count;
-
 import java.util.Collection;
-import java.util.List;
+
+import com.usergrid.count.common.Count;
 
 /**
  * @author zznate

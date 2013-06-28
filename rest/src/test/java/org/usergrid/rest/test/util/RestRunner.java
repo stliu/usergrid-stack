@@ -17,14 +17,13 @@ package org.usergrid.rest.test.util;
 
 import java.lang.reflect.Field;
 
+import com.sun.jersey.test.framework.JerseyTest;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.Statement;
 import org.usergrid.cassandra.CassandraRunner;
 import org.usergrid.rest.test.resource.TestContext;
 import org.usergrid.rest.test.security.TestAdminUser;
-
-import com.sun.jersey.test.framework.JerseyTest;
 
 /**
  * Helper that creates a test application and test context as well as running

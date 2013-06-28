@@ -15,14 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.usergrid.persistence.cassandra.CassandraService.DEFAULT_APPLICATION_ID;
-import static org.usergrid.services.ServiceParameter.parameters;
-import static org.usergrid.services.ServicePayload.batchPayload;
-import static org.usergrid.services.ServicePayload.payload;
-import static org.usergrid.utils.InflectionUtils.pluralize;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +31,14 @@ import org.usergrid.persistence.EntityManagerFactory;
 import org.usergrid.persistence.cassandra.EntityManagerFactoryImpl;
 import org.usergrid.test.ShiroHelperRunner;
 import org.usergrid.utils.JsonUtils;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.usergrid.persistence.cassandra.CassandraService.DEFAULT_APPLICATION_ID;
+import static org.usergrid.services.ServiceParameter.parameters;
+import static org.usergrid.services.ServicePayload.batchPayload;
+import static org.usergrid.services.ServicePayload.payload;
+import static org.usergrid.utils.InflectionUtils.pluralize;
 
 @RunWith(ShiroHelperRunner.class)
 public abstract class AbstractServiceTest {

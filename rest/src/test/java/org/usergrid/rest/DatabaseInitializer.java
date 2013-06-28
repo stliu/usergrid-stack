@@ -24,8 +24,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.usergrid.management.ManagementService;
 import org.usergrid.mq.QueueManagerFactory;
 import org.usergrid.persistence.EntityManagerFactory;
-import org.usergrid.persistence.cassandra.EntityManagerFactoryImpl;
-import org.usergrid.persistence.cassandra.Setup;
 import org.usergrid.services.ServiceManagerFactory;
 
 public class DatabaseInitializer {

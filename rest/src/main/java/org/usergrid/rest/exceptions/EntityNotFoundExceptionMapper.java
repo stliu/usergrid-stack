@@ -15,12 +15,12 @@
  ******************************************************************************/
 package org.usergrid.rest.exceptions;
 
-import static javax.ws.rs.core.Response.Status.NOT_FOUND;
-
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 
 import org.usergrid.persistence.exceptions.EntityNotFoundException;
+
+import static javax.ws.rs.core.Response.Status.NOT_FOUND;
 
 @Provider
 public class EntityNotFoundExceptionMapper extends

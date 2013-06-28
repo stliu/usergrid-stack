@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static org.usergrid.persistence.Schema.PROPERTY_NAME;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,16 +22,16 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.UUID;
-
 import javax.xml.bind.annotation.XmlRootElement;
-
-import org.usergrid.persistence.annotations.EntityProperty;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion;
+import org.usergrid.persistence.annotations.EntityProperty;
+
+import static org.usergrid.persistence.Schema.PROPERTY_NAME;
 
 /**
  * The abstract superclass implementation of the Entity interface.

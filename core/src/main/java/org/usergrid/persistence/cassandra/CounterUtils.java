@@ -15,6 +15,31 @@
  ******************************************************************************/
 package org.usergrid.persistence.cassandra;
 
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.UUID;
+
+import com.usergrid.count.Batcher;
+import com.usergrid.count.common.Count;
+import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
+import me.prettyprint.cassandra.serializers.LongSerializer;
+import me.prettyprint.cassandra.serializers.PrefixedSerializer;
+import me.prettyprint.cassandra.serializers.StringSerializer;
+import me.prettyprint.cassandra.serializers.UUIDSerializer;
+import me.prettyprint.hector.api.beans.HCounterColumn;
+import me.prettyprint.hector.api.mutation.Mutator;
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.usergrid.mq.Message;
+import org.usergrid.mq.cassandra.QueuesCF;
+import org.usergrid.persistence.CounterResolution;
+import org.usergrid.persistence.entities.Event;
+
 import static me.prettyprint.hector.api.factory.HFactory.createColumn;
 import static me.prettyprint.hector.api.factory.HFactory.createCounterColumn;
 import static org.usergrid.persistence.Schema.DICTIONARY_COUNTERS;
@@ -24,33 +49,6 @@ import static org.usergrid.persistence.cassandra.ApplicationCF.ENTITY_DICTIONARI
 import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.addInsertToMutator;
 import static org.usergrid.persistence.cassandra.CassandraPersistenceUtils.key;
 import static org.usergrid.utils.ConversionUtils.bytebuffer;
-
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.UUID;
-
-import me.prettyprint.cassandra.serializers.ByteBufferSerializer;
-import me.prettyprint.cassandra.serializers.LongSerializer;
-import me.prettyprint.cassandra.serializers.PrefixedSerializer;
-import me.prettyprint.cassandra.serializers.StringSerializer;
-import me.prettyprint.cassandra.serializers.UUIDSerializer;
-import me.prettyprint.hector.api.beans.HCounterColumn;
-import me.prettyprint.hector.api.mutation.Mutator;
-
-import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.usergrid.mq.Message;
-import org.usergrid.mq.cassandra.QueuesCF;
-import org.usergrid.persistence.CounterResolution;
-import org.usergrid.persistence.entities.Event;
-
-import com.usergrid.count.Batcher;
-import com.usergrid.count.common.Count;
 
 public class CounterUtils {
 

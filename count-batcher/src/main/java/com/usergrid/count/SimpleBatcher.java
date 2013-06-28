@@ -15,13 +15,13 @@
  ******************************************************************************/
 package com.usergrid.count;
 
-import com.usergrid.count.common.Count;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.atomic.AtomicLong;
+
+import com.usergrid.count.common.Count;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A simple Batcher implementation that keeps a sum of the

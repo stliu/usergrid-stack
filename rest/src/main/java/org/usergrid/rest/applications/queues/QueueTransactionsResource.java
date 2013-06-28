@@ -15,16 +15,9 @@
  ******************************************************************************/
 package org.usergrid.rest.applications.queues;
 
-import static org.usergrid.utils.MapUtils.*;
-import java.util.List;
-import java.util.Map;
 import java.util.UUID;
-
-import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -34,19 +27,17 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
-import org.apache.commons.lang.StringUtils;
+import com.sun.jersey.api.json.JSONWithPadding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.usergrid.mq.QueueManager;
 import org.usergrid.mq.QueueQuery;
-import org.usergrid.mq.QueueSet;
 import org.usergrid.persistence.Results;
 import org.usergrid.rest.AbstractContextResource;
 
-import com.sun.jersey.api.json.JSONWithPadding;
-import com.sun.jersey.core.provider.EntityHolder;
+import static org.usergrid.utils.MapUtils.hashMap;
 
 @Component
 @Scope("prototype")

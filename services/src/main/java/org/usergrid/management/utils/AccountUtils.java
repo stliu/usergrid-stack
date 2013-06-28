@@ -15,11 +15,11 @@
  ******************************************************************************/
 package org.usergrid.management.utils;
 
+import org.usergrid.persistence.Entity;
+
 import static org.usergrid.persistence.Schema.PROPERTY_ACTIVATED;
 import static org.usergrid.persistence.Schema.PROPERTY_DISABLED;
 import static org.usergrid.utils.ConversionUtils.getBoolean;
-
-import org.usergrid.persistence.Entity;
 
 public class AccountUtils {
 

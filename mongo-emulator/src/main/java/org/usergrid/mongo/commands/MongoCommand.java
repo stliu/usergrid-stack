@@ -17,10 +17,10 @@ package org.usergrid.mongo.commands;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.jboss.netty.channel.ChannelHandlerContext;
 import org.jboss.netty.channel.MessageEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 import org.usergrid.mongo.MongoChannelHandler;
 import org.usergrid.mongo.protocol.OpQuery;

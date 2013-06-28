@@ -15,10 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.utils.ListUtils.isEmpty;
-import static org.usergrid.utils.ListUtils.last;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -31,6 +27,10 @@ import org.usergrid.persistence.EntityRef;
 import org.usergrid.persistence.Query;
 import org.usergrid.services.ServiceParameter.QueryParameter;
 import org.usergrid.services.ServiceResults.Type;
+
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.utils.ListUtils.isEmpty;
+import static org.usergrid.utils.ListUtils.last;
 
 public class ServiceRequest {
 

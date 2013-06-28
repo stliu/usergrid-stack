@@ -15,17 +15,16 @@
  ******************************************************************************/
 package org.usergrid.persistence;
 
-import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
-
-import io.baas.Simple;
-
 import java.util.List;
 
+import io.baas.Simple;
 import org.junit.Assert;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.usergrid.persistence.entities.SampleEntity;
+
+import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
 
 public class SchemaTest {
 

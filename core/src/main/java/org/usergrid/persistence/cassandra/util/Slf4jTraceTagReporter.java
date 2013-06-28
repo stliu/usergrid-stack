@@ -1,9 +1,9 @@
 package org.usergrid.persistence.cassandra.util;
 
+import java.util.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.Date;
 
 /**
  * Simple reporter which dumps to class logger at info level.

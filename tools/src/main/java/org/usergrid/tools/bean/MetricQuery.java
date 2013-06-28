@@ -1,12 +1,16 @@
 package org.usergrid.tools.bean;
 
-import com.google.common.base.Preconditions;
-import org.usergrid.persistence.*;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
+
+import com.google.common.base.Preconditions;
+import org.usergrid.persistence.AggregateCounter;
+import org.usergrid.persistence.AggregateCounterSet;
+import org.usergrid.persistence.CounterResolution;
+import org.usergrid.persistence.EntityManager;
+import org.usergrid.persistence.Query;
+import org.usergrid.persistence.Results;
 
 /**
  * @author zznate

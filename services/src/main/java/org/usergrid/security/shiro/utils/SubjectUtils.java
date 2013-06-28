@@ -15,16 +15,10 @@
  ******************************************************************************/
 package org.usergrid.security.shiro.utils;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.usergrid.security.shiro.Realm.ROLE_ADMIN_USER;
-import static org.usergrid.security.shiro.Realm.ROLE_APPLICATION_ADMIN;
-import static org.usergrid.security.shiro.Realm.ROLE_APPLICATION_USER;
-import static org.usergrid.security.shiro.Realm.ROLE_ORGANIZATION_ADMIN;
-import static org.usergrid.security.shiro.Realm.ROLE_SERVICE_ADMIN;
-
 import java.util.Set;
 import java.util.UUID;
 
+import com.google.common.collect.BiMap;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.UnavailableSecurityManagerException;
@@ -39,7 +33,12 @@ import org.usergrid.persistence.Identifier;
 import org.usergrid.security.shiro.PrincipalCredentialsToken;
 import org.usergrid.security.shiro.principals.UserPrincipal;
 
-import com.google.common.collect.BiMap;
+import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.usergrid.security.shiro.Realm.ROLE_ADMIN_USER;
+import static org.usergrid.security.shiro.Realm.ROLE_APPLICATION_ADMIN;
+import static org.usergrid.security.shiro.Realm.ROLE_APPLICATION_USER;
+import static org.usergrid.security.shiro.Realm.ROLE_ORGANIZATION_ADMIN;
+import static org.usergrid.security.shiro.Realm.ROLE_SERVICE_ADMIN;
 
 public class SubjectUtils {
 

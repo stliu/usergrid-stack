@@ -3,13 +3,7 @@ package org.usergrid.tools;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Options;
 import org.usergrid.management.UserInfo;
-import org.usergrid.persistence.CredentialsInfo;
-import org.usergrid.persistence.Entity;
-import org.usergrid.persistence.EntityManager;
-import org.usergrid.persistence.cassandra.CassandraService;
-import org.usergrid.persistence.entities.User;
 
-import static org.usergrid.persistence.Schema.DICTIONARY_CREDENTIALS;
 import static org.usergrid.utils.JsonUtils.mapToFormattedJsonString;
 
 /**

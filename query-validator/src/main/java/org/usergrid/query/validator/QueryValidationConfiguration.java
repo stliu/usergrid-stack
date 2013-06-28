@@ -1,9 +1,9 @@
 package org.usergrid.query.validator;
 
+import java.util.List;
+
 import org.usergrid.persistence.Entity;
 import org.usergrid.utils.InflectionUtils;
-
-import java.util.List;
 
 public class QueryValidationConfiguration {
 

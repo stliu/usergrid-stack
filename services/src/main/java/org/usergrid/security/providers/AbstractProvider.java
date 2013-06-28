@@ -1,19 +1,13 @@
 package org.usergrid.security.providers;
 
+import java.util.Map;
+
 import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.json.JSONConfiguration;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.usergrid.management.ManagementService;
 import org.usergrid.persistence.EntityManager;
-import org.usergrid.persistence.EntityManagerFactory;
-import org.usergrid.persistence.EntityRef;
-import org.usergrid.persistence.entities.Application;
-
-import javax.ws.rs.core.MediaType;
-import java.util.Map;
 
 /**
  * @author zznate

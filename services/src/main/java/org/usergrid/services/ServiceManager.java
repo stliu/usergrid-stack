@@ -15,9 +15,6 @@
  ******************************************************************************/
 package org.usergrid.services;
 
-import static org.usergrid.persistence.SimpleEntityRef.ref;
-import static org.usergrid.utils.InflectionUtils.pluralize;
-
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +23,9 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,9 +42,8 @@ import org.usergrid.services.applications.ApplicationsService;
 import org.usergrid.services.exceptions.UndefinedServiceEntityTypeException;
 import org.usergrid.utils.ListUtils;
 
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
+import static org.usergrid.persistence.SimpleEntityRef.ref;
+import static org.usergrid.utils.InflectionUtils.pluralize;
 
 public class ServiceManager {
 

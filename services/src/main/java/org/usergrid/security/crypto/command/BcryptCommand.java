@@ -15,8 +15,6 @@
  ******************************************************************************/
 package org.usergrid.security.crypto.command;
 
-import static org.apache.commons.codec.binary.Base64.decodeBase64;
-
 import java.nio.charset.Charset;
 import java.util.UUID;
 
@@ -24,6 +22,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 import org.usergrid.persistence.CredentialsInfo;
 import org.usergrid.utils.BCrypt;
+
+import static org.apache.commons.codec.binary.Base64.decodeBase64;
 
 /**
  * Simple bcrypt command.  Runtime encoding of bytes is expected to convert to a UTF8 string

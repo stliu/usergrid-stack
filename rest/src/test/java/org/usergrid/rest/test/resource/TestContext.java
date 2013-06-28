@@ -17,13 +17,12 @@ package org.usergrid.rest.test.resource;
 
 import java.util.UUID;
 
+import com.sun.jersey.test.framework.JerseyTest;
 import org.usergrid.rest.test.resource.app.Application;
 import org.usergrid.rest.test.resource.app.User;
 import org.usergrid.rest.test.resource.app.UsersCollection;
 import org.usergrid.rest.test.resource.mgmt.Management;
 import org.usergrid.rest.test.security.TestUser;
-
-import com.sun.jersey.test.framework.JerseyTest;
 
 /**
  * @author tnine
